@@ -1,0 +1,95 @@
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'modalTitle'" data-backdrop="static" aria-hidden="true" [attr.data-keyboard]="allowEscape">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="id+'-title'">{{title}}ผนวกแนบท้ายใบอนุญาต</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" *ngIf="allowEscape">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container-fluid div-content-box-without-header">
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Name" class="form-control-sm">ชื่อยุทธภัณฑ์ <span class="txt-require">*</span></label>
+              <input type="text" class="form-control form-control-sm" id="txtAppendixEditor_Name" placeholder="" [(ngModel)]="appendix.PRODUCT_NAME" (change)="clearValidate('txtAppendixEditor_Name')">
+              <div class="invalid-feedback">กรุณาระบุชื่อยุทธภัณฑ์</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Brand" class="col-form-label form-control-sm">ยี่ห้อ</label>
+              <input type="text" class="form-control form-control-sm" id="txtAppendixEditor_Brand" placeholder="Brand Name" [(ngModel)]="appendix.PRODUCT_BRAND_NAME">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Series" class="col-form-label form-control-sm">รุ่นที่ผลิต</label>
+              <input type="text" class="form-control form-control-sm" id="txtAppendixEditor_Series" placeholder="Series" [(ngModel)]="appendix.PRODUCT_SERIES">
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Detail" class="col-form-label form-control-sm">รายละเอียดเพิ่มเติม</label>
+              <textarea class="form-control form-control-sm" id="txtAppendixEditor_Detail" placeholder="Other Detail" [(ngModel)]="appendix.PRODUCT_DESCRIPTION"></textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="txtAppendixEditor_QTY" class="col-form-label form-control-sm">จำนวน <span class="txt-require">*</span></label>
+              <!-- <input type="number" step="0.001" class="form-control form-control-sm" id="txtAppendixEditor_QTY" min="0" [ngModel]="appendix.QUANTITY | toQTY" (ngModelChange)="appendix.QUANTITY=$event" (change)="clearValidate('txtAppendixEditor_QTY')"> -->
+              <input type="text" class="form-control form-control-sm" id="txtAppendixEditor_QTY" min="0" [(InputNumModel)]="appendix.QUANTITY" (change)="clearValidate('txtAppendixEditor_QTY')">
+              <div class="invalid-feedback">จำนวนยุทธภัณฑ์ต้องมากกว่า 0</div>
+            </div>
+            <div class="form-group col-6">
+              <label for="txtAppendixEditor_QTYUnit" class="col-form-label form-control-sm">&nbsp;</label>
+              <select class="form-control form-control-sm" id="txtAppendixEditor_QTYUnit" [(ngModel)]="appendix.QUANTITY_UNIT_ID" (change)="clearValidate('txtAppendixEditor_QTYUnit')">
+                <option value="0"> -- เลือกหน่วย -- </option>
+                <option *ngFor=" let u of UnitList " [value]="u.ID">{{u.UnitName}}</option>
+              </select>
+              <div class="invalid-feedback">กรุณาระบุหน่วยของยุทธภัณฑ์</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="txtAppendixEditor_Weight" class="col-form-label form-control-sm">น้ำหนัก <span class="txt-require">*</span></label>
+              <!-- <input type="number" step="0.001" class="form-control form-control-sm" id="txtAppendixEditor_Weight" min="0" [ngModel]="appendix.WEIGHT | toWeight" (ngModelChange)="appendix.WEIGHT=$event" (change)="clearValidate('txtAppendixEditor_Weight')"> -->
+              <input type="text" class="form-control form-control-sm" id="txtAppendixEditor_Weight" [(InputNumModel)]="appendix.WEIGHT" (change)="clearValidate('txtAppendixEditor_Weight')">
+              <div class="invalid-feedback">น้ำหนักยุทธภัณฑ์ต้องมากกว่า 0 หรือกำหนดเป็น 0 กรณีเลือกหน่วยเป็น "ไม่ระบุ"</div>
+            </div>
+            <div class="form-group col-6">
+              <label for="txtAppendixEditor_WeightUnit" class="col-form-label form-control-sm">&nbsp;</label>
+              <select class="form-control form-control-sm" id="txtAppendixEditor_WeightUnit" [(ngModel)]="appendix.WEIGHT_UNIT_ID" (change)="checkUnitOfWeight()">
+                <option value="0"> -- เลือกหน่วยน้ำหนัก -- </option>
+                <option value="-1"> ไม่ระบุ </option>
+                <option *ngFor=" let w of WeightList " [value]="w.ID">{{w.UnitName}}</option>
+              </select>
+              <div class="invalid-feedback">กรุณาระบุหน่วยน้ำหนักยุทธภัณฑ์ (กรณีไม่มีเลือก "ไม่ระบุ")</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Note" class="col-form-label form-control-sm">หมายเหตุ</label>
+              <textarea class="form-control form-control-sm" id="txtAppendixEditor_Note" placeholder="" [(ngModel)]="appendix.NOTE1" maxlength="300"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelDialog()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="saveAppendix()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

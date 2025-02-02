@@ -1,0 +1,151 @@
+<div class="container-fluid div-content-box">
+  <div class="div-content-box-header">
+    {{Title}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  
+  <table class="table table-sm table-borderless" id="tbMonthlyInventory">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th><label for="{{INVENTORY_M1_ID}}" class="col-form-label col-form-label-sm">จำนวนที่ใช้ในกิจการหรือจำหน่าย</label></th>
+        <th><label for="{{INVENTORY_M1_ID}}" class="col-form-label col-form-label-sm">หน่วย</label></th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td><label for="{{INVENTORY_M1_ID}}" class="col-form-label col-form-label-sm cdss-col-nowrap">เดือนที่ 1</label></td>
+        <td>
+          <div class="input-group input-group-sm">
+            <input type="text" id="{{INVENTORY_M1_ID}}" class="form-control form-control-sm" [value]="Monthly_01.USE_DATE | toDateString : 'MMM YYYY'" readonly />
+            <div class="input-group-append">
+              <button class="input-group-text" id="{{CMD_INVENTORY_M1_ID}}">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">กรุณาระบุเดือนที่ใช้ไป</div>
+          </div>
+        </td>
+        <td>
+          <!-- <input type="number" step="0.001" id="txtInventory_M1_QTY" class="form-control form-control-sm" [ngModel]="Monthly_01.USE_QUANTITY | toQTY" (ngModelChange)="Monthly_01.USE_QUANTITY=$event" min="0" /> -->
+          <input type="text" id="txtInventory_M1_QTY" class="form-control form-control-sm" [(InputNumModel)]="Monthly_01.USE_QUANTITY" />
+          <div class="invalid-feedback">กรุณาระบุจำนวนที่ใช้ไป</div>
+        </td>
+        <td>
+          <select class="form-control form-control-sm" id="txtInventory_M1_Unit" [(ngModel)]="Monthly_01.QUANTITY_UNIT_ID" [disabled]="IsHideUnit">
+            <option>ไม่ระบุ</option>
+            <option *ngFor=" let unit of UnitList " [value]="unit.ID">{{unit.UnitName}}</option>
+          </select>
+          <div class="invalid-feedback">กรุณาเลือกหน่วยของจำนวน</div>
+        </td>
+        <td>
+          <button class="btn btn-light" (click)="clearMonthly(1)" [disabled]="IsUsageDetailNull(1)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="{{INVENTORY_M2_ID}}" class="col-form-label col-form-label-sm cdss-col-nowrap">เดือนที่ 2</label></td>
+        <td>
+          <div class="input-group input-group-sm">
+            <input type="text" id="{{INVENTORY_M2_ID}}" class="form-control form-control-sm" [value]="Monthly_02.USE_DATE | toDateString : 'MMM YYYY'" readonly />
+            <div class="input-group-append">
+              <button class="input-group-text" id="{{CMD_INVENTORY_M2_ID}}">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">กรุณาระบุเดือนที่ใช้ไป</div>
+          </div>
+        </td>
+        <td>
+          <!-- <input type="number" step="0.001" id="txtInventory_M2_QTY" class="form-control form-control-sm" [ngModel]="Monthly_02.USE_QUANTITY | toQTY" (ngModelChange)="Monthly_02.USE_QUANTITY=$event" min="0" /> -->
+          <input type="text" id="txtInventory_M2_QTY" class="form-control form-control-sm" [(InputNumModel)]="Monthly_02.USE_QUANTITY" />
+          <div class="invalid-feedback">กรุณาระบุจำนวนที่ใช้ไป</div>
+        </td>
+        <td>
+          <select class="form-control form-control-sm" id="txtInventory_M2_Unit" [(ngModel)]="Monthly_02.QUANTITY_UNIT_ID" [disabled]="IsHideUnit">
+            <option>ไม่ระบุ</option>
+            <option *ngFor=" let unit of UnitList " [value]="unit.ID">{{unit.UnitName}}</option>
+          </select>
+          <div class="invalid-feedback">กรุณาเลือกหน่วยของจำนวน</div>
+        </td>
+        <td>
+          <button class="btn btn-light" (click)="clearMonthly(2)" [disabled]="IsUsageDetailNull(2)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="{{INVENTORY_M3_ID}}" class="col-form-label col-form-label-sm cdss-col-nowrap">เดือนที่ 3</label></td>
+        <td>
+          <div class="input-group input-group-sm">
+            <input type="text" id="{{INVENTORY_M3_ID}}" class="form-control form-control-sm" [value]="Monthly_03.USE_DATE | toDateString : 'MMM YYYY'" readonly />
+            <div class="input-group-append">
+              <button class="input-group-text" id="{{CMD_INVENTORY_M3_ID}}">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">กรุณาระบุเดือนที่ใช้ไป</div>
+          </div>
+        </td>
+        <td>
+          <!-- <input type="number" step="0.001" id="txtInventory_M3_QTY" class="form-control form-control-sm" [ngModel]="Monthly_03.USE_QUANTITY | toQTY" (ngModelChange)="Monthly_03.USE_QUANTITY=$event" min="0" /> -->
+          <input type="text" id="txtInventory_M3_QTY" class="form-control form-control-sm" [(InputNumModel)]="Monthly_03.USE_QUANTITY" />
+          <div class="invalid-feedback">กรุณาระบุจำนวนที่ใช้ไป</div>
+        </td>
+        <td>
+          <select class="form-control form-control-sm" id="txtInventory_M3_Unit" [(ngModel)]="Monthly_03.QUANTITY_UNIT_ID" [disabled]="IsHideUnit">
+            <option>ไม่ระบุ</option>
+            <option *ngFor=" let unit of UnitList " [value]="unit.ID">{{unit.UnitName}}</option>
+          </select>
+          <div class="invalid-feedback">กรุณาเลือกหน่วยของจำนวน</div>
+        </td>
+        <td>
+          <button class="btn btn-light" (click)="clearMonthly(3)" [disabled]="IsUsageDetailNull(3)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="{{INVENTORY_ONHAND_ID}}" class="col-form-label col-form-label-sm cdss-col-nowrap">ยอดคงเหลือ ณ วันที่</label></td>
+        <td>
+          <div class="input-group input-group-sm">
+            <input type="text" id="{{INVENTORY_ONHAND_ID}}" class="form-control form-control-sm" [value]="OnHand.USE_DATE | toDateString" readonly />
+            <div class="input-group-append">
+              <button class="input-group-text" id="{{CMD_INVENTORY_ONHAND_ID}}">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">กรุณาระบุวันของยอดคงเหลือ</div>
+          </div>
+        </td>
+        <td>
+          <!-- <input type="number" step="0.001" id="txtInventory_Onhand_QTY" class="form-control form-control-sm" [ngModel]="OnHand.REMAIN_QUANTITY | toQTY" (ngModelChange)="OnHand.REMAIN_QUANTITY=$event" min="0" /> -->
+          <input type="text" id="txtInventory_Onhand_QTY" class="form-control form-control-sm" [(InputNumModel)]="OnHand.REMAIN_QUANTITY" />
+          <div class="invalid-feedback">กรุณาระบุจำนวนที่ใช้ไป</div>
+        </td>
+        <td>
+          <select class="form-control form-control-sm" id="txtInventory_M4_Unit" [(ngModel)]="OnHand.QUANTITY_UNIT_ID" [disabled]="IsHideUnit">
+            <option>ไม่ระบุ</option>
+            <option *ngFor=" let unit of UnitList " [value]="unit.ID">{{unit.UnitName}}</option>
+          </select>
+          <div class="invalid-feedback">กรุณาเลือกหน่วยของจำนวน</div>
+        </td>
+        <td>
+          <button class="btn btn-light" (click)="clearMonthly(4)" [disabled]="IsUsageDetailNull(4)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="invalid-feedback">กรุณาระบุอย่างน้อย 1 ข้อมูล</div>
+</div>

@@ -1,0 +1,184 @@
+<div class="container-fluid div-content-box" id="div-section-cross-border">
+  <div class="div-content-box-header">
+    {{Title}}
+
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  <!--<input type="button" class="btn" [id]="ID_OF_CALENDAR_EXPORT_FROM_BUTTON" />
+  <input type="button" class="btn" [id]="ID_OF_CALENDAR_EXPORT_TO_BUTTON" />-->
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtOriginCompanyName" class="col-form-label col-form-label-sm">บริษัทต้นทางสินค้า</label>
+      <input type="text" [(ngModel)]="DocDetail.ORIGIN_NAME" id="txtOriginCompanyName" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtOriginalFromCountry" class="col-form-label col-form-label-sm">ประเทศต้นทางสินค้า</label>
+      <select class="form-control form-control-sm" id="txtOriginalFromCountry" [(ngModel)]="DocDetail.ORIGIN_COUNTRY_CODE">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtSendFromCompanyName" class="col-form-label col-form-label-sm">บริษัทที่ส่ง</label>
+      <input type="text" [(ngModel)]="DocDetail.CONSIGNOR_NAME" id="txtSendFromCompanyName" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtImportForm_01" class="col-form-label col-form-label-sm">ประเทศ</label>
+      <select class="form-control form-control-sm" id="txtSendFromCountry" [(ngModel)]="CountryIMCT">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtReceiveByCompanyName" class="col-form-label col-form-label-sm">บริษัทที่รับ</label>
+      <input type="text" [(ngModel)]="DocDetail.CONSIGNEE_NAME" id="txtReceiveByCompanyName" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtReceiveByCountry" class="col-form-label col-form-label-sm">ประเทศ</label>
+      <select class="form-control form-control-sm" id="txtReceiveByCountry" [(ngModel)]="CountryEXCT">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="txtObjectiveOfCrossBorder" class="col-form-label col-form-label-sm">วัตถุประสงค์</label>
+      <textarea id="txtObjectiveOfCrossBorder" class="form-control" [(ngModel)]="Objective"></textarea>
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtCROSS_IN_PORT" class="col-form-label col-form-label-sm">ด่านที่นำเข้าประเทศ</label>
+      <!-- <input type="text" [(ngModel)]="DocDetail.CROSS_IN_PORT" id="txtCROSS_IN_PORT" class="form-control form-control-sm" /> -->
+      <select class="form-control form-control-sm" id="txtCROSS_IN_PORT" [(ngModel)]="DocDetail.CROSS_IN_PORT" (ngModelChange)="changeCrossPort(true)" >
+        <option value=""> -- เลือกด่านที่นำเข้าประเทศ -- </option>
+        <option *ngFor=" let item of CustomsList " [value]="item.AreaCode">{{item.AreaName}}</option>
+      </select>
+    </div>
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtCROSS_IN_PROVINCE_NM" class="col-form-label col-form-label-sm">จังหวัด</label>
+      <select class="form-control form-control-sm" id="txtCROSS_IN_PROVINCE_NM" [(ngModel)]="DocDetail.CROSS_IN_PROVINCE_NM">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let p of ProvinceList " [value]="p.name">{{p.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtCROSS_IN_TRAN_TYPE" class="col-form-label col-form-label-sm">
+        ขนส่งโดย
+      </label>
+      <input type="text" [(ngModel)]="DocDetail.CROSS_IN_TRAN_TYPE" id="txtCROSS_IN_TRAN_TYPE" class="form-control form-control-sm" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtCROSS_OUT_PORT" class="col-form-label col-form-label-sm">ด่านที่ส่งออกจากประเทศ</label>
+      <!-- <input type="text" [(ngModel)]="DocDetail.CROSS_OUT_PORT" id="txtCROSS_OUT_PORT" class="form-control form-control-sm" /> -->
+      <!-- <select class="form-control form-control-sm" id="txtCROSS_OUT_PORT" [(ngModel)]="DocDetail.CROSS_OUT_PORT" (change)="clearValidate('txtAmamentPackageName')"> -->
+      <select class="form-control form-control-sm" id="txtCROSS_OUT_PORT" [(ngModel)]="DocDetail.CROSS_OUT_PORT" (ngModelChange)="changeCrossPort(false)">
+        <option value=""> -- เลือกด่านที่นำเข้าประเทศ -- </option>
+        <option *ngFor=" let item of CustomsList " [value]="item.AreaCode">{{item.AreaName}}</option>
+      </select>
+    </div>
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtCROSS_OUT_PROVINCE_NM" class="col-form-label col-form-label-sm">จังหวัด</label>
+      <select class="form-control form-control-sm" id="txtCROSS_OUT_PROVINCE_NM" [(ngModel)]="DocDetail.CROSS_OUT_PROVINCE_NM">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let p of ProvinceList " [value]="p.name">{{p.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-6">
+      <label for="txtCROSS_OUT_TRAN_TYPE" class="col-form-label col-form-label-sm">ขนส่งโดย</label>
+      <input type="text" [(ngModel)]="DocDetail.CROSS_OUT_TRAN_TYPE" id="txtCROSS_OUT_TRAN_TYPE" class="form-control form-control-sm" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPONo" class="col-form-label col-form-label-sm">P/O No.</label>
+      <input type="text" [(ngModel)]="RefDoc.PO_NO" id="txtExportPONo" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPODate" class="col-form-label col-form-label-sm">ลงวันที่</label>
+      <div class="input-group input-group-sm mb-2">
+        <input type="text" [value]="RefDoc.PO_DATE | toDateString" id="txtExportPODate" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdExportPODate">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtPOUser" class="col-form-label col-form-label-sm">ชื่อในหนังสือผู้ใช้ปลายทาง</label>
+      <input type="text" [(ngModel)]="PODocEndUserName" id="txtPOUser" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtPODocEndUserName" class="col-form-label col-form-label-sm">วันที่เอกสาร</label>
+      <div class="input-group input-group-sm mb-2">
+        <input type="text" [value]="PODocEndUserDate | toDateString" id="txtPODocEndUserDate" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdCrossBorderPODocEndUserDate">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPeriodFrom" class="col-form-label col-form-label-sm">ห้วงเวลาส่งออก</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="RefDoc.EXPORT_START_TIME | toDateString : 'MMM YYYY'" id="txtExportPeriodFrom" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdExportPeriodFrom">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPeriodTo" class="col-form-label col-form-label-sm">ถึง</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="RefDoc.EXPORT_END_TIME | toDateString : 'MMM YYYY'" id="txtExportPeriodTo" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdExportPeriodTo">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="txtNote1" class="col-form-label col-form-label-sm">อื่นๆ (พิมพ์ในใบคำขอ)</label>
+      <textarea id="txtNote1" class="form-control form-control-sm" [(ngModel)]="Note1"></textarea>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,316 @@
+<div class="container-fluid div-content-box" id="div-section-reference-to-document">
+    <div class="div-content-box-header">
+      <i class="fa fa-info-circle" aria-hidden="true"></i> {{Title}}
+    </div>
+    <div class="div-content-box_suggestion is-warning">
+      <!-- #message suggestion -->
+    </div>
+    <!-- <div [hidden]="HasProductReference">
+        หากต้องการอ้างอิงถึงใบอนุญาตอื่น ๆ กรุณาเลือก รายการยุทธภัณฑ์ที่ต้องการก่อน
+    </div> -->
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <div *ngIf="HasReferenceToLicense" class="form-row" style="margin-top: 10px;">
+
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtLicenseReference_No" class="col-form-label col-form-label-sm" style="font-weight: bold;">{{ReferenceLicense.REF_LICENSE_FORM_ID | toNameOfLicenseType:true}}เลขที่</label>
+        <input type="text" readonly class="form-control" id="txtLicenseReference_No" [value]="ReferenceLicense.REF_LICENSE_NO" />
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtLicenseReference_IssueDate" class="col-form-label col-form-label-sm">ลงวันที่</label>
+        <input type="text" readonly class="form-control" id="txtLicenseReference_IssueDate" [value]="ReferenceLicense.REF_LICENSE_ISSUE_DATE | toDateString " />
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtLicenseReference_ExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+        <input type="text" readonly class="form-control" id="txtLicenseReference_ExpireDate" [value]="ReferenceLicense.REF_LICENSE_EXPIRY_DATE | toDateString " />
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtLicenseReference_QTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต</label>
+        <input type="text" readonly class="form-control" id="txtLicenseReference_QTY" [value]="ReferenceLicense.REF_LICENSE_QTY | toQTY: ReferenceLicense.refLicenseQTYUnitText" />
+      </div>
+
+    </div>
+    <!-- ------------------------------------------------ -->
+    <div *ngIf="HasReferenceToOwnerLicense" class="form-row" style="margin-top: 10px;">
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtOwnerLicenseReference_No" class="col-form-label col-form-label-sm" style="font-weight: bold;">ใบอนุญาตมีเลขที่</label>
+        <input type="text" readonly class="form-control" id="txtOwnerLicenseReference_No" [value]="ReferenceLicense.REF_HAS_LICENSE_NO" />
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtOwnerLicenseReference_IssueDate" class="col-form-label col-form-label-sm">ลงวันที่</label>
+        <input type="text" readonly class="form-control" id="txtOwnerLicenseReference_IssueDate" [value]="ReferenceLicense.REF_HAS_LICENSE_ISSUE_DATE | toDateString" />
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtOwnerLicenseReference_ExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+        <input type="text" readonly class="form-control" id="txtOwnerLicenseReference_ExpireDate" [value]="ReferenceLicense.REF_HAS_LICENSE_EXPIRY_DATE | toDateString " />
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+        <label for="txtOwnerLicenseReference_QTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต</label>
+        <input type="text" readonly class="form-control" id="txtOwnerLicenseReference_QTY" [value]="ReferenceLicense.REF_HAS_LICENSE_QTY | toQTY: ReferenceLicense.refHasLicenseQTYUnitText" />
+      </div>
+
+    </div>
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <div class="form-row" *ngIf="IsShowReferenceButton">
+      <!-- <div [hidden]="!HasReferenceToLicense && !HasReferenceToOwnerLicense" class="form-group col-12"> -->
+      <div [hidden]="!isShowCancelReferenceButton" class="form-group col-12">
+        <div class="cdss-commandbar is-right">
+            <button class="btn btn-warning btn-sm cdss-width-75" (click)="clearLicenseReference()">ยกเลิกการอ้างอิงใบอนุญาต</button>
+        </div>
+        <div><hr /></div>
+      </div>
+    </div>
+      <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <div *ngIf="IsReferenceToImportOrEnter">
+      <!-- ------------------------------------------------ -->
+      <!-- ------------------------------------------------ -->
+      <div class="form-row">
+
+        <div class="form-group col-4 col-sm-4 col-md-2">
+          <label for="txtOwnerLicenseReference_ExpireDate" class="col-form-label col-form-label-sm">ทยอยสั่งเข้ามาครั้งละ <span>*</span></label>
+          <input step="0.001" type="number" class="form-control"  value="0" min="0" [max]="ReferenceLicense.REF_HAS_LICENSE_QTY" />
+        </div>
+        <div class="form-group col-2 col-sm-2 col-md-1">
+          <label for="txtOwnerLicenseReference_ExpireDate" class="col-form-label col-form-label-sm">&nbsp;</label>
+          <input type="text" class="form-control-plaintext" readonly [value]="unitName" />
+        </div>
+
+
+        <div class="form-group col-4 col-sm-4 col-md-2">
+          <label for="txtOwnerLicenseReference_QTY" class="col-form-label col-form-label-sm">จำนวนที่นำเข้าแล้ว<span>*</span></label>
+          <input step="0.001" type="number" class="form-control" [value]="ReferenceLicense.REF_HAS_LICENSE_QTY | toQTY" />
+        </div>
+        <div class="form-group col-2 col-sm-2 col-md-1">
+          <label for="txtOwnerLicenseReference_ExpireDate" class="col-form-label col-form-label-sm">&nbsp;</label>
+          <input type="text" class="form-control-plaintext" readonly [value]="unitName" />
+        </div>
+
+        <div class="form-group col-4 col-sm-4 col-md-2">
+            <label for="txtOwnerLicenseReference_QTY" class="col-form-label col-form-label-sm">จำนวนที่ยังไม่ได้นำเข้า<span>*</span></label>
+            <input step="0.001" type="number" class="form-control" [value]="ReferenceLicense.REF_HAS_LICENSE_QTY | toQTY" />
+        </div>
+        <div class="form-group col-2 col-sm-2 col-md-1">
+          <label for="" class="col-form-label col-form-label-sm">&nbsp;</label>
+          <input type="text" class="form-control-plaintext" readonly [value]="unitName" />
+        </div>
+
+        <div class="form-group col-4 col-sm-4 col-md-2">
+          <label for="txtOwnerLicenseReference_QTY" class="col-form-label col-form-label-sm">ราคาต่อหน่วย (บาท)<span>*</span></label>
+          <!-- <input type="number" step="0.01" class="form-control" [value]="ReferenceLicense.REF_HAS_LICENSE_QTY |toMoney " /> -->
+          <input type="text" class="form-control" [(InputNumModel)]="ReferenceLicense.REF_HAS_LICENSE_QTY" [floatPoint]="2" />
+        </div>
+        <div class="form-group col-2 col-sm-2 col-md-1">
+          <label for="" class="col-form-label col-form-label-sm">&nbsp;</label>
+          <input type="text" class="form-control-plaintext" readonly [value]="unitName" />
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+          <div class="form-group col-12 col-sm-4 col-md-4">
+            <label for="txtReferenceLicense_Country_01" class="col-form-label col-form-label-sm">{{ReferenceFromCountryCaption}}จากประเทศ (1)<span>*</span></label>
+            <select class="form-control form-control-sm" id="txtReferenceLicense_Country_01">
+              <option value="">-- ไม่ระบุ --</option>
+              <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-12 col-sm-4 col-md-4">
+            <label for="txtReferenceLicense_Country_02" class="col-form-label col-form-label-sm">{{ReferenceFromCountryCaption}}จากประเทศ (2)<span>*</span></label>
+            <select class="form-control form-control-sm" id="txtReferenceLicense_Country_02">
+              <option value="">-- ไม่ระบุ --</option>
+              <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-12 col-sm-4 col-md-4">
+            <label for="txtReferenceLicense_Country_03" class="col-form-label col-form-label-sm">{{ReferenceFromCountryCaption}}จากประเทศ (3)<span>*</span></label>
+            <select class="form-control form-control-sm" id="txtReferenceLicense_Country_03">
+              <option value="">-- ไม่ระบุ --</option>
+              <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+            </select>
+          </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label for="txtTransportOfExportTime" class="col-form-label col-form-label-sm"> (เลือกได้มากกว่า 1 ข้อ หรือ ไม่ระบุ)</label>
+        </div>
+      </div>
+
+      <div class="form-check form-check-inline form-control-sm">
+        <input class="form-check-input" type="checkbox" value="B" id="RefLicense_IsExportByShip" [checked]="RefLicense_IsCheck_ByBoat" (click)="setReferenceLicense_TransformBy('B', 'RefLicense_IsExportByShip')">
+        <label class="form-check-label" for="IsExportByShip">ทางเรือ</label>
+      </div>
+      <div class="form-check form-check-inline form-control-sm">
+        <input class="form-check-input" type="checkbox" value="A" id="RefLicense_IsExportByAir" [checked]="RefLicense_IsCheck_ByPlane" (click)="setReferenceLicense_TransformBy('P', 'RefLicense_IsExportByAir')">
+        <label class="form-check-label" for="IsExportByAir">ทางเครื่องบิน</label>
+      </div>
+      <div class="form-check form-check-inline form-control-sm">
+        <!-- <input class="form-check-input" type="checkbox" value="C" id="IsExportByCar" [checked]="IsCheck_ByTruck" (click)="setTransformBy('T', 'IsExportByCar')"> -->
+        <input class="form-check-input" type="checkbox" value="C" id="RefLicense_IsExportByCar" [checked]="RefLicense_IsCheck_ByTruck" (click)="setReferenceLicense_TransformBy('T', 'RefLicense_IsExportByCar')">
+        <label class="form-check-label" for="IsExportByCar">ทางรถยนต์</label>
+      </div>
+
+      <div class="clearfix">&nbsp;<br /></div>
+
+      <!-- <div class="form-group row">
+
+        <label for="IsExportByShip" class="col-12 col-sm-3 col-md-2 col-form-label col-form-label-sm">
+          ขนส่งโดย (เลือกได้มากกว่า 1 ข้อ หรือ ไม่ระบุ)
+        </label>
+
+        <div class="col-11 offset-1 col-sm-9">
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="B" id="RefLicense_IsExportByShip" [checked]="RefLicense_IsCheck_ByBoat" (click)="setReferenceLicense_TransformBy('B', 'RefLicense_IsExportByShip')">
+            <label class="form-check-label" for="IsExportByShip">ทางเรือ</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="A" id="RefLicense_IsExportByAir" [checked]="RefLicense_IsCheck_ByPlane" (click)="setReferenceLicense_TransformBy('P', 'RefLicense_IsExportByAir')">
+            <label class="form-check-label" for="IsExportByAir">ทางเครื่องบิน</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="C" id="RefLicense_IsExportByCar" [checked]="RefLicense_IsCheck_ByTruck" (click)="setReferenceLicense_TransformBy('T', 'RefLicense_IsExportByCar')">
+            <label class="form-check-label" for="IsExportByCar">ทางรถยนต์</label>
+          </div>
+
+        </div>
+      </div> -->
+
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label for="txtReferenceLicense_Time" class="col-form-label col-form-label-sm">ใช้เวลาเดินทาง</label>
+          <input type="text" class="form-control" id="txtReferenceLicense_Time" [(ngModel)]="ReferenceLicense.DELIVERY_TIME_TEXT" />
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <div *ngIf="IsReferenceToProduction">
+      <div class="form-row">
+
+        <div class="form-group col-6 col-sm-6 col-md-3">
+          <label for="txtLicenseReference_Production_AVG" class="col-form-label col-form-label-sm">กำลังการผลิตเฉลี่ยต่อปี <span>*</span></label>
+          <input type="number" step="0.001" class="form-control" id="txtLicenseReference_Production_AVG" value="0" />
+          <div class="invalid-feedback">กรุณาระบุข้อมูลหน่วยของหีบห่อ</div>
+        </div>
+
+        <div class="form-group col-6 col-sm-6 col-md-3">
+          <label for="txtLicenseReference_Production_MAX" class="col-form-label col-form-label-sm">กำลังการผลิตสูงสุดต่อปี<span>*</span></label>
+          <input type="number" step="0.001" class="form-control" id="txtLicenseReference_Production_MAX" value="0" />
+          <div class="invalid-feedback">กรุณาระบุข้อมูลหน่วยของหีบห่อ</div>
+        </div>
+
+        <div class="form-group col-6 col-sm-6 col-md-3">
+            <label for="txtLicenseReference_Production_MIN" class="col-form-label col-form-label-sm">กำลังการผลิตต่ำสุดต่อปี<span>*</span></label>
+            <input type="number" step="0.001" class="form-control" id="txtLicenseReference_Production_MIN" value="0" />
+            <div class="invalid-feedback">กรุณาระบุข้อมูลหน่วยของหีบห่อ</div>
+        </div>
+
+        <div class="form-group col-6 col-sm-6 col-md-3">
+          <label for="txtLicenseReference_Production_DONE" class="col-form-label col-form-label-sm">ผลิตแล้วจำนวน<span>*</span></label>
+          <input type="number" step="0.001" class="form-control" id="txtLicenseReference_Production_DONE" value="0" />
+          <div class="invalid-feedback">กรุณาระบุข้อมูลหน่วยของหีบห่อ</div>
+        </div>
+
+      </div>
+    </div>
+      <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <div *ngIf="IsReferenceToOnlyOwner" class="form-row">
+      <div class="form-group col-xs-9 col-sm-4 col-lg-2">
+        <label for="txtOwnerLicenseReference_ExpireDate" class="col-form-label col-form-label-sm">ซื้อไปแล้วจำนวน</label>
+        <input type="text" class="form-control" [max-value]="ReferenceLicense.ACTUAL_QUANTITY" [(InputNumModel)]="ReferenceLicense.ACTUAL_QUANTITY" (change)="autoCalRemain()" [readOnly]="ReferenceLicense.renewCount>1" />
+      </div>
+      <div class="form-group col-xs-3 col-sm-2 col-lg-1">
+        <label class="col-form-label col-form-label-sm">&nbsp;</label>
+        <input type="text" readonly class="form-control-plaintext" [value]="unitName" />
+      </div>
+
+      <div class="form-group col-xs-9 col-sm-4 col-lg-2">
+        <label for="txtOwnerLicenseReference_QTY" class="col-form-label col-form-label-sm">คงเหลือยังซื้อได้อีก</label>
+        <!-- <input type="text" readonly class="form-control" id="txtOwnerLicenseReference_QTY" [value]="ReferenceLicense.REF_HAS_LICENSE_QTY}}" [readonly] /> -->
+        <input type="text" readonly class="form-control" [value]="ReferenceLicense.REMAIN_QUANTITY | toQTY"/>
+      </div>
+      <div class="form-group col-xs-3 col-sm-2 col-lg-1">
+        <label class="col-form-label col-form-label-sm">&nbsp;</label>
+        <input type="text" readonly class="form-control-plaintext" [value]="unitName" />
+      </div>
+    </div>
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <!-- <div *ngIf="HasLicenseReference"> -->
+    <div *ngIf="hasOperationUsage">
+      <div class="form-row">
+          <div class="col-12">
+            <div><hr /></div>
+            <label class="col-form-label col-form-label-sm" style="font-weight: bold;">อัตราการใช้ยุทธภัณฑ์ (หรือจำหน่าย) ในแต่ละเดือน</label>
+          </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-xs-12 col-sm-3 col-lg-3" *ngFor=" let data of OperationUsageLastest">
+            <label for="txtMonthlyOperationMove" class="col-form-label col-form-label-sm">เดือน {{GetMonthCaption(data)}}</label>
+            <input type="text" readonly class="form-control" [value]="data.USE_QUANTITY | toQTY:unitName"/>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-xs-12 col-sm-3 col-lg-3">
+          <label for="txtExportPODocDate" class="col-form-label col-form-label-sm">ยอดคงเหลือ ณ วันที่</label>
+          <div class="input-group">
+            <!-- <input type="text" [value]="CurrentDataOperationMove.remaining_date | toDateString" id="txtRemainDate" class="form-control" readonly />
+            <div class="input-group-append">
+              <button class="input-group-text" id="cmdDocDate" (click)="initDatePicker(true)">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </button>
+            </div> -->
+            <input type="text" [value]="OperationUsageCurrent.USE_DATE | toDateString" id="txtRemainDate" class="form-control" readonly />
+            <div class="input-group-append">
+              <button class="input-group-text" id="cmdDocDate" (click)="initDatePicker(true)">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-xs-9 col-sm-3 col-lg-3">
+          <label for="txtMonthlyOperationMove" class="col-form-label col-form-label-sm">จำนวน</label>
+          <!-- <input type="text" class="form-control" [(InputNumModel)]="CurrentDataOperationMove.remaining_qty" /> -->
+          <input type="text" class="form-control" [(InputNumModel)]="OperationUsageCurrent.REMAIN_QUANTITY" />
+        </div>
+        <div class="form-group col-xs-3 col-sm-2 col-lg-1">
+          <label class="col-form-label col-form-label-sm">&nbsp;</label>
+          <input type="text" class="form-control-plaintext" [value]="unitName" />
+        </div>
+
+      </div>
+      <!-- {{OperationUsageCurrent | json}} -->
+    </div>
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <!-- ------------------------------------------------ -->
+    <div *ngIf="IsShowReferenceButton" [hidden]="HasLicenseReference" class="form-row">
+    <!-- <div class="form-row"> -->
+      <div class="form-group col-12">
+        <div class="cdss-commandbar is-right">
+          <button class="btn btn-info btn-sm cdss-width-75" (click)="selectLicenseReference()">เลือกใบอนุญาตที่ต้องการอ้างอิง...</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<cdss-popup-search-ref-license #popupLicense></cdss-popup-search-ref-license>

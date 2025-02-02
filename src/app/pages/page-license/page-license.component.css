@@ -1,0 +1,27 @@
+.renew-button{
+  white-space:nowrap;
+}
+
+.remain-30day{
+  background-color: yellow !important;
+}
+
+.remain-14day{
+  background-color: orange !important;
+}
+
+.remain-07day{
+  background-color: lightcoral !important;
+}
+
+.div-note{
+  color: red;
+}
+
+.hiddenButton{
+  visibility: hidden;
+}
+
+.seperate-left{
+  margin-left: 10px;
+}

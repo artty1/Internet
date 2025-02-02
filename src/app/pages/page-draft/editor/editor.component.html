@@ -1,0 +1,11 @@
+<div [hidden]="isLoading">
+  <cdss-request-document></cdss-request-document>
+</div>
+
+<cdss-waiting-dialog (ready)="initWaitingDialog($event)" tag="draft-loading">
+  <cdss-loading></cdss-loading>
+</cdss-waiting-dialog>
+
+<cdss-waiting-dialog (ready)="initWaitingDialog($event)" tag="error-loading">
+  {{errorMessage}}
+</cdss-waiting-dialog>

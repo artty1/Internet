@@ -1,0 +1,69 @@
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'modalTitle'" data-backdrop="static" aria-hidden="true" data-keyboard="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="id+'-title'">{{title}}ค้นหาใบอนุญาต</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid div-content-box">
+
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th></th>
+                <th>เลขที่รับเรื่อง</th>
+                <th>ประเภทใบอนุญาติ</th>
+                <th>สถานะ</th>
+                <th>เลขที่ใบอนุญาต</th>
+                <th>วันที่ออกใบอนุญาต</th>
+                <th>วันที่หมดอายุ</th>
+                <th>ชื่อยุทธภัณฑ์</th>
+                <th>จำนวน</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr [hidden]="!isLoading">
+                <td colspan="9"><cdss-loading></cdss-loading></td>
+              </tr>
+
+              <tr *ngFor="let item of LicenseList; let idx = index" [attr.data-index]="idx">
+                <td>
+                  <button class="btn btn-link" (click)="selectReferenceLicense(item)">เลือก</button>
+                </td>
+                <!--<td class="cdss-td-right">{{(idx+1)}}</td>-->
+                <td class="cdss-td-center cdss-col-nowrap">{{item.reference_request_no}}</td>
+                <td>{{item.license_type | toNameOfLicenseType}}</td>
+                <td>{{item.is_active | toNameOfLicenseStatus}}</td>
+                <td>{{item.license_no}}</td>
+                <!--<td class="cdss-td-center cdss-col-nowrap">{{item.reference_request_accept_date | toDateString}}</td>-->
+
+                <td class="cdss-td-center cdss-col-nowrap">{{item.license_issue_date | toDateString}}</td>
+                <td class="cdss-td-center cdss-col-nowrap">{{item.license_expire_date | toDateString}}</td>
+                <td>{{item.product_name}}</td>
+                <td>{{item.qty}} {{item.qty_unit_name}}</td>
+                <!--<td>{{item.weight}} {{item.weight_unit_name}}</td>-->
+                <!--<td>{{item.authorize_by}}</td>-->
+              </tr>
+
+              <tr [hidden]="LicenseList.length>0">
+                <td colspan="9" class="rowNoData">ไม่มีข้อมูล ...</td>
+              </tr>
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="9">{{Footer}}</td>
+              </tr>
+            </tfoot>
+          </table>
+
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeDialog()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

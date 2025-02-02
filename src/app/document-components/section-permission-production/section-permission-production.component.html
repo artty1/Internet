@@ -1,0 +1,92 @@
+<div class="container-fluid div-content-box" id="div-section-permission-production">
+  <div class="div-content-box-header">
+    <i class="fa fa-info-circle" aria-hidden="true"></i> {{Title}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  <div class="form-row" [hidden]="!IsShowReferenceDoc_License">
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">ใบอนุญาตเลขที่</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="DocRef.REF_LICENSE_NO" id="txtOwnerLicenseNo_DomesticOrder" class="form-control form-control-sm" style="text-align:center;" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text">@</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">ลงวันที่</label>
+      <input type="text" id="" [value]="DocRef.REF_LICENSE_ISSUE_DATE | toDateString" class="form-control form-control-sm" readonly />
+    </div>
+
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" id="" [value]="DocRef.REF_LICENSE_EXPIRY_DATE | toDateString" class="form-control form-control-sm" readonly />
+    </div>
+
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต</label>
+      <input type="text" id="" [value]="DocRef.REF_LICENSE_QTY | toQTY : DocRef.refLicenseQTYUnitText" class="form-control form-control-sm" readonly />
+    </div>
+  </div>
+
+
+  <div class="form-row" [hidden]="!IsShowReferenceDoc_OwnerLicense">
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">ใบอนุญาตมีเลขที่</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="DocRef.REF_HAS_LICENSE_NO" id="txtOwnerLicenseNo_DomesticOrder" class="form-control form-control-sm" style="text-align:center;" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text">@</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">ลงวันที่</label>
+      <input type="text" id="" [value]="DocRef.REF_HAS_LICENSE_ISSUE_DATE | toDateString" class="form-control form-control-sm" readonly />
+    </div>
+
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" id="" [value]="DocRef.REF_HAS_LICENSE_EXPIRY_DATE | toDateString" class="form-control form-control-sm" readonly />
+    </div>
+
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต</label>
+      <input type="text" id="" [value]="DocRef.REF_HAS_LICENSE_QTY | toQTY : DocRef.refHasLicenseQTYUnitText" class="form-control form-control-sm" readonly />
+    </div>
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">กำลังการผลิตสูงสุดต่อปี *</label>
+      <!-- <input type="number" step="0.001" id="txtPermissionOfProduction_QTY_Max" [ngModel]="DocRef.CAPACITY_QUANTITY_MAX | toQTY" (ngModelChange)="DocRef.CAPACITY_QUANTITY_MAX=$event" (change)="clearValidate('txtPermissionOfProduction_QTY_Max')" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtPermissionOfProduction_QTY_Max" [(InputNumModel)]="DocRef.CAPACITY_QUANTITY_MAX" (change)="clearValidate('txtPermissionOfProduction_QTY_Max')" class="form-control form-control-sm txt-right" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลกำลังการผลิตสูงสุดต่อปี</div>
+    </div>
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">กำลังการผลิตต่ำสุดต่อปี *</label>
+      <!-- <input type="number" step="0.001" id="txtPermissionOfProduction_QTY_Min" [ngModel]="DocRef.CAPACITY_QUANTITY_MIN | toQTY" (ngModelChange)="DocRef.CAPACITY_QUANTITY_MIN=$event" (change)="clearValidate('txtPermissionOfProduction_QTY_Min')" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtPermissionOfProduction_QTY_Min" [(InputNumModel)]="DocRef.CAPACITY_QUANTITY_MIN" (change)="clearValidate('txtPermissionOfProduction_QTY_Min')" class="form-control form-control-sm txt-right" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลกำลังการผลิตต่ำสุดต่อปี</div>
+    </div>
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">กำลังการผลิตเฉลี่ยต่อปี *</label>
+      <!-- <input type="number" step="0.001" id="txtPermissionOfProduction_QTY_Avg" [ngModel]="DocRef.CAPACITY_QUANTITY_AVG | toQTY" (ngModelChange)="DocRef.CAPACITY_QUANTITY_AVG = $event" (change)="clearValidate('txtPermissionOfProduction_QTY_Avg')" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtPermissionOfProduction_QTY_Avg" [(InputNumModel)]="DocRef.CAPACITY_QUANTITY_AVG" (change)="clearValidate('txtPermissionOfProduction_QTY_Avg')" class="form-control form-control-sm txt-right" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลกำลังการผลิตเฉลี่ยต่อปี</div>
+    </div>
+    <div class="form-group col-3">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">ผลิตแล้วจำนวน</label>
+      <!-- <input type="number" step="0.001" id="txtPermissionOfProduction_QTY_Actual" [ngModel]="DocRef.ACTUAL_QUANTITY | toQTY" (ngModelChange)="DocRef.ACTUAL_QUANTITY=$event" (change)="clearValidate('txtPermissionOfProduction_QTY_Actual')" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtPermissionOfProduction_QTY_Actual" [(InputNumModel)]="DocRef.ACTUAL_QUANTITY" (change)="clearValidate('txtPermissionOfProduction_QTY_Actual')" class="form-control form-control-sm txt-right" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลจำนวนที่ผลิตแล้ว</div>
+    </div>
+  </div>
+
+  </div>

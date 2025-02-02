@@ -1,0 +1,154 @@
+
+<div id="div-documenttype-panel container-fluid">
+
+  <div class="row" style="margin: 10px;">
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-owner">
+          <h5 class="card-title">มี</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอใบอนุญาตมีซึ่งยุทธภัณฑ์
+          </p>
+          <button (click)="gotoCreateDraftOwning()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftOwner }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-enter">
+          <h5 class="card-title">สั่งเข้า-มี</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอใบอนุญาตสั่งเข้า-มีซึ่งยุทธภัณฑ์
+          </p>
+          <button (click)="gotoCreateDraftEnter()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftEnter }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-import">
+          <h5 class="card-title">นำเข้า-มี</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอใบอนุญาตนำเข้ามา-มีซึ่งยุทธภัณฑ์
+          </p>
+          <button (click)="gotoCreateDraftImport()" class="btn btn-info"  [ngClass]="{ 'no-permission': !CanCreateDraftImport }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-production">
+          <h5 class="card-title">ผลิต-มี</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอใบอนุญาตผลิต-มีซึ่งยุทธภัณฑ์
+          </p>
+          <button (click)="gotoCreateDraftProduction()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftProduction }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row" style="margin: 10px;">
+
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-renevel">
+          <h5 class="card-title">ต่อใบอนุญาต</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอต่ออายุใบอนุญาต สามารถเลือกรายการใบอนุญาตที่ต้องการต่ออายุจากรายการได้ที่หน้า <a [routerLink]="['/license/renew']">ใบอนุญาต</a>
+            <a class="a-download" href="javascript: null;" (click)="gotoRenewManual()">คู่มือขั้นตอนการต่ออายุ</a>  
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-substitue">
+          <h5 class="card-title">ใบแทนใบอนุญาต</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอใบแทนใบอนุญาต สามารถเลือกรายการใบอนุญาตที่ต้องการออกใบแทนจากรายการได้ที่หน้า <a [routerLink]="['/license/substitue']">ใบอนุญาต</a>
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-send-sample">
+          <h5 class="card-title">ใบอนุญาตขอส่งตัวอย่าง</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอหนังสืออนุญาตส่งออกตัวอย่าง
+          </p>
+          <button (click)="gotoCreateDraftSendSample()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftSample }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card img-export">
+        <div class="card-body img-export">
+          <h5 class="card-title">ส่งออก</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอหนังสืออนุญาตส่งออก (รายปี)
+          </p>
+          <button (click)="gotoCreateDraftExport()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftExport }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row" style="margin: 10px;">
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-export-special">
+          <h5 class="card-title">ส่งออก (พิเศษ)</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอหนังสืออนุญาตส่งออก (พิเศษ)
+          </p>
+          <button (click)="gotoCreateDraftExportSpecial()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftExportSpecial }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-cross-border">
+          <h5 class="card-title">ส่งผ่านแดน</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอหนังสืออนุญาตส่งผ่านแดน
+          </p>
+          <button (click)="gotoCreateDraftCrossBorder()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftCrossBorder }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<cdss-message-dialog (ready)="initDialog($event)" tag="message-expire">
+  License of Trander is Expired !!!!, please contact your admin or DID Officer.
+</cdss-message-dialog>
+
+<!-- ---- https://app.clickup.com/t/860qugcwj ------------------------- -->
+<cdss-message-dialog (ready)="initDialog($event)" tag="message-warinig" cancel-caption="OK" [show-ok]="false">
+  <div id="div-warning-dialog-message">
+    ขณะนี้ระบบการยื่นคำขอต่ออายุ/ผลิต/มี ซึ่งยุทธภัณฑ์ ยังไม่ถูกเปิดใช้บริการ ผู้ประกอบการสามารถยื่นข้อมูลบัญชีรับ-จ่าย (ยภ.8) ได้ตามปกติ
+  </div>
+</cdss-message-dialog>
+<!-- ---- https://app.clickup.com/t/860qugcwj ------------------------- -->
+
+
+<!-- <cdss-waiting-dialog #waitingDialog>
+    <cdss-loading></cdss-loading>
+</cdss-waiting-dialog> -->
+
+<!-- <a [routerLink]="['../','draft','343944']">343944</a> -->

@@ -1,0 +1,72 @@
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'modalTitle'" data-backdrop="static" aria-hidden="true" [attr.data-keyboard]="allowEscape">
+  <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="div-trader-document-dialog-title'">เอกสารในระบบ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div *ngIf="isShowDialogtraderDocument" class="container-fluid" id="div-attachmentbody">
+
+          <div class="row">
+            <div class="col-5">
+              <!-- <div style="overflow-y: scroll;"> -->
+                <button *ngFor=" let docGroup of traderDocumentAttachments " type="button" class="btn btn-sm btn-light button-group" [ngClass]="{ 'active': docGroup == currentTraderDocumentAttachment }" style="display: block; width: 100%;" (click)="focusToDocument(docGroup)">
+                  {{docGroup.document_name}}
+                  <span class="badge badge-success">{{docGroup.doc_att_count}}</span>
+                </button>
+              <!-- </div> -->
+            </div>
+            <div class="col-7" style="background-color: #f0f0f0; padding-left: 3px; padding-right: 3px;">
+
+              <div class="container-fluid">
+                <div class="row" style="margin-top: 10px;">
+                  <div class="col-12 file-box">
+                    <div class="file-caption">ชื่อเอกสาร</div>
+                    <div class="file-value" style="text-align: left;">{{currentTraderDocumentAttachment.document_name}}</div>
+                  </div>
+
+                  <div class="col-6 file-box">
+                    <div class="file-caption">วันที่ออกเอกสาร</div>
+                    <div class="file-value">{{currentTraderDocumentAttachment.issue_date | toDateStringDash}}</div>
+                  </div>
+                  <div class="col-6 file-box">
+                    <div class="file-caption">วันที่หมดอายุ</div>
+                    <div class="file-value">{{currentTraderDocumentAttachment.expiry_date | toDateStringDash}}</div>
+                  </div>
+
+                  <div class="col-6 file-box">
+                    <div class="file-caption">ออกให้ ณ จังหวัด</div>
+                    <div class="file-value">{{currentTraderDocumentAttachment.issue_province_name}}</div>
+                  </div>
+                  <div class="col-6 file-box">
+                    <div class="file-caption">ออกให้ ณ อำเภอ/เขต</div>
+                    <div class="file-value">{{currentTraderDocumentAttachment.issue_sub_province_name}}</div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <button *ngFor=" let attachments of currentTraderDocumentAttachment.attachments " type="button" class="btn btn-sm btn-light button-file" (click)="viewToDocument(attachments)" [title]="attachments.file_description">
+                      {{attachments.file_fullname}}
+                      <div *ngIf="attachments.has_exception" class="div-attachment-error">{{attachments.ui_exception}}</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="closeDialogtraderDocument()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

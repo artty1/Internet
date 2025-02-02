@@ -1,0 +1,34 @@
+<!-- move note into sectiontrader-comment, use this section for submit_info list -->
+
+<div class="container-fluid div-content-box" id="div-section-note" style="position: relative;">
+  <div class="div-content-box-header" style="background-color:red;">
+    <i class="fa fa-commenting" aria-hidden="true"></i> {{Title}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+
+  <div class="div-content-box-contact">{{ApplicationContact}}</div>
+
+  <div *ngFor=" let submit of SubmitInfoList, let idx=index" class="div-submit-box">
+
+    <div class="div-submit-box-header">การยื่นครั้งที่ {{SubmitInfoLength - idx}} เมื่อ {{submit.SUBMIT_DATE | toDateString}}</div>
+
+    <div class="div-submit-box-trader">
+      <div class="div-submit-box-trader-content" [innerHtml]="submit.SUBMIT_COMMENT"></div>
+      <div class="div-submit-box-user">
+        {{submit.SUBMIT_USER}}<br />
+        {{submit.SUBMIT_DATE | toDateString: 'D MMM YYYY HH:mm:ss'}}
+      </div>
+    </div>
+    <div class="div-submit-box-officer" *ngIf="submit.OFFICER_COMMENT_DATE">
+      <div class="div-submit-box-user" style="text-align: right;">
+        {{submit.OFFICER_NAME}}<br />
+        {{submit.OFFICER_COMMENT_DATE | toDateString: 'D MMM YYYY HH:mm:ss'}}
+      </div>
+      <div class="div-submit-box-officer-content" [innerHtml]="submit.OFFICER_COMMENT"></div>
+    </div>
+  </div>
+
+</div>
+

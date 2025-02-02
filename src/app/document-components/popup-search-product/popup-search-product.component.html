@@ -1,0 +1,118 @@
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'modalTitle'" data-backdrop="static" aria-hidden="true" [attr.data-keyboard]="allowEscape">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="id+'-title'">{{title}}ค้นหายุทธภัณฑ์</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" *ngIf="allowEscape">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container-fluid">
+          <!-- <div class="form-group row"> -->
+            <label for="inputPassword" class="col-2 col-form-label col-form-label-sm">ข้อมูลที่ต้องการค้นหา</label>
+
+            <div class="col-8 col-xs-10">
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control form-control-sm" id="txtProductCriteria" placeholder="พิมพ์คำที่ต้องการค้นหาหรือบางส่วนของคำ" [(ngModel)]="criteriaSearch">
+                <div class="input-group-append">
+                  <button class="input-group-text" (click)="clearCriteria()"><i class="fa fa-times" aria-hidden="true" hidden></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-1">
+              <button type="button" class="btn btn-primary btn-sm" (click)="searchProduct()" [hidden]="!enableSearchButton">
+                <i class="fa fa-search" aria-hidden="true"></i> Search
+              </button>
+            </div>
+            <div class="col-1">
+              <button type="button" class="btn btn-outline-light btn-sm" (click)="clearSearchData()" [hidden]="!enableSearchButton">
+                <i class="fa fa-remove" aria-hidden="true"></i> Clear
+              </button>
+            </div>
+
+          </div>
+           -->
+        </div>
+
+        <table class="table table-striped table-fullwidth table-hover cdss-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>รหัสยุทธภัณฑ์</th>
+              <th>ชื่อยุทธภัณฑ์</th>
+              <th>หน่วยปริมาณ</th>
+              <th>หน่วยน้ำหนัก</th>
+              <!-- <th>Cas No</th> -->
+              <!-- <th>ชื่อยุทธภัณฑ์</th> -->
+                <!--<th>ชื่อยุทธภัณฑ์ภาษาไทย</th>
+    <th>ชื่อยุทธภัณฑ์ภาษาอังกฤษ</th>-->
+              <th>ประเภทและกลุ่มของยุทธภัณฑ์</th>
+              <!--<th>ประเภทยุทธภัณฑ์</th>-->
+              <!--<th>ชื่อกลุ่มยุทธภัณฑ์</th>-->
+              <th>พิกัด</th>
+              <th>รหัสสถิติ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr [hidden]="!isLoading">
+              <td colspan="11" class="txt-center">
+                <cdss-loading></cdss-loading>
+              </td>
+            </tr>
+
+            <tr [hidden]="!noData">
+              <td colspan="9" class="txt-center">
+                Data not found.
+              </td>
+            </tr>
+
+            <tr *ngFor=" let item of ProductList">
+              <td><button class="btn btn-link btn-link" (click)="selectProduct(item)">เลือก</button></td>
+              <td>{{item.Code}}</td>
+              <td>
+                <div>{{item.Name}}</div>
+                <div>{{item.DescriptionTH}}</div>
+                <div>{{item.DescriptionEN}}</div>
+              </td>
+              <td>{{item.QuantityUnitName}}</td>
+              <td>{{item.WeightUnitName}}</td>
+              <!-- <td>{{item.CasNo}}</td> -->
+              <!-- <td>
+                <div class="cdss-col-nowrap">{{item.DescriptionTH}}</div>
+                <div class="cdss-col-nowrap">{{item.DescriptionEN}}</div>
+              </td>               -->
+              <!--<td>{{item.TypeName}}</td>-->
+              <!--<td>{{item.GroupName}}</td>-->
+            <td>
+              <div><span style="font-weight:bold">ประเภท : </span>{{item.TypeName}}</div>
+              <div><span style="font-weight:bold">กลุ่ม : </span>{{item.GroupName}}</div>
+            </td>
+              <td>{{item.TariffCode}}</td>
+              <td>{{item.StatisticCode}}</td>
+            </tr>
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td [hidden]="isLoading" colspan="9" class="txt-right">
+                {{footer}}
+              </td>
+            </tr>
+          </tfoot>
+
+        </table>
+
+        <cdss-datagrid-pagination #pg></cdss-datagrid-pagination>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeDialog()">Cancel</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+

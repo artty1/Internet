@@ -1,0 +1,70 @@
+#div-documenttype-panel {
+  margin: auto;
+  margin-bottom: 20px;
+  text-align:center;
+}
+
+  #div-documenttype-panel > div {
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+
+    text-align: left;
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+  }
+
+.documenttype-header{
+  font-size: 1.2em;
+  font-weight:bold;
+  border-bottom: solid 1px #808080;
+
+}
+
+  .documenttype-header > a {
+    text-decoration: none;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 3px 5px 3px 5px;
+    background-color: lightgray;
+    border-radius: 3px;
+  }
+
+  .documenttype-header > a:hover {
+    background-color: white;
+  }
+
+  .documenttype-description {
+  font-size: 0.8em;
+  /*text-align:justify*/
+}
+
+
+  .card-body{
+    background-position: 0px 4px;
+    background-size: 60px;
+    background-repeat: no-repeat;
+  }
+
+  .card-title
+  {
+    padding-bottom: 5px !important;
+    padding-left: 50px;
+  }
+
+  .btn.no-permission{
+    visibility: hidden;
+  }
+
+
+  #div-warning-dialog-message{
+    color: red;
+  }
+
+  .a-download{
+    margin-left: 5px;
+    color: red;
+    text-decoration: underline;
+  }

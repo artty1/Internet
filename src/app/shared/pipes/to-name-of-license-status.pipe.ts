@@ -1,0 +1,18 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import { EnumToStringService } from '../helpers/enum-to-string.service';
+
+@Pipe({
+  name: 'toNameOfLicenseStatus'
+})
+
+export class ToNameOfLicenseStatusPipe implements PipeTransform {
+
+  constructor(private e_service:EnumToStringService){
+
+  }
+  // -------------------------------------------
+  transform(value: boolean): string{
+    return this.e_service.ToNameOfLicenseStatus(value);
+  }
+  // -------------------------------------------
+}

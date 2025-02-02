@@ -1,0 +1,70 @@
+<div class="container-fluid div-content-box" id="div-section-appendix">
+  <div class="div-content-box-header">
+    <i class="fa fa-file" aria-hidden="true"></i> {{Title}}
+  </div>
+  <!-- <div class="div-content-box_suggestion is-warning">
+    #message suggestion
+  </div> -->
+
+  <div class="cdss-commandbar is-right is-top">
+    <div class="d-lg-none">&nbsp;</div>
+    <button class="btn btn-light btn-sm cdss-width-75" (click)="exportToExcel()">
+      <i class="fa fa-file-excel-o" aria-hidden="true"></i> Download Excel Template
+    </button>
+    <button class="btn btn-primary btn-sm cdss-width-75" (click)="updateExcel()">
+      <i class="fa fa-file-excel-o" aria-hidden="true"></i> เพิ่มข้อมูลจากไฟล์ Excel
+    </button>
+    <button class="btn btn-success btn-sm cdss-width-75" (click)="newAppendix()">
+      <i class="fa fa-plus-square-o" aria-hidden="true"></i> เพิ่ม
+    </button>
+  </div>
+
+
+  <table class="table table-striped table-hover table-fullwidth table-sm table-responsive-sm" style="font-size: 0.875rem;">
+    <thead>
+      <tr>
+        <th class="text-center cdss">&nbsp;</th>
+        <th class="text-center cdss">ลำดับ</th>
+        <th class="text-center cdss">ชื่อยุทธภัณฑ์</th>
+        <th class="text-center cdss">ยี่ห้อ</th>
+        <th class="text-center cdss">รุ่น</th>
+        <th class="text-center cdss">รายละเอียดเพิ่ม</th>
+        <th class="text-center cdss">จำนวน</th>
+        <th class="text-center cdss">น้ำหนัก</th>
+        <!--<th class="text-center cdss">หน่วยน้ำหนัก</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor=" let item of AppendixList; let idx = index;" [id]="TRID(idx)"> -->
+      <tr *ngFor=" let item of AppendixsWithUnit; let idx = index;" [id]="TRID(idx)">
+        <td>
+          <!-- <button class="btn btn-link" (click)="editAppendix(item, idx)">แก้ไข</button>
+          <button class="btn btn-link" (click)="deleteAppendix(item)">ลบ</button> -->
+          <button class="btn btn-link" (click)="editAppendix(AppendixList[idx], idx)">แก้ไข</button>
+          <button class="btn btn-link" (click)="deleteAppendix(AppendixList[idx])">ลบ</button>
+        </td>
+        <td style="text-align:right">{{idx+1}}</td>
+        <!-- <td>{{item.ITEM_NO}}</td> -->
+        <td>{{item.Appendix.PRODUCT_NAME}}</td>
+        <td>{{item.Appendix.PRODUCT_BRAND_NAME}}</td>
+        <td>{{item.Appendix.PRODUCT_SERIES}}</td>
+        <td>{{item.Appendix.PRODUCT_DESCRIPTION}}</td>
+        <td style="text-align:right">{{item.Appendix.QUANTITY | toQTY : item.QUANTITY_UNIT_NAME}}</td>
+        <td style="text-align:right">{{item.Appendix.WEIGHT | toQTY : item.WEIGHT_UNIT_NAME : ''}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="8" class="grd-footer">
+          {{Footer}}
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+
+</div>
+
+<cdss-popup-editor-appendix tag="editor" (ready)="initPopup($event)"></cdss-popup-editor-appendix>
+<cdss-popup-upload-excel tag="excel" (ready)="initPopup($event)"></cdss-popup-upload-excel>
+<cdss-popup-list-excel-appendix tag="list" (ready)="initPopup($event)"></cdss-popup-list-excel-appendix>

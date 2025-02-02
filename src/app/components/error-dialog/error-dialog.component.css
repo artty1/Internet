@@ -1,0 +1,12 @@
+.div-error-dialog-header{
+    color: red;
+    margin-bottom: 1.5rem;
+  }
+
+  .div-error-dialog-detail{
+    color: red;
+  }
+
+  .div-error-dialog-detail::before{
+    content: "\00a0";
+  }

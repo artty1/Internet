@@ -1,0 +1,37 @@
+<form>
+  <div class="form-row text-right">
+
+    <div class="form-group col-10 cdss-pagination">
+      <ng-container *ngIf="IsShowPaging">
+        <button [disabled]="IsFirstPage" type="button" class="btn btn-secondary btn-sm" (click)="MoveFirst()" >
+            <i class="fa fa-fast-backward"></i>
+        </button>
+        <button [disabled]="IsFirstPage" type="button" class="btn btn-secondary btn-sm" (click)="MovePrevious()">
+            <i class="fa fa-backward"></i>
+        </button>
+
+        <button type="button" [disabled]="IsButtonCurrentPage(p)" [class]="GetButtonClass(p)" *ngFor=" let p of PageCountLoop " (click)="MoveTo(p)">
+            <b>{{p}}</b>
+        </button>
+
+        <button [disabled]="IsLastPage" type="button" class="btn btn-secondary btn-sm" (click)="MoveNext()">
+            <i class="fa fa-forward"></i>
+        </button>
+        <button [disabled]="IsLastPage" type="button" class="btn btn-secondary btn-sm" (click)="MoveLast()">
+            <i class="fa fa-fast-forward"></i>
+        </button>
+      </ng-container>
+    </div>
+
+    <div class="form-group col-2 cdss-pagination">
+        <select class="form-control form-control-sm" [(ngModel)]="selectPageSize" [ngModelOptions]="{standalone: true}">
+          <option [value]="5">แสดงผลหน้าละ 5 ข้อมูล</option>
+          <option [value]="8">แสดงผลหน้าละ 8 ข้อมูล</option>
+          <option [value]="10">แสดงผลหน้าละ 10 ข้อมูล</option>
+          <option [value]="20">แสดงผลหน้าละ 20 ข้อมูล</option>
+          <option [value]="50">แสดงผลหน้าละ 50 ข้อมูล</option>
+        </select>
+      </div>
+  </div>
+</form>
+

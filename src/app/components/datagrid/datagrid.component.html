@@ -1,0 +1,19 @@
+<div [hidden]="!isShowComponent">
+  <div *ngIf="title.length>0">{{title}}</div>
+  <table class="table  table-sm table-striped table-hover">
+    <thead>
+      <tr style="text-align:center">
+        <th *ngFor="let col of getColumns" [class]="cssHeader" scope="col">{{col.title}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eachData of currentDatasource" scope="row">
+        <td *ngFor="let col of getColumns" [class]="col.align">{{eachData[col.fieldName]}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr></tr>
+    </tfoot>
+  </table>
+
+</div>

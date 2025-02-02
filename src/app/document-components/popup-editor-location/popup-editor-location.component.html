@@ -1,0 +1,196 @@
+<!--<cdss-dialog [Base]="this" [Title]="Title">
+
+  <div class="container-fluid div-content-box-without-header">
+    <div class="cdss-commandbar is-right">
+      <button class="btn btn-light" (click)="getAddressFromTraderProfile()">ดึงที่อยู่จากข้อมูลหลัก</button>
+      <button class="btn btn-light" (click)="showAddressList()">เลือกที่อยู่จากที่เคยทำรายการ</button>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12">
+        <label for="txtAddressNo" class="col-form-label-sm">ชื่อสถานที่</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressName" placeholder="-" [readonly]="isLock" [(ngModel)]="address.LOCATION_NAME">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-7 col-md-3">
+        <label for="txtAddressNo" class="col-form-label-sm">บ้านเลขที่</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressNo" placeholder="-" [readonly]="isLock" [(ngModel)]="address.ADDRESS_NO">
+      </div>
+      <div class="form-group col-sm-5 col-md-1">
+        <label for="txtAddressMoo" class="col-form-label-sm">หมู่ที่</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressMoo" placeholder="-" [readonly]="isLock" [(ngModel)]="address.MOO">
+      </div>
+
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressBuilding" class="col-form-label-sm">อาคาร</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressBuilding" placeholder="-" [readonly]="isLock" [(ngModel)]="address.BUILDING_NAME">
+      </div>
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressVillage" class="col-form-label-sm">หมู่บ้าน</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressVillage" placeholder="-" [readonly]="isLock" [(ngModel)]="address.VILLAGE">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressSoi" class="col-form-label-sm">ตรอก/ซอย</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressSoi" placeholder="-" [readonly]="isLock" [(ngModel)]="address.SOI">
+      </div>
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressStreet" class="col-form-label-sm">ถนน</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressStreet" placeholder="-" [readonly]="isLock" [(ngModel)]="address.STREET">
+      </div>
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressSubDistrict" class="col-form-label-sm">ตำบล/แขวง</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressSubDistrict" placeholder="ตำบล/แขวง" [readonly]="isLock" [(ngModel)]="address.DISTRICT_NAME">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressDistrict" class="col-form-label-sm">อำเภอ/เขต</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressDistrict" placeholder="อำเภอ/เขต" [readonly]="isLock" [(ngModel)]="address.SUB_PROVINCE_NAME">
+      </div>
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressProvince" class="col-form-label-sm">จังหวัด</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressProvince" placeholder="จังหวัด" [readonly]="isLock" [(ngModel)]="address.PROVINCE_NAME">
+      </div>
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtAddressZipcode" class="col-form-label-sm">รหัสไปรษณีย์</label>
+        <input type="text" class="form-control form-control-sm" id="txtAddressZipcode" placeholder="รหัสไปรษณีย์" [readonly]="isLock" [(ngModel)]="address.POSTCODE">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtPhone" class="col-form-label-sm">หมายเลขโทรศัพท์</label>
+        <input type="text" class="form-control form-control-sm" id="txtPhone" placeholder="หมายเลขโทรศัพท์" [readonly]="isLock" [(ngModel)]="address.PHONE_NO">
+      </div>
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtFax" class="col-form-label-sm">โทรสาร</label>
+        <input type="text" class="form-control form-control-sm" id="txtFax" placeholder="โทรสาร" [readonly]="isLock" [(ngModel)]="address.FAX_NO">
+      </div>
+      <div class="form-group col-sm-12 col-md-4">
+        <label for="txtEmail" class="col-form-label-sm">E-mail</label>
+        <input type="text" class="form-control form-control-sm" id="txtEmail" placeholder="E-mail" [readonly]="isLock" [(ngModel)]="address.E_MAIL_ADDRESS">
+      </div>
+    </div>
+  </div>
+
+</cdss-dialog>-->
+
+
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'modalTitle'" data-backdrop="static" aria-hidden="true" [attr.data-keyboard]="allowEscape">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="id+'-title'">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" *ngIf="allowEscape">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container-fluid div-content-box-without-header">
+          <div class="cdss-commandbar is-right">
+            <button class="btn btn-light" (click)="getAddressFromTraderProfile()">ดึงที่อยู่จากข้อมูลหลัก</button>
+            <button class="btn btn-light" (click)="showAddressList()">เลือกที่อยู่จากที่เคยทำรายการ</button>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAddressNo" class="col-form-label-sm">ชื่อสถานที่</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressName" placeholder="-" [readonly]="isLock" [(ngModel)]="address.LOCATION_NAME" maxlength="300" (change)="clearValidate('txtAddressName')">
+              <div class="invalid-feedback">กรุณาระบุข้อมูลชื่อสถานที่</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-7 col-md-3">
+              <label for="txtAddressNo" class="col-form-label-sm">บ้านเลขที่</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressNo" placeholder="-" [readonly]="isLock" [(ngModel)]="address.ADDRESS_NO" maxlength="50">
+            </div>
+            <div class="form-group col-sm-5 col-md-1">
+              <label for="txtAddressMoo" class="col-form-label-sm">หมู่ที่</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressMoo" placeholder="-" [readonly]="isLock" [(ngModel)]="address.MOO" maxlength="35">
+            </div>
+
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressBuilding" class="col-form-label-sm">อาคาร</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressBuilding" placeholder="-" [readonly]="isLock" [(ngModel)]="address.BUILDING_NAME" maxlength="250">
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressVillage" class="col-form-label-sm">หมู่บ้าน</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressVillage" placeholder="-" [readonly]="isLock" [(ngModel)]="address.VILLAGE" maxlength="50">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressSoi" class="col-form-label-sm">ตรอก/ซอย</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressSoi" placeholder="-" [readonly]="isLock" [(ngModel)]="address.SOI" maxlength="50">
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressStreet" class="col-form-label-sm">ถนน</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressStreet" placeholder="-" [readonly]="isLock" [(ngModel)]="address.STREET" maxlength="50">
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressSubDistrict" class="col-form-label-sm">ตำบล/แขวง</label>
+              <input [hidden]="hasDistrict" type="text" class="form-control form-control-sm txt-center" value="กรุณาเลือกข้อมูล อำเภอ/เขต" readonly>
+              <input [hidden]="!isLock" type="text" class="form-control form-control-sm" placeholder="ตำบล/แขวง" readonly [(ngModel)]="address.DISTRICT_NAME">
+
+              <select [hidden]="!hasDistrict || isLock" class="form-control form-control-sm" id="selAddressSubDistrict" [(ngModel)]="address.DISTRICT_NAME" [disabled]="isLock" (change)="selectSubDistrict('selAddressSubDistrict')">
+                <option value="" data-postcode=""> -- เลือก ตำบล/แขวง -- </option>
+                <option *ngFor=" let item of SubDistrictList " [value]="item.name" [attr.data-postcode]="item.postcode">{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressDistrict" class="col-form-label-sm">อำเภอ/เขต</label>
+
+              <input [hidden]="hasProvince" type="text" class="form-control form-control-sm txt-center" value="กรุณาเลือกข้อมูล จังหวัด" readonly>
+              <input [hidden]="!isLock" type="text" class="form-control form-control-sm" [(ngModel)]="address.SUB_PROVINCE_NAME" readonly>
+
+              <select [hidden]="!hasProvince || isLock" id="selAddressDistrict" class="form-control form-control-sm" [disabled]="isLock" [(ngModel)]="address.SUB_PROVINCE_NAME" (change)="selectDistrict('selAddressDistrict')">
+                <option value="" data-id=""> -- เลือก อำเภอ/เขต -- </option>
+                <option *ngFor=" let item of DistrictList " [value]="item.name" [attr.data-id]="item.id">{{item.name}}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressProvince" class="col-form-label-sm">จังหวัด</label>
+              <input [hidden]="!isLock" type="text" class="form-control form-control-sm" placeholder="จังหวัด" readonly [(ngModel)]="address.PROVINCE_NAME">
+
+              <select [hidden]="isLock" id="selAddressProvince" class="form-control form-control-sm" [disabled]="isLock" [(ngModel)]="address.PROVINCE_NAME" (change)="selectProvince('selAddressProvince')">
+                <option value="" data-id=""> -- เลือก จังหวัด -- </option>
+                <option *ngFor=" let item of ProvinceList" [value]="item.name" [attr.data-id]="item.id">{{item.name}}</option>
+              </select>
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtAddressZipcode" class="col-form-label-sm">รหัสไปรษณีย์</label>
+              <input type="text" class="form-control form-control-sm" id="txtAddressZipcode" placeholder="รหัสไปรษณีย์" [readonly]="isLock" [(ngModel)]="address.POSTCODE"  maxlength="5">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtPhone" class="col-form-label-sm">หมายเลขโทรศัพท์</label>
+              <input type="text" class="form-control form-control-sm" id="txtPhone" placeholder="หมายเลขโทรศัพท์" [readonly]="isLock" [(ngModel)]="address.PHONE_NO" maxlength="30">
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtFax" class="col-form-label-sm">โทรสาร</label>
+              <input type="text" class="form-control form-control-sm" id="txtFax" placeholder="โทรสาร" [readonly]="isLock" [(ngModel)]="address.FAX_NO" maxlength="30">
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="txtEmail" class="col-form-label-sm">E-mail</label>
+              <input type="text" class="form-control form-control-sm" id="txtEmail" placeholder="E-mail" [readonly]="isLock" [(ngModel)]="address.E_MAIL_ADDRESS" maxlength="100">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelDialog()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="validateData()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<cdss-popup-list-location (ready)="initLocationList($event)" [ForProduction]="ForProduction" (command)="selectAddress($event)"></cdss-popup-list-location>

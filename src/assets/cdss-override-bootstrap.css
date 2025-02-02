@@ -1,0 +1,17 @@
+.is-invalid {
+  background-image: none !important;
+  padding: .375rem .75rem !important;
+}
+
+/*input[type="number"].is-invalid{
+  padding-right: 0px !important;
+}*/
+
+table.is-invalid, button.is-invalid {
+  border: solid 1px red !important;
+}
+
+
+table.is-invalid ~ div.invalid-feedback {
+  display: block;
+}

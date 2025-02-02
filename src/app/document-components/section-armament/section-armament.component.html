@@ -1,0 +1,138 @@
+<div class="container-fluid div-content-box" id="div-section-armament">
+  <div class="div-content-box-header">
+    <i class="fa fa-archive" aria-hidden="true"></i> {{Title}}</div>
+    <div class="div-content-box_suggestion is-warning">
+      <!-- #message suggestion -->
+    </div>
+
+  <div class="form-row" style="display: none;">
+
+    <div class="input-group col-12">
+      <label for="txtAmamentType" class="col-form-label-sm">ชนิด</label>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <button class="input-group-text" (click)="clearCode('G')"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <select class="form-control form-control-sm" id="txtAmamentType" [disabled]="!IsProductGroupReady" (change)="loadProductByGroup()" [(ngModel)]="Arm.ProductGroupID">
+          <option value="0"> -- เลือกชนิดยุทธภัณฑ์ เพื่อกรองรายการของยุทธภัณฑ์ -- </option>
+          <option *ngFor="let item of ProductGroups" [value]="item.ID">{{item.Name}}</option>
+        </select>
+        <div class="input-group-append">
+          <button class="input-group-text" (click)="showSearchProductGroup()" [disabled]="!IsProductGroupReady" style="margin-right: 5px;"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <button class="btn btn-link" type="button" [hidden]="!IsProductGroupReady" (click)="refreshProductGroup()" style="width: 24px; padding: 0px;"><img src="assets/refresh-icon.png" style="width: 24px;" /></button>
+          <span [hidden]="IsProductGroupReady"><img src="assets/field-loading.gif" /></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-row">
+    <!--<div class="form-group col-6">
+      <label for="txtAmamentName" class="col-form-label-sm">ยุทธภัณฑ์ *</label>
+      <input type="text" class="form-control form-control-sm" id="txtAmamentName" placeholder="-" [readonly]="IsViewMode" [(ngModel)]="Arm.PRODUCT_NAME">
+    </div>-->
+    <div class="form-group col-6">
+      <label for="txtAmamentName" class="col-form-label-sm">ยุทธภัณฑ์ *</label>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <button class="input-group-text" (click)="clearCode('P')"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <select class="form-control form-control-sm" id="txtAmamentName" [disabled]="!IsProductReady" (change)="changeArmament()" [(ngModel)]="Arm.PRODUCT_CODE">
+          <option value=""> -- เลือกยุทธภัณฑ์ -- </option>
+          <option *ngFor=" let item of ProductList " [value]="item.Code">{{item.Name}}</option>
+        </select>
+        <div class="input-group-append">
+          <button class="input-group-text" (click)="showSearchProduct()" [disabled]="!IsProductReady" style="margin-right: 5px;"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <button class="btn btn-link" type="button" [hidden]="!IsProductReady" (click)="refreshProduct()" style="width: 24px; padding: 0px;"><img src="assets/refresh-icon.png" style="width: 24px; height: 24px;" /></button>
+          <span [hidden]="IsProductReady"><img src="assets/field-loading.gif" /></span>
+        </div>
+        <div class="invalid-feedback">กรุณาเลือกยุทธภัณฑ์</div>
+      </div>
+    </div>
+    <div class="form-group col-6">
+      <label for="txtAmamentIngradient" class="col-form-label-sm">มีผสมอยู่</label>
+      <input type="text" class="form-control form-control-sm" id="txtAmamentIngradient" placeholder="-" [readonly]="IsViewMode" [(ngModel)]="RefDocument.INGREDIENT_DESCRIPTION">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="txtAmamentName" class="col-form-label-sm">ชื่อยุทธภัณฑ์</label>
+      <!-- <input type="text" class="form-control form-control-sm" id="txtAmamentName" placeholder="-" readonly [value]="Arm.PRODUCT_NAME"> -->
+      <input type="text" class="form-control form-control-sm" id="txtAmamentName" placeholder="-" [(ngModel)]="Arm.PRODUCT_NAME">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-6">
+      <label for="txtAmamentBrand" class="col-form-label-sm">ยี่ห้อ *</label>
+      <input type="text" class="form-control form-control-sm" id="txtAmamentBrand" placeholder="-" [readonly]="IsViewMode" [(ngModel)]="Arm.PRODUCT_BRAND_NAME" (change)="clearValidate('txtAmamentBrand')">
+      <div class="invalid-feedback">กรุณาระบุยี่ห้อยุทธภัณฑ์</div>
+    </div>
+    <div class="form-group col-6">
+      <label for="txtAmamentSeries" class="col-form-label-sm">รุ่นที่ผลิต</label>
+      <input type="text" class="form-control form-control-sm" id="txtAmamentSeries" placeholder="-" [readonly]="IsViewMode" [(ngModel)]="Arm.PRODUCT_SERIES">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-sm-12 col-md-6">
+      <label for="txtAmamentDescription" class="col-form-label-sm">รายละเอียดเพิ่มเติม</label>
+      <input type="text" class="form-control form-control-sm" id="txtAmamentDescription" placeholder="-" [readonly]="IsViewMode" [(ngModel)]="Arm.PRODUCT_DESCRIPTION">
+    </div>
+    <div class="form-group col-6 col-sm-6 col-md-3">
+      <label for="txtAmamentTariffCode" class="col-form-label-sm">พิกัดศุลกากร</label>
+      <input type="text" class="form-control form-control-sm" id="txtAmamentTariffCode" placeholder="-" readonly [(ngModel)]="Arm.TARIFF_CODE">
+    </div>
+    <div class="form-group col-6 col-sm-6 col-md-3">
+      <label for="txtAmamentStatisticalCode" class="col-form-label-sm">รหัสสถิติ</label>
+      <input type="text" maxlength="3" class="form-control form-control-sm" id="txtAmamentStatisticalCode" placeholder="-" readonly [(ngModel)]="Arm.STATISTICAL_CODE">
+    </div>
+
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-4 col-sm-4 col-md-2">
+      <label for="txtAmamentQTY" class="col-form-label-sm">จำนวน *</label>
+      <!-- <input type="number" step="0.001" class="form-control form-control-sm" id="txtAmamentQTY" placeholder="-" pattern=”[0–9]*” [readonly]="IsViewMode" min="0" [ngModel]="Arm.QUANTITY | toQTY" (ngModelChange)="Arm.QUANTITY=$event" (change)="clearValidate('txtAmamentQTY')"> -->
+      <input type="text" class="form-control form-control-sm" id="txtAmamentQTY" placeholder="-" [readonly]="IsViewMode" [(InputNumModel)]="Arm.QUANTITY" (change)="clearValidate('txtAmamentQTY')">
+      <div class="invalid-feedback">จำนวนยุทธภัณฑ์ไม่สามารถเท่ากับ 0 ได้</div>
+    </div>
+    <div class="form-group col-8 col-sm-8 col-md-4">
+      <label for="txtAmamentQTYName" class="col-form-label-sm">หน่วย</label>
+      <!--<input type="text" class="form-control form-control-sm" id="txtAmamentQTYName" placeholder="-" [readonly]="IsViewMode" [(ngModel)]="Arm.QUANTITY_UNIT_ID">-->
+      <select class="form-control form-control-sm" id="txtAmamentQTYName" [(ngModel)]="Arm.QUANTITY_UNIT_ID" (change)="clearValidate('txtAmamentQTYName')">
+        <option value="0"> -- หน่วยของจำนวนยุทธภัณฑ์ -- </option>
+        <option *ngFor=" let item of UnitLookup " [value]="item.ID">{{item.UnitName}}</option>
+      </select>
+      <div class="invalid-feedback">กรุณาระบุข้อมูลหน่วยของจำนวนยุทธภัณฑ์</div>
+    </div>
+
+    <div class="form-group col-sm-4 col-md-2">
+      <label for="txtTaxID" class="col-form-label-sm">น้ำหนัก</label>
+      <!-- <input type="number" step="0.001" class="form-control form-control-sm" id="txtAmamentWeight" placeholder="-" [readonly]="IsViewMode" min="0" [ngModel]="Arm.WEIGHT | toWeight" (ngModelChange)="Arm.WEIGHT=$event"> -->
+      <input type="text" class="form-control form-control-sm" id="txtAmamentWeight" placeholder="-" [readonly]="IsViewMode" min="0" [(InputNumModel)]="Arm.WEIGHT" [floatPoint]="3">
+    </div>
+    <div class="form-group col-sm-8 col-md-4">
+      <label for="txtAmamentWeightName" class="col-form-label-sm">หน่วย</label>
+      <select class="form-control form-control-sm" id="txtAmamentWeightName" [(ngModel)]="Arm.WEIGHT_UNIT_ID" (change)="clearValidate('txtAmamentWeightName')">
+        <option value="0"> -- หน่วยน้ำหนักของยุทธภัณฑ์ -- </option>
+        <option *ngFor=" let item of WeightLookup " [value]="item.ID">{{item.UnitName}}</option>
+      </select>
+      <div class="invalid-feedback">กรุณาระบุข้อมูลหน่วยของน้ำหนัก</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="txtTaxID" class="col-form-label-sm">เพื่อ *</label>
+      <input type="text" class="form-control form-control-sm" id="txtAmamentObject" placeholder="-" [readonly]="IsViewMode" [(ngModel)]="Arm.OBJECTIVE" (change)="clearValidate('txtAmamentObject')">
+      <div class="invalid-feedback">กรุณาระบุข้อมูลวัตถุประสงค์</div>
+    </div>
+
+
+</div>
+
+<cdss-popup-search-product tag="product" (command)="getSearchResult($event)" #searchProduct></cdss-popup-search-product>
+<cdss-popup-search-product-group tag="product-group" (command)="getSearchResult($event)" #searchProductGroup></cdss-popup-search-product-group>

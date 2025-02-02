@@ -1,0 +1,94 @@
+<cdss-module-header [title]="status" (on-refresh)="refreshData()" [is-loading]="isLoading"></cdss-module-header>
+
+<!-- <cdss-module-header>{{status}}</cdss-module-header>
+
+<div class="cdss-commandbar is-right">
+  <button class="btn btn-link" (click)="refreshData()" [disabled]="isLoading">refresh</button>
+</div> -->
+
+<table class="table table-striped table-fullwidth table-hover table-sm cdss-table">
+  <thead>
+    <tr>
+      <th class="cdss-col-no">ลำดับ</th>
+      <th></th>
+      <th>ประเภทใบอนุญาต</th>
+      <th *ngIf="IsDocumentAccepted">เลขที่รับเรื่อง</th>
+      <th *ngIf="IsDocumentAccepted">วันที่รับเรื่อง</th>
+      <th>ชื่อยุทธภัณฑ์</th>
+      <th>จำนวน</th>
+      <th>น้ำหนัก</th>
+      <th>ช่องทาง<br />การยื่นคำขอ</th>
+      <!-- <th>สถานะ</th> -->
+      <th>คำร้องโดย</th>
+      <th *ngIf="IsDocumentAccepted">เจ้าหน้าที่รับเรื่อง</th>
+      <th>ใบคำขอ</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngIf="isLoading">
+      <td colspan="12" class="rowLoading"><cdss-loading></cdss-loading></td>
+    </tr>
+
+    <tr [hidden]="!noData">
+    <!-- <tr *ngIf="noData"> -->
+      <td colspan="12" class="rowNoData">ไม่มีข้อมูล ...</td>
+    </tr>
+
+    <tr *ngFor="let item of Datasource; let idx = index" [attr.data-index]="idx">
+      <td class="cdss-td-right">{{(RowNo + idx)}}</td>
+      <td>
+        <button class="btn btn-sm btn-warning" (click)="actionCommandCopy(item)" title="copy คำขอ">
+          <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td class="cdss-col-nowrap" [title]="item.id">{{item.request_type | toNameOfRequestDocumentType}}</td>
+      <td *ngIf="IsDocumentAccepted" class="cdss-td-right cdss-col-nowrap">{{item.recevie_no}}</td>
+      <td *ngIf="IsDocumentAccepted" class="cdss-td-center cdss-col-nowrap">{{item.receive_date | toDateString }}</td>
+      <td class="cdss-td-content">{{item.detail}}</td>
+      <td class="cdss-td-right">{{ item.qty | toQTY }} {{item.qty_unit_name}}</td>
+      <td class="cdss-td-right">{{item.weight | toQTY }} {{item.weight_unit_name}}</td>
+      <td class="cdss-td-center">{{item.is_online_request | toChannelName }}</td>
+      <td class="cdss-td-record-log">
+        <div *ngIf="!IsStatusSubmit" [title]="item.update_date">
+          {{item.create_by}} ({{item.create_date | toDateString:"DD/MM/YY" }})
+        </div>
+        <div *ngIf="IsStatusSubmit" [title]="item.document_date">
+          {{item.update_by}} ({{item.document_date | toDateString:"DD/MM/YY" }})
+        </div>
+      </td>
+      <td *ngIf="IsDocumentAccepted" class="cdss-td-record-log">
+        <div *ngIf="IsStatusProcess || IsStatusApprove" [title]="item.officer_date">
+          {{item.officer_by}} ({{item.officer_date | toDateString:"DD/MM/YY" }})
+        </div>
+      </td>
+      <td class="cdss-td-center command-all">
+        <!-- <button *ngIf="IsStatusReject" class="btn btn-sm btn-warning" (click)="actionCommandEdit(item)">แก้ไข</button> -->
+        <button *ngIf="IsStatusReject" class="btn btn-sm btn-warning" (click)="actionCommandEdit(item)">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+        <!-- <button *ngIf="!IsStatusReject" class="btn btn-light btn-sm btn-outline-info" (click)="actionCommandEdit(item)">ดู</button> -->
+        <!-- <button *ngIf="!IsStatusReject" class="btn btn-light btn-sm btn-outline-info" (click)="printRequestDocument(item.id)">พิมพ์</button> -->
+        <!-- <button *ngIf="!IsStatusReject" class="btn btn-light btn-sm btn-outline-info" (click)="printRequestDocument(item.id)"> -->
+        <button *ngIf="IsStatusCanPrint" class="btn btn-light btn-sm btn-outline-info" (click)="printRequestDocument(item.id)">
+          <i class="fa fa-print" aria-hidden="true"></i>
+        </button>
+        <!-- <button *ngIf="IsStatusSubmited" class="btn btn-sm btn-warning" (click)="rejectSubmit(item.id)">ยกเลิกการยื่น</button> -->
+      </td>
+    </tr>
+
+  </tbody>
+  <tfoot [hidden]="hideFooter">
+    <tr>
+      <td [attr.colspan]="tdCount">
+        {{footerData}}
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<cdss-datagrid-pagination #pg></cdss-datagrid-pagination>
+
+<cdss-waiting-dialog #waitingDialog>
+  <cdss-loading></cdss-loading>
+</cdss-waiting-dialog>

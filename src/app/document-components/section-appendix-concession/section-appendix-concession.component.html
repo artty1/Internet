@@ -1,0 +1,56 @@
+<div class="container-fluid div-content-box" id="div-section-concession">
+  <div class="div-content-box-header">
+    <i class="fa fa-file" aria-hidden="true"></i> {{Title}}
+  </div>
+  <!-- <div class="div-content-box_suggestion is-warning">
+    #message suggestion
+  </div> -->
+
+  <div class="cdss-commandbar is-right is-top">
+    <div class="d-lg-none">&nbsp;</div>
+    <button class="btn btn-light btn-sm cdss-width-75" (click)="exportToExcel()" title="Download Excel Template">
+      <i class="fa fa-file-excel-o" aria-hidden="true"></i> Download Excel Template
+    </button>
+    <button class="btn btn-primary btn-sm cdss-width-75" (click)="updateExcel()">
+      <i class="fa fa-file-excel-o" aria-hidden="true"></i> เพิ่มข้อมูลจากไฟล์ Excel
+    </button>
+    <button class="btn btn-success btn-sm cdss-width-75" (click)="newData()">
+      <i class="fa fa-plus-square-o" aria-hidden="true"></i> เพิ่ม</button>
+  </div>
+
+
+  <table class="table table-striped table-hover table-fullwidth table-sm" style="font-size: 0.875rem;">
+    <thead>
+      <tr>
+        <th class="text-center cdss">&nbsp;</th>
+        <th class="text-center cdss">ลำดับ</th>
+        <th class="text-center cdss">เลขที่ประทานบัตร</th>
+        <th class="text-center cdss">ลงวันที่</th>
+        <th class="text-center cdss">วันหมดอายุ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let item of ConsessionList, let idx = index" [id]="TRID(idx)">
+        <td>
+          <button class="btn btn-link" (click)="editConsession(item)">แก้ไข</button>
+          <button class="btn btn-link" (click)="deleteConsession(item)">ลบ</button>
+        </td>
+        <td>{{(idx+1)}}</td>
+        <td>{{item.DOCUMENT_NO}}</td>
+        <td>{{item.DOCUMENT_DATE | toDateString: 'D MMMM YYYY'}}</td>
+        <td>{{item.CONTACT_INFO}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5" class="grd-footer">
+          {{Footer}}
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<cdss-popup-editor-appendix-concession tag="editor" (ready)="initPopup($event)"></cdss-popup-editor-appendix-concession>
+<cdss-popup-upload-excel tag="excel" (ready)="initPopup($event)"></cdss-popup-upload-excel>
+<cdss-popup-list-excel-appendix-consession tag="list" (ready)="initPopup($event)"></cdss-popup-list-excel-appendix-consession>

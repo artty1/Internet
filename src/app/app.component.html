@@ -1,0 +1,120 @@
+
+<div class="container-fluid" id="toptoptop">
+  <div class="row">
+
+    <div id="div-sidemenu" class="d-none d-sm-none d-md-block col-md-1 col-lg-2">
+
+      <ul id="side-nav">
+
+        <!--<li>
+          <a [routerLink]="['']" [routerLinkActive]="'is-active'" [routerLinkActiveOptions]="{exact:true}">
+            <div class="d-none d-md-block d-lg-none"><img src="assets/icon-set/icon-status-draft.png" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-draft.png" /><div class="sidemenu-title">หน้าหลัก</div></div>
+          </a>
+        </li>-->
+
+        <li>
+          <a [routerLink]="['new']" [routerLinkActive]="'is-active'">
+          <!-- <a [routerLink]="['']" [routerLinkActive]="'is-active'"> -->
+            <div class="d-none d-md-block d-lg-none" title="คำขอใหม่"><img src="assets/icon-set/icon-status-new.png" alt="คำขอใหม่" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-new.png" /><div class="sidemenu-title">คำขอใหม่</div></div>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['draft']" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none" title="คำขอร่าง"><img src="assets/icon-set/icon-status-draft.png" alt="คำขอร่าง" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-draft.png" /><div class="sidemenu-title">คำขอร่าง</div></div>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['submit']" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none" title="คำขอที่ยื่นแล้ว"><img src="assets/icon-set/icon-status-submit.png" alt="คำขอที่ยื่นแล้ว" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-submit.png" /><div class="sidemenu-title">คำขอที่ยื่นแล้ว</div></div>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['receive']" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none" title="คำขอที่รับแล้ว"><img src="assets/icon-set/icon-status-receive.png" alt="คำขอที่รับแล้ว" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-receive.png" /><div class="sidemenu-title">คำขอที่รับแล้ว</div></div>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['reject']" class="link-red" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none" title="คำขอที่ถูกปฏิเสธ"><img src="assets/icon-set/icon-status-reject.png" alt="คำขอที่ถูกปฏิเสธ" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-reject.png" /><div class="sidemenu-title">คำขอที่ถูกปฏิเสธ</div></div>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['pending']" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none" title="กำลังดำเนินการ"><img src="assets/icon-set/icon-status-pending.png" alt="กำลังดำเนินการ" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-pending.png" /><div class="sidemenu-title">กำลังดำเนินการ</div></div>
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['approve']" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none" title="อนุมัติแล้ว"><img src="assets/icon-set/icon-status-approve.png" alt="อนุมัติแล้ว" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-approve.png" /><div class="sidemenu-title">อนุมัติแล้ว</div></div>
+          </a>
+        </li>
+
+        <li>
+          <div class="side-menu-blank"></div>
+        </li>
+        <li>
+          <a [routerLink]="['refuse']" class="link-red" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none"><img src="assets/icon-set/icon-status-approve.png" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-status-approve.png" /><div class="sidemenu-title">ถูกถอดเรื่อง</div></div>
+          </a>
+        </li>
+
+        <li>
+          <div class="side-menu-blank"></div>
+        </li>
+
+        <li>
+          <a [routerLink]="['license']" [routerLinkActive]="'is-active'">
+            <div class="d-none d-md-block d-lg-none"><img src="assets/icon-set/icon-license.png" /></div>
+            <div class="d-none d-lg-block side-menu-box"><img src="assets/icon-set/icon-license.png" />
+              <div class="sidemenu-title">
+                <span class="d-none d-xl-inline">หนังสือ/</span>ใบอนุญาต
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+    <div id="div-content" class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+
+</div>
+<div style="margin-bottom: 30px;margin-top: 20px;"></div>
+
+<div id="div-user" *ngIf="IsUserLogin" hidden>
+  <span>{{UserDetail}}</span>
+</div>
+
+<cdss-waiting-dialog #waitingDialog>
+  <div [innerHTML]="WaitingMessage"></div>
+  <cdss-loading *ngIf="isShowLoadingImage"></cdss-loading>
+</cdss-waiting-dialog>
+
+
+<cdss-error-dialog #errorDialog>
+</cdss-error-dialog>
+
+
+<br />
+
+<!-- <cdss-floating-scroll-to target="toptoptop"></cdss-floating-scroll-to> -->

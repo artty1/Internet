@@ -1,0 +1,243 @@
+<div class="container-fluid div-content-box" id="div-section-detail-of-export">
+  <div class="div-content-box-header">
+    <i class="fa fa-info-circle" aria-hidden="true"></i> {{Title}}
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-xs-1 col-sm-6 col-lg-3">
+      <label for="txtLicenseNo" class="col-form-label col-form-label-sm">ใบอนุญาตเลขที่</label>
+      <div class="input-group input-group-sm mb-2">
+        <div class="input-group-prepend">
+          <button class="input-group-text" (click)="clearReferenceLicense(SelectLicenseType.forLicense)"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <input type="text" [value]="RefDoc.REF_LICENSE_NO" id="txtLicenseNo" class="form-control form-control-sm" style="text-align:center;" readonly (change)="clearValidate('txtLicenseNo')" />
+        <div class="input-group-append">
+          <button class="input-group-text" (click)="searchReferenceLicense(SelectLicenseType.forLicense)">
+            <i aria-hidden="true" class="fa fa-search"></i>
+          </button>
+        </div>
+        <div class="invalid-feedback">กรุณาระบุเลขที่ใบอนุญาต</div>
+      </div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseIssueDate" class="col-form-label col-form-label-sm">ลงวันที่ </label>
+      <input type="text" [value]="RefDoc.REF_LICENSE_ISSUE_DATE | toDateString" id="txtLicenseIssueDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" [value]="RefDoc.REF_LICENSE_EXPIRY_DATE | toDateString" id="txtLicenseExpireDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-8 col-sm-4 col-lg-3">
+      <label for="txtLicenseQTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต *</label>
+      <input type="text" [value]="RefDoc.REF_LICENSE_QTY | toQTY:unitNameOfReferenceLicense" id="txtLicenseQTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+    <!-- <div class="form-group col-xs-4 col-sm-2 col-lg-1">
+      <label for="txtLicenseQTYUnit" class="col-form-label col-form-label-sm">&nbsp;</label>
+      <input type="text" readonly class="form-control-plaintext form-control-sm" id="txtLicenseQTYUnit" [value]="unitNameOfReferenceLicense">
+    </div> -->
+
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-xs-1 col-sm-6 col-lg-3">
+      <label for="txtLicenseNo" class="col-form-label col-form-label-sm">ใบอนุญาตมีเลขที่</label>
+      <div class="input-group input-group-sm mb-2">
+        <div class="input-group-prepend">
+          <button class="input-group-text" (click)="clearReferenceLicense(SelectLicenseType.forHasLicense)"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <input type="text" [value]="RefDoc.REF_HAS_LICENSE_NO" id="txtLicenseOwnerNo" class="form-control form-control-sm" style="text-align:center;" readonly (change)="clearValidate('txtLicenseOwnerNo')" />
+        <div class="input-group-append">
+          <button class="input-group-text" (click)="searchReferenceLicense(SelectLicenseType.forHasLicense)">
+            <i aria-hidden="true" class="fa fa-search"></i>
+          </button>
+        </div>
+        <div class="invalid-feedback">กรุณาระบุเลขที่ใบอนุญาตมี</div>
+      </div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtOwnerLicenseIssueDate" class="col-form-label col-form-label-sm">ลงวันที่ </label>
+      <input type="text" [value]="RefDoc.REF_HAS_LICENSE_ISSUE_DATE | toDateString" id="txtOwnerLicenseIssueDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtOwnerLicenseExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" [value]="RefDoc.REF_HAS_LICENSE_EXPIRY_DATE | toDateString" id="txtOwnerLicenseExpireDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-8 col-sm-4 col-lg-3">
+      <label for="txtOwnerLicenseQTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต *</label>
+      <input type="text" [value]="RefDoc.REF_HAS_LICENSE_QTY | toQTY:unitNameOfReferenceHasLicense" id="txtOwnerLicenseQTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+    <!-- <div class="form-group col-xs-4 col-sm-2 col-lg-1">
+      <label for="txtOwnerLicenseQTYUnit" class="col-form-label col-form-label-sm">&nbsp;</label>
+      <input type="text" readonly class="form-control-plaintext form-control-sm" id="txtOwnerLicenseQTYUnit" [value]="unitNameOfReferenceHasLicense">
+    </div> -->
+
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-xs-1 col-sm-6 col-lg-3">
+      <label for="txtExportLicenseDocNo" class="col-form-label col-form-label-sm">หนังสืออนุญาตเลขที่</label>
+      <div class="input-group input-group-sm mb-2">
+        <div class="input-group-prepend">
+          <button class="input-group-text" (click)="clearReferenceLicense(SelectLicenseType.forExportLicense)"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <input type="text" [value]="RefDoc.REF_EXPORT_LICENSE_NO" id="txtExportLicenseOwnerNo" class="form-control form-control-sm" style="text-align:center;" readonly (change)="clearValidate('txtLicenseOwnerNo')" />
+        <!-- <input type="text" id="txtLicenseDocNo" class="form-control form-control-sm" style="text-align:center;" readonly /> -->
+        <div class="input-group-append">
+          <button class="input-group-text" (click)="searchReferenceLicense(SelectLicenseType.forExportLicense)">
+            <i aria-hidden="true" class="fa fa-search"></i>
+          </button>
+        </div>
+        <!-- <div class="invalid-feedback">กรุณาระบุเลขที่ใบอนุญาตมี</div> -->
+      </div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtExportLicenseDocIssueDate" class="col-form-label col-form-label-sm">ลงวันที่ </label>
+      <input type="text" [value]="RefDoc.REF_EXPORT_LICENSE_ISSUE_DATE | toDateString" id="txtExportLicenseDocIssueDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtExportLicenseDocNoExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" [value]="RefDoc.REF_EXPORT_LICENSE_EXPIRY_DATE | toDateString" id="txtExportLicenseDocNoExpireDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-8 col-sm-4 col-lg-3">
+      <label for="txtExportLicenseDocNoQTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต</label>
+      <input type="text" [value]="RefDoc.REF_EXPORT_LICENSE_QTY | toQTY:unitNameOfReferenceExportLicense" id="txtExportLicenseDocNoQTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+    <!-- <div class="form-group col-xs-4 col-sm-2 col-lg-1">
+      <label for="txtOwnerLicenseQTYUnit" class="col-form-label col-form-label-sm">&nbsp;</label>
+      <input type="text" readonly class="form-control-plaintext form-control-sm" id="txtOwnerLicenseQTYUnit" [value]="unitNameOfReferenceHasLicense">
+    </div> -->
+
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="form-group col-sm-6 col-lg-3">
+      <label for="txtImport_PeriodQTY" class="col-form-label col-form-label-sm">จำนวนที่ส่งออกแล้ว <span class="txt-require">*</span></label>
+      <!-- <input type="number" step="0.001" [ngModel]="RefDoc.GRADUAL_QUANTITY | toQTY" (ngModelChange)="RefDoc.GRADUAL_QUANTITY = $event" min="0" id="txtImport_PeriodQTY" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" [(InputNumModel)]="RefDoc.GRADUAL_QUANTITY" (InputNumModelChange)="calRemain()" min="0" id="txtImport_PeriodQTY" class="form-control form-control-sm txt-right" />
+      <!-- <input type="text" [(InputNumModel)]="RefDoc.GRADUAL_QUANTITY" min="0" id="txtImport_PeriodQTY" class="form-control form-control-sm txt-right" /> -->
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลจำนวนที่ส่งออกแล้ว มากกว่า 0</div>
+    </div>
+    <div class="form-group col-sm-6 col-lg-3">
+      <label for="txtImport_Done" class="col-form-label col-form-label-sm">จำนวนที่ยังไม่ได้ส่งออก <span class="txt-require">*</span></label>
+      <!-- <input type="number" step="0.001" [ngModel]="RefDoc.REMAIN_QUANTITY | toQTY" (ngModelChange)="RefDoc.REMAIN_QUANTITY=$event" min="0" id="txtImport_Done" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" [(InputNumModel)]="RefDoc.REMAIN_QUANTITY" min="0" id="txtImport_Done" class="form-control form-control-sm txt-right" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลจำนวนที่ยังไม่ได้ส่งออกแล้ว มากกว่า 0</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtSaleFor" class="col-form-label col-form-label-sm">จำหน่ายให้กับบริษัท</label>
+      <input type="text" [(ngModel)]="Arm.CONSIGNEE_NAME" id="txtSaleFor" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtSaleForCountry" class="col-form-label col-form-label-sm">ประเทศ</label>
+      <select class="form-control form-control-sm" id="txtSaleForCountry" [(ngModel)]="countryOfExport">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let c of CountryList" [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPONo" class="col-form-label col-form-label-sm">P/O No.</label>
+      <input type="text" [(ngModel)]="RefDoc.PO_NO" id="txtExportPONo" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPODate" class="col-form-label col-form-label-sm">ลงวันที่</label>
+      <div class="input-group input-group-sm mb-2">
+        <input type="text" [value]="RefDoc.PO_DATE | toDateString" id="txtExportPODate" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdExportPODate">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPOContactName" class="col-form-label col-form-label-sm">ชื่อในหนังสือผู้ใช้ปลายทาง</label>
+      <input type="text" [(ngModel)]="RefDoc.DOC_END_USER_NAME" id="txtExportPOContactName" class="form-control form-control-sm" />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPODocDate" class="col-form-label col-form-label-sm">วันที่เอกสาร</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="RefDoc.DOC_END_USER_DATE | toDateString" id="txtExportPODocDate" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdExportPODocDate">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPeriodFrom" class="col-form-label col-form-label-sm">ห้วงเวลาส่งออก</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="RefDoc.EXPORT_START_TIME | toDateString : 'MMM YYYY'" id="txtExportPeriodFrom" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdExportPeriodFrom">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="txtExportPeriodTo" class="col-form-label col-form-label-sm">ถึง</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="RefDoc.EXPORT_END_TIME | toDateString : 'MMM YYYY'" id="txtExportPeriodTo" class="form-control form-control-sm" readonly />
+        <div class="input-group-append">
+          <button class="input-group-text" id="cmdExportPeriodTo">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="txtTransportOfExportTime" class="col-form-label col-form-label-sm">ขนส่งโดย (เลือกได้มากกว่า 1 ข้อ หรือ ไม่ระบุ)</label>
+    </div>
+  </div>
+
+  <div class="form-check form-check-inline form-control-sm">
+    <input class="form-check-input" type="checkbox" value="B" id="IsExportByShip" [checked]="IsCheck_ByBoat" (click)="setTransformBy('B', 'IsExportByShip')">
+    <label class="form-check-label" for="IsExportByShip">ทางเรือ</label>
+  </div>
+  <div class="form-check form-check-inline form-control-sm">
+    <input class="form-check-input" type="checkbox" value="A" id="IsExportByAir" [checked]="IsCheck_ByPlane" (click)="setTransformBy('P', 'IsExportByAir')">
+    <label class="form-check-label" for="IsExportByAir">ทางเครื่องบิน</label>
+  </div>
+  <div class="form-check form-check-inline form-control-sm">
+    <input class="form-check-input" type="checkbox" value="C" id="IsExportByCar" [checked]="IsCheck_ByTruck" (click)="setTransformBy('T', 'IsExportByCar')">
+    <label class="form-check-label" for="IsExportByCar">ทางรถยนต์</label>
+  </div>
+
+  <div class="clearfix">&nbsp;<br /></div>
+
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="txtTransportOfExportTime" class="col-form-label col-form-label-sm">อื่นๆ (พิมพ์ในใบคำขอ)</label>
+      <textarea [(ngModel)]="RefDoc.NOTE1" id="txtTransportOfExportTime" class="form-control form-control-sm"></textarea>
+    </div>
+  </div>
+
+</div>
+
+
+<cdss-popup-search-ref-license tag="search-license" (ready)="initialPopup($event)"></cdss-popup-search-ref-license>

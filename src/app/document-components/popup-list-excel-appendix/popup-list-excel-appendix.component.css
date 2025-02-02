@@ -1,0 +1,9 @@
+.row-import {
+
+}
+
+.row-not-import {
+  text-decoration: line-through;
+  color: lightcoral;
+}
+

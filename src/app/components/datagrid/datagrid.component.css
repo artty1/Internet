@@ -1,0 +1,13 @@
+.dgHeader{
+  font-weight: bold;
+}
+
+.data-right {
+  text-align: right;
+}
+.data-center {
+  text-align: center;
+}
+.data-left {
+  text-align: left;
+}

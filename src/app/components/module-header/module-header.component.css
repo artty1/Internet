@@ -1,0 +1,18 @@
+.document-header {
+  border-width: 0px;
+  /* height: 23px; */
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-size: 2em;
+  color: #006600;
+  /* margin-bottom: 25px; */
+  display: flex;
+}
+
+.document-header-title {
+  flex: 1 1 auto;
+}
+
+.document-header-command {
+  flex: 0 0 auto;
+}

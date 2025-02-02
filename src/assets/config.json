@@ -1,0 +1,30 @@
+{
+    "_application_name": "E-Licensing for Trader",
+    "_contact": "หมายเลขติดต่อ 099-999-9999",
+    "_version": "1.0.0.18 (2022-01-06 20:00)",
+    "_api_url_for_dev": "http://localhost:56249/api/",
+    "api_url_for_server_test": "http://192.168.130.30/trader/api/",
+
+    "profile_url": "http://192.168.130.30/EInternet/Account/getEProfile",
+    
+    "api_url": "http://192.168.130.30/trader/api/",
+    "did_url": "http://192.168.130.30/EInternet/",
+    "elicensing_api_url": "http://192.168.130.30/ELicensing/api/",
+
+    "is_mockup": "~",
+    "allow_user_refresh_browser": false,
+    "_mockup_user": {
+        "user_id": 1361,
+        "user_code": "go003201",
+        "user_name": "go003201",
+        "trader_id": 1361,
+        "trader_name": "การไฟฟ้าฝ่ายผลิตแห่งประเทศไทย"
+    },
+    "mockup_user": {
+        "user_id": 48,
+        "user_code": "sc000601",
+        "user_name": "sc000601",
+        "trader_id": 48,
+        "trader_name": "บริษัท เดรเกอร์ เซฟตี้ (ไทยแลนด์) จำกัด"
+    }
+  }

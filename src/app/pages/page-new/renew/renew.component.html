@@ -1,0 +1,9 @@
+<div *ngIf="!isLoadingReference">
+  <!--<cdss-request-document requestType="requestType"></cdss-request-document>-->
+  <cdss-request-document></cdss-request-document>
+</div>
+
+<div *ngIf="isLoadingReference">
+  <!--<div>Refer to : {{referTo}}</div>-->
+  <cdss-loading></cdss-loading>
+</div>

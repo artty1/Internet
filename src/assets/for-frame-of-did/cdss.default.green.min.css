@@ -1,0 +1,2697 @@
+.k-in {
+	border-color: transparent;
+}
+.k-item {
+	border-color: transparent;
+}
+.k-window-action {
+	border-color: transparent;
+}
+.k-block {
+	text-align: left; font-family: Helvetica, Arial, Sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);
+}
+.k-widget {
+	text-align: left; font-family: Helvetica, Arial, Sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);
+}
+.k-block {
+	border-color: rgb(197, 197, 197);
+}
+.k-widget {
+	border-color: rgb(197, 197, 197);
+}
+.k-input {
+	border-color: rgb(197, 197, 197);
+}
+.k-textbox {
+	border-color: rgb(197, 197, 197);
+}
+.k-group {
+	border-color: rgb(197, 197, 197);
+}
+.k-content {
+	border-color: rgb(197, 197, 197);
+}
+.k-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-filter-row > th {
+	border-color: rgb(197, 197, 197);
+}
+.k-editable-area {
+	border-color: rgb(197, 197, 197);
+}
+.k-separator {
+	border-color: rgb(197, 197, 197);
+}
+.k-colorpicker .k-i-arrow-s {
+	border-color: rgb(197, 197, 197);
+}
+.k-textbox > input {
+	border-color: rgb(197, 197, 197);
+}
+.k-autocomplete {
+	border-color: rgb(197, 197, 197);
+}
+.k-dropdown-wrap {
+	border-color: rgb(197, 197, 197);
+}
+.k-toolbar {
+	border-color: rgb(197, 197, 197);
+}
+.k-group-footer td {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-footer {
+	border-color: rgb(197, 197, 197);
+}
+.k-footer-template td {
+	border-color: rgb(197, 197, 197);
+}
+.k-state-default {
+	border-color: rgb(197, 197, 197);
+}
+.k-state-default .k-select {
+	border-color: rgb(197, 197, 197);
+}
+.k-state-disabled {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-header-wrap {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-header-locked {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-footer-locked {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-content-locked {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid td {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid td.k-state-selected {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-footer-wrap {
+	border-color: rgb(197, 197, 197);
+}
+.k-pager-wrap {
+	border-color: rgb(197, 197, 197);
+}
+.k-pager-wrap .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-pager-refresh {
+	border-color: rgb(197, 197, 197);
+}
+.k-grouping-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-grouping-header .k-group-indicator {
+	border-color: rgb(197, 197, 197);
+}
+.k-panelbar > .k-item > .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-panel > .k-item > .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-panelbar .k-panel {
+	border-color: rgb(197, 197, 197);
+}
+.k-panelbar .k-content {
+	border-color: rgb(197, 197, 197);
+}
+.k-treemap-tile {
+	border-color: rgb(197, 197, 197);
+}
+.k-calendar th {
+	border-color: rgb(197, 197, 197);
+}
+.k-slider-track {
+	border-color: rgb(197, 197, 197);
+}
+.k-splitbar {
+	border-color: rgb(197, 197, 197);
+}
+.k-dropzone-active {
+	border-color: rgb(197, 197, 197);
+}
+.k-tiles {
+	border-color: rgb(197, 197, 197);
+}
+.k-toolbar {
+	border-color: rgb(197, 197, 197);
+}
+.k-tooltip {
+	border-color: rgb(197, 197, 197);
+}
+.k-button-group .k-tool {
+	border-color: rgb(197, 197, 197);
+}
+.k-upload-files {
+	border-color: rgb(197, 197, 197);
+}
+.k-group {
+	
+}
+.k-toolbar {
+	
+}
+.k-grouping-header {
+	
+}
+.k-pager-wrap {
+	
+}
+.k-group-footer td {
+	
+}
+.k-grid-footer {
+	
+}
+.k-footer-template td {
+	
+}
+.k-widget .k-status {
+	
+}
+.k-calendar th {
+	
+}
+.k-dropzone-hovered {
+	
+}
+.k-widget.k-popup {
+	
+}
+.k-grouping-row td {
+	background-color: rgb(227, 227, 227);
+}
+td.k-group-cell {
+	background-color: rgb(227, 227, 227);
+}
+.k-resize-handle-inner {
+	background-color: rgb(227, 227, 227);
+}
+.k-list-container {
+	border-color: rgb(197, 197, 197); background-color: rgb(233, 233, 233);
+}
+.k-content {
+	background-color: rgb(255, 255, 255);
+}
+.k-editable-area {
+	background-color: rgb(255, 255, 255);
+}
+.k-panelbar > li.k-item {
+	background-color: rgb(255, 255, 255);
+}
+.k-panel > li.k-item {
+	background-color: rgb(255, 255, 255);
+}
+.k-tiles {
+	background-color: rgb(255, 255, 255);
+}
+.k-alt {
+	background-color: rgb(245, 245, 245);
+}
+.k-separator {
+	background-color: rgb(245, 245, 245);
+}
+.k-resource.k-alt {
+	background-color: rgb(245, 245, 245);
+}
+.k-pivot-layout > tbody > tr:first-child > td:first-child {
+	background-color: rgb(245, 245, 245);
+}
+.k-pivot-rowheaders .k-alt .k-alt {
+	background-color: rgb(245, 245, 245);
+}
+.k-header.k-alt {
+	background-color: rgb(245, 245, 245);
+}
+.k-textbox {
+	border-color: rgb(197, 197, 197); background-color: rgb(227, 227, 227);
+}
+.k-autocomplete.k-header {
+	border-color: rgb(197, 197, 197); background-color: rgb(227, 227, 227);
+}
+.k-dropdown-wrap.k-state-active {
+	border-color: rgb(197, 197, 197); background-color: rgb(227, 227, 227);
+}
+.k-picker-wrap.k-state-active {
+	border-color: rgb(197, 197, 197); background-color: rgb(227, 227, 227);
+}
+.k-numeric-wrap.k-state-active {
+	border-color: rgb(197, 197, 197); background-color: rgb(227, 227, 227);
+}
+.k-textbox > input {
+	border-color: rgb(197, 197, 197);
+}
+.k-autocomplete .k-input {
+	border-color: rgb(197, 197, 197);
+}
+.k-dropdown-wrap .k-input {
+	border-color: rgb(197, 197, 197);
+}
+.k-autocomplete.k-state-focused .k-input {
+	border-color: rgb(197, 197, 197);
+}
+.k-dropdown-wrap.k-state-focused .k-input {
+	border-color: rgb(197, 197, 197);
+}
+.k-picker-wrap.k-state-focused .k-input {
+	border-color: rgb(197, 197, 197);
+}
+.k-numeric-wrap.k-state-focused .k-input {
+	border-color: rgb(197, 197, 197);
+}
+input.k-textbox {
+	background: none;
+}
+textarea.k-textbox {
+	background: none;
+}
+input.k-textbox:hover {
+	background: none;
+}
+textarea.k-textbox:hover {
+	background: none;
+}
+.k-textbox > input {
+	background: none;
+}
+.k-input {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+input.k-textbox {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+textarea.k-textbox {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+input.k-textbox:hover {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+textarea.k-textbox:hover {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-textbox > input {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-multiselect-wrap {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+[readonly].k-input {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-block {
+	color: rgb(46, 46, 46);
+}
+.k-widget {
+	color: rgb(46, 46, 46);
+}
+.k-popup {
+	color: rgb(46, 46, 46);
+}
+.k-content {
+	color: rgb(46, 46, 46);
+}
+.k-toolbar {
+	color: rgb(46, 46, 46);
+}
+.k-dropdown .k-input {
+	color: rgb(46, 46, 46);
+}
+.k-inverse {
+	color: rgb(255, 255, 255);
+}
+.k-block {
+	color: rgb(46, 46, 46);
+}
+.k-link:link {
+	color: rgb(46, 46, 46);
+}
+.k-link:visited {
+	color: rgb(46, 46, 46);
+}
+.k-nav-current.k-state-hover .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-tabstrip-items .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-panelbar > li > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-header {
+	color: rgb(46, 46, 46);
+}
+.k-treemap-title {
+	color: rgb(46, 46, 46);
+}
+.k-grid-header .k-header > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-header {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-grid-header {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-toolbar {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-dropdown-wrap {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-picker-wrap {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-numeric-wrap {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-grouping-header {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-pager-wrap {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-textbox {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-button {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-progressbar {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-draghandle {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-autocomplete {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-state-highlight {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-tabstrip-items .k-item {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-panelbar .k-tabstrip-items .k-item {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.km-pane-wrapper > .km-pane > .km-view > .km-content {
+	background-position: 50% 50%; background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(227, 227, 227);
+}
+.k-widget.k-tooltip {
+	background-image: url("http://cdn.kendostatic.com/2015.1.429/styles/textures/highlight.png");
+}
+.k-block {
+	background-color: rgb(227, 227, 227);
+}
+.k-header {
+	background-color: rgb(227, 227, 227);
+}
+.k-grid-header {
+	background-color: rgb(227, 227, 227);
+}
+.k-toolbar {
+	background-color: rgb(227, 227, 227);
+}
+.k-grouping-header {
+	background-color: rgb(227, 227, 227);
+}
+.k-pager-wrap {
+	background-color: rgb(227, 227, 227);
+}
+.k-button {
+	background-color: rgb(227, 227, 227);
+}
+.k-draghandle {
+	background-color: rgb(227, 227, 227);
+}
+.k-treemap-tile {
+	background-color: rgb(227, 227, 227);
+}
+html .km-pane-wrapper .k-header {
+	background-color: rgb(227, 227, 227);
+}
+.k-icon:hover {
+	opacity: 1;
+}
+.k-state-hover .k-icon {
+	opacity: 1;
+}
+.k-state-selected .k-icon {
+	opacity: 1;
+}
+.k-state-focused .k-icon {
+	opacity: 1;
+}
+.k-column-menu .k-state-hover .k-sprite {
+	opacity: 1;
+}
+.k-column-menu .k-state-active .k-sprite {
+	opacity: 1;
+}
+.k-pager-numbers .k-current-page .k-link:hover::after {
+	opacity: 1;
+}
+.k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view.k-state-hover > .k-link::after {
+	opacity: 1;
+}
+.k-icon {
+	opacity: 0.8;
+}
+.k-state-disabled .k-icon {
+	opacity: 0.8;
+}
+.k-column-menu .k-sprite {
+	opacity: 0.8;
+}
+.k-pager-numbers .k-current-page .k-link::after {
+	opacity: 0.8;
+}
+.k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view > .k-link::after {
+	opacity: 0.8;
+}
+.k-mobile-list :checked.k-check {
+	opacity: 0.8;
+}
+.k-mobile-list .k-edit-field [type=checkbox]:checked {
+	opacity: 0.8;
+}
+.k-mobile-list .k-edit-field [type=radio]:checked {
+	opacity: 0.8;
+}
+.k-tool {
+	border-color: transparent;
+}
+.k-icon {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-tool-icon {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-grouping-dropclue {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-drop-hint {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-column-menu .k-sprite {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-grid-mobile .k-resize-handle-inner::before {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-grid-mobile .k-resize-handle-inner::after {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-pager-numbers .k-current-page .k-link::after {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view > .k-link::after {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-mobile-list :checked.k-check {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-mobile-list .k-edit-field [type=checkbox]:checked {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-mobile-list .k-edit-field [type=radio]:checked {
+	border-color: transparent; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-loading {
+	background-position: 50% 50%; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/loading.gif");
+}
+.k-state-hover .k-loading {
+	background-position: 50% 50%; background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/loading.gif");
+}
+.k-loading-image {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/loading-image.gif");
+}
+.k-loading-color {
+	background-color: rgb(255, 255, 255);
+}
+.k-button {
+	border-color: rgb(197, 197, 197); color: rgb(46, 46, 46); background-color: rgb(227, 227, 227);
+}
+.k-draghandle {
+	border-color: rgb(197, 197, 197); box-shadow: none; background-color: rgb(255, 255, 255); -webkit-box-shadow: none;
+}
+.k-draghandle:hover {
+	border-color: rgb(188, 180, 176); box-shadow: none; background-color: rgb(188, 180, 176); -webkit-box-shadow: none;
+}
+.k-scheduler {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-scheduler-layout {
+	color: rgb(46, 46, 46);
+}
+.k-scheduler-datecolumn {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-scheduler-groupcolumn {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-scheduler-times tr {
+	border-color: rgb(197, 197, 197);
+}
+.k-scheduler-times th {
+	border-color: rgb(197, 197, 197);
+}
+.k-scheduler-table td {
+	border-color: rgb(197, 197, 197);
+}
+.k-scheduler-header th {
+	border-color: rgb(197, 197, 197);
+}
+.k-scheduler-header-wrap {
+	border-color: rgb(197, 197, 197);
+}
+.k-scheduler-times {
+	border-color: rgb(197, 197, 197);
+}
+.k-nonwork-hour {
+	background-color: rgb(242, 242, 242);
+}
+.k-gantt .k-nonwork-hour {
+	background-color: rgba(0, 0, 0, 0.02);
+}
+.k-gantt .k-header.k-nonwork-hour {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.k-scheduler-table .k-today {
+	background-color: rgb(248, 248, 248);
+}
+.k-today > .k-scheduler-datecolumn {
+	background-color: rgb(248, 248, 248);
+}
+.k-today > .k-scheduler-groupcolumn {
+	background-color: rgb(248, 248, 248);
+}
+.k-scheduler-now-arrow {
+	border-left-color: rgb(226, 0, 0);
+}
+.k-scheduler-now-line {
+	background-color: rgb(226, 0, 0);
+}
+.k-event {
+	background: url("http://cdn.kendostatic.com/2015.1.429/styles/textures/highlight.png") repeat-x 0px -257px rgb(255, 218, 193); border-color: rgb(255, 218, 193); color: rgb(46, 46, 46);
+}
+.k-task-complete {
+	background: url("http://cdn.kendostatic.com/2015.1.429/styles/textures/highlight.png") repeat-x 0px -257px rgb(255, 218, 193); border-color: rgb(255, 218, 193); color: rgb(46, 46, 46);
+}
+.k-event-inverse {
+	color: rgb(255, 255, 255);
+}
+.k-event.k-state-selected {
+	background-position: 0px 0px;
+}
+.k-ie7 .k-event .k-resize-handle {
+	background-color: rgb(186, 186, 186);
+}
+.k-event .k-resize-handle::after {
+	background-color: rgb(186, 186, 186);
+}
+.k-ie7 .k-task-single .k-resize-handle {
+	background-color: rgb(186, 186, 186);
+}
+.k-task-single .k-resize-handle::after {
+	background-color: rgb(186, 186, 186);
+}
+.k-scheduler-marquee::before {
+	border-color: rgb(80, 151, 67);
+}
+.k-scheduler-marquee::after {
+	border-color: rgb(80, 151, 67);
+}
+.k-panelbar .k-content {
+	border-color: rgb(197, 197, 197); color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-panelbar .k-panel {
+	border-color: rgb(197, 197, 197); color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-panelbar .k-item {
+	border-color: rgb(197, 197, 197); color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-panelbar > li > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-panelbar > .k-item > .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-panel > li.k-item {
+	background-color: rgb(255, 255, 255);
+}
+.k-state-active {
+	border-color: rgb(80, 151, 67); color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-state-active:hover {
+	border-color: rgb(80, 151, 67); color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-active-filter {
+	border-color: rgb(80, 151, 67); color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-tabstrip .k-state-active {
+	border-color: rgb(80, 151, 67); color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-fieldselector .k-list-container {
+	background-color: rgb(255, 255, 255);
+}
+.k-button:focus {
+	border-color: rgb(197, 197, 197);
+}
+.k-button.k-state-focused {
+	border-color: rgb(197, 197, 197);
+}
+.k-button:hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-button.k-state-hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-button:active {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-button.k-state-active {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-button:hover:active {
+	border-color: rgb(239, 103, 26); color: rgb(255, 255, 255); background-color: rgb(243, 88, 0);
+}
+.k-button.k-state-active:hover {
+	border-color: rgb(239, 103, 26); color: rgb(255, 255, 255); background-color: rgb(243, 88, 0);
+}
+[disabled].k-button {
+	border-color: rgb(197, 197, 197); color: rgb(159, 158, 158); background-image: none; background-color: rgba(0, 0, 0, 0);
+}
+.k-button.k-state-disabled {
+	border-color: rgb(197, 197, 197); color: rgb(159, 158, 158); background-image: none; background-color: rgba(0, 0, 0, 0);
+}
+.k-state-disabled .k-button {
+	border-color: rgb(197, 197, 197); color: rgb(159, 158, 158); background-image: none; background-color: rgba(0, 0, 0, 0);
+}
+.k-state-disabled .k-button:hover {
+	border-color: rgb(197, 197, 197); color: rgb(159, 158, 158); background-image: none; background-color: rgba(0, 0, 0, 0);
+}
+.k-button.k-state-disabled:hover {
+	border-color: rgb(197, 197, 197); color: rgb(159, 158, 158); background-image: none; background-color: rgba(0, 0, 0, 0);
+}
+.k-state-disabled .k-button:active {
+	border-color: rgb(197, 197, 197); color: rgb(159, 158, 158); background-image: none; background-color: rgba(0, 0, 0, 0);
+}
+.k-button.k-state-disabled:active {
+	border-color: rgb(197, 197, 197); color: rgb(159, 158, 158); background-image: none; background-color: rgba(0, 0, 0, 0);
+}
+:not(.k-state-disabled):not([disabled]).k-button:focus {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+:not(.k-state-disabled):not([disabled]).k-button:focus:active {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-menu .k-state-hover > .k-state-active {
+	background-color: transparent;
+}
+.k-state-highlight {
+	background: rgb(255, 255, 255); color: rgb(46, 46, 46);
+}
+.k-state-focused {
+	border-color: rgb(188, 180, 176);
+}
+.k-grouping-row .k-state-focused {
+	border-color: rgb(188, 180, 176);
+}
+.k-calendar .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-calendar .k-footer {
+	padding: 0px;
+}
+.k-calendar .k-footer .k-nav-today {
+	color: rgb(46, 46, 46); text-decoration: none; background-color: rgb(255, 255, 255);
+}
+.k-calendar .k-footer .k-nav-today:hover {
+	text-decoration: underline; background-color: rgb(255, 255, 255);
+}
+.k-calendar .k-footer .k-nav-today.k-state-hover {
+	text-decoration: underline; background-color: rgb(255, 255, 255);
+}
+.k-calendar .k-footer .k-nav-today:active {
+	background-color: rgb(255, 255, 255);
+}
+.k-calendar .k-link.k-nav-fast {
+	color: rgb(46, 46, 46);
+}
+.k-calendar .k-nav-fast.k-state-hover {
+	color: rgb(46, 46, 46); text-decoration: none; background-color: rgb(188, 180, 176);
+}
+.k-calendar .k-link.k-state-hover {
+	border-radius: 0px;
+}
+.k-window-titlebar .k-link {
+	border-radius: 0px;
+}
+.k-calendar .k-footer .k-link {
+	border-radius: 0px;
+}
+.k-calendar th {
+	background-color: rgb(235, 235, 235);
+}
+.k-calendar-container.k-group {
+	border-color: rgb(197, 197, 197);
+}
+.k-state-selected {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-state-selected:link {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-state-selected:visited {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-list > .k-state-selected {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-list > .k-state-highlight {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-panel > .k-state-selected {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-ghost-splitbar-vertical {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-ghost-splitbar-horizontal {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-draghandle.k-state-selected:hover {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-scheduler .k-scheduler-toolbar .k-state-selected {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-scheduler .k-today.k-state-selected {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-marquee-color {
+	border-color: rgb(80, 151, 67); color: rgb(255, 255, 255); background-color: rgb(80, 151, 67);
+}
+.k-virtual-item.k-first {
+	border-bottom-color: rgb(159, 158, 158);
+}
+.k-list > .k-item.k-first {
+	border-bottom-color: rgb(159, 158, 158);
+}
+.k-marquee-text {
+	color: rgb(255, 255, 255);
+}
+.k-state-focused {
+	box-shadow: inset 0px 0px 5px 1px #bcb4b0; -webkit-box-shadow: #bcb4b0 0px 0px 5px 1px inset;
+}
+.k-list > .k-state-focused {
+	box-shadow: inset 0px 0px 5px 1px #bcb4b0; -webkit-box-shadow: #bcb4b0 0px 0px 5px 1px inset;
+}
+.k-listview > .k-state-focused {
+	box-shadow: inset 0px 0px 5px 1px #bcb4b0; -webkit-box-shadow: #bcb4b0 0px 0px 5px 1px inset;
+}
+.k-grid-header th.k-state-focused {
+	box-shadow: inset 0px 0px 5px 1px #bcb4b0; -webkit-box-shadow: #bcb4b0 0px 0px 5px 1px inset;
+}
+td.k-state-focused {
+	box-shadow: inset 0px 0px 5px 1px #bcb4b0; -webkit-box-shadow: #bcb4b0 0px 0px 5px 1px inset;
+}
+.k-button.k-state-focused {
+	box-shadow: inset 0px 0px 5px 1px #bcb4b0; -webkit-box-shadow: #bcb4b0 0px 0px 5px 1px inset;
+}
+.k-state-focused.k-state-selected {
+	box-shadow: inset 0px 0px 3px 4px #df5100; -webkit-box-shadow: #df5100 0px 0px 3px 4px inset;
+}
+.k-list > .k-state-focused.k-state-selected {
+	box-shadow: inset 0px 0px 3px 4px #df5100; -webkit-box-shadow: #df5100 0px 0px 3px 4px inset;
+}
+.k-listview > .k-state-focused.k-state-selected {
+	box-shadow: inset 0px 0px 3px 4px #df5100; -webkit-box-shadow: #df5100 0px 0px 3px 4px inset;
+}
+td.k-state-focused.k-state-selected {
+	box-shadow: inset 0px 0px 3px 4px #df5100; -webkit-box-shadow: #df5100 0px 0px 3px 4px inset;
+}
+.k-ie8 .k-panelbar span.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie8 .k-menu li.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie8 .k-listview > .k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie8 .k-grid-header th.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie8 td.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie8 .k-tool.k-state-hover {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie8 .k-button:focus {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie8 .k-button.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-panelbar span.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-menu li.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-listview > .k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-grid-header th.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 td.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-tool.k-state-hover {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-button:focus {
+	background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-button.k-state-focused {
+	background-color: rgb(188, 180, 176);
+}
+.k-list > .k-state-selected.k-state-focused {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-list-optionlabel.k-state-selected.k-state-focused {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-state-selected > .k-link {
+	color: rgb(255, 255, 255);
+}
+.k-panelbar > li > .k-state-selected {
+	color: rgb(255, 255, 255);
+}
+.k-panelbar > li.k-state-default > .k-link.k-state-selected {
+	color: rgb(255, 255, 255);
+}
+.k-state-hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-state-hover:hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-splitbar-horizontal-hover:hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-splitbar-vertical-hover:hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-list > .k-state-hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-scheduler .k-scheduler-toolbar ul li.k-state-hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-pager-wrap .k-link:hover {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-dropdown .k-state-focused {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-filebrowser-dropzone {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-mobile-list .k-item > .k-link:active {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-mobile-list .k-item > .k-label:active {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-mobile-list .k-edit-label.k-check:active {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-mobile-list .k-recur-view .k-check:active {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-mobile-list .k-scheduler-timezones :nth-child(2).k-edit-field:active {
+	border-color: rgb(188, 180, 176); color: rgb(46, 46, 46); background-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-window-titlebar .k-state-hover {
+	border-color: rgb(188, 180, 176);
+}
+.k-ie8 .k-window-titlebar .k-state-hover {
+	border-color: rgb(188, 180, 176);
+}
+.k-state-hover > .k-select {
+	border-color: rgb(188, 180, 176);
+}
+.k-state-focused > .k-select {
+	border-color: rgb(188, 180, 176);
+}
+.k-button:hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-button.k-state-hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-button:focus {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-button.k-state-focused {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-textbox:hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-state-hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-state-hover:hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-pager-wrap .k-link:hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-other-month.k-state-hover .k-link {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+div.k-filebrowser-dropzone em {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-draghandle:hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-pager-wrap {
+	color: rgb(46, 46, 46); background-color: rgb(227, 227, 227);
+}
+.k-autocomplete.k-state-active {
+	background-image: none;
+}
+.k-picker-wrap.k-state-active {
+	background-image: none;
+}
+.k-numeric-wrap.k-state-active {
+	background-image: none;
+}
+.k-dropdown-wrap.k-state-active {
+	background-image: none;
+}
+.k-state-active {
+	background-image: none;
+}
+.k-state-active:hover {
+	background-image: none;
+}
+.k-state-active > .k-link {
+	background-image: none;
+}
+.k-button:active {
+	background-image: none;
+}
+.k-panelbar > .k-item > .k-state-focused {
+	background-image: none;
+}
+.k-state-selected {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-button:active {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-button.k-state-active {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-draghandle.k-state-selected:hover {
+	background-image: none, linear-gradient(rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.k-button:active {
+	background-position: 50% 50%;
+}
+.k-button.k-state-active {
+	background-position: 50% 50%;
+}
+.k-draghandle.k-state-selected:hover {
+	background-position: 50% 50%;
+}
+.k-tool-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite.png");
+}
+.k-state-hover > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-other-month.k-state-hover .k-link {
+	color: rgb(46, 46, 46);
+}
+div.k-filebrowser-dropzone em {
+	color: rgb(46, 46, 46);
+}
+.k-autocomplete.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-autocomplete.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-picker-wrap.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-picker-wrap.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-numeric-wrap.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-numeric-wrap.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-dropdown-wrap.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-dropdown-wrap.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.km-pane-wrapper .k-mobile-list input:not([type='checkbox']):not([type='radio']) {
+	color: rgb(46, 46, 46);
+}
+.km-pane-wrapper .km-pane .k-mobile-list select:not([multiple]) {
+	color: rgb(46, 46, 46);
+}
+.km-pane-wrapper .k-mobile-list textarea {
+	color: rgb(46, 46, 46);
+}
+.k-dropdown .k-state-focused .k-input {
+	color: rgb(46, 46, 46);
+}
+.k-dropdown .k-state-hover .k-input {
+	color: rgb(46, 46, 46);
+}
+.k-state-error {
+	border-color: rgb(226, 0, 0); color: rgb(255, 255, 255); background-color: rgb(255, 132, 0);
+}
+.k-state-disabled {
+	opacity: 0.7;
+}
+.k-ie7 .k-state-disabled {
+	
+}
+.k-ie8 .k-state-disabled {
+	
+}
+.k-tile-empty.k-state-selected {
+	border-width: 0px; background-image: none; background-color: transparent;
+}
+.k-loading-mask.k-state-selected {
+	border-width: 0px; background-image: none; background-color: transparent;
+}
+.k-state-disabled {
+	color: rgb(159, 158, 158);
+}
+.k-state-disabled .k-link {
+	color: rgb(159, 158, 158);
+}
+.k-state-disabled .k-button {
+	color: rgb(159, 158, 158);
+}
+.k-other-month {
+	color: rgb(159, 158, 158);
+}
+.k-other-month .k-link {
+	color: rgb(159, 158, 158);
+}
+.k-dropzone em {
+	color: rgb(159, 158, 158);
+}
+.k-dropzone .k-upload-status {
+	color: rgb(159, 158, 158);
+}
+.k-tile-empty strong {
+	color: rgb(159, 158, 158);
+}
+.k-slider .k-draghandle {
+	color: rgb(159, 158, 158);
+}
+.k-progressbar-indeterminate {
+	background: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/indeterminate.gif");
+}
+.k-progressbar-indeterminate .k-progress-status-wrap {
+	display: none;
+}
+.k-progressbar-indeterminate .k-state-selected {
+	display: none;
+}
+.k-slider-track {
+	background-color: rgb(197, 197, 197);
+}
+.k-slider-selection {
+	background-color: rgb(80, 151, 67);
+}
+.k-slider-horizontal .k-tick {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/slider-h.gif");
+}
+.k-slider-vertical .k-tick {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/slider-v.gif");
+}
+.k-widget.k-tooltip {
+	border-color: rgb(197, 197, 197); color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0);
+}
+.k-widget.k-tooltip-validation {
+	border-color: rgb(85, 85, 85); color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0);
+}
+.input-prepend .k-tooltip-validation {
+	top: 3px; font-size: 12px; position: relative;
+}
+.input-append .k-tooltip-validation {
+	top: 3px; font-size: 12px; position: relative;
+}
+.k-callout-n {
+	border-bottom-color: rgb(197, 197, 197);
+}
+.k-callout-w {
+	border-right-color: rgb(197, 197, 197);
+}
+.k-callout-s {
+	border-top-color: rgb(197, 197, 197);
+}
+.k-callout-e {
+	border-left-color: rgb(197, 197, 197);
+}
+.k-tooltip-validation .k-callout-n {
+	border-bottom-color: rgb(85, 85, 85);
+}
+.k-tooltip-validation .k-callout-w {
+	border-right-color: rgb(85, 85, 85);
+}
+.k-tooltip-validation .k-callout-s {
+	border-top-color: rgb(85, 85, 85);
+}
+.k-tooltip-validation .k-callout-e {
+	border-left-color: rgb(85, 85, 85);
+}
+.k-splitbar {
+	background-color: rgb(227, 227, 227);
+}
+.k-restricted-size-vertical {
+	background-color: rgb(255, 255, 255);
+}
+.k-restricted-size-horizontal {
+	background-color: rgb(255, 255, 255);
+}
+.k-file {
+	border-color: rgb(197, 197, 197); background-color: rgb(255, 255, 255);
+}
+.k-file-progress {
+	color: rgb(0, 102, 204);
+}
+.k-file-progress .k-progress {
+	background-color: rgb(208, 248, 255);
+}
+.k-file-success {
+	color: rgb(40, 118, 11);
+}
+.k-file-success .k-progress {
+	background-color: rgb(221, 255, 208);
+}
+.k-file-error {
+	color: rgb(204, 0, 0);
+}
+.k-file-error .k-progress {
+	background-color: rgb(255, 222, 215);
+}
+.k-tile {
+	border-color: rgb(255, 255, 255);
+}
+.k-textbox:hover {
+	border-color: rgb(188, 180, 176);
+}
+.k-tiles li.k-state-hover {
+	border-color: rgb(188, 180, 176);
+}
+.k-tiles li.k-state-selected {
+	border-color: rgb(80, 151, 67);
+}
+.k-filebrowser .k-tile .k-folder {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/imagebrowser.png"); background-size: auto auto;
+}
+.k-filebrowser .k-tile .k-file {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/imagebrowser.png"); background-size: auto auto;
+}
+.k-leaf {
+	color: rgb(255, 255, 255);
+}
+.k-leaf.k-state-hover:hover {
+	color: rgb(255, 255, 255);
+}
+.k-leaf.k-inverse {
+	color: rgb(0, 0, 0);
+}
+.k-leaf.k-inverse.k-state-hover:hover {
+	color: rgb(0, 0, 0);
+}
+.k-widget {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-button {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-slider {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-treeview {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-upload {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-state-hover {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-autocomplete.k-state-focused {
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-dropdown-wrap.k-state-focused {
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-picker-wrap.k-state-focused {
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-numeric-wrap.k-state-focused {
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-state-selected {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-state-active {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-grid td.k-state-selected.k-state-focused {
+	background-color: rgb(86, 162, 72);
+}
+.k-popup {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-menu .k-menu-group {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-grid .k-filter-options {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-time-popup {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-datepicker-calendar {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-autocomplete.k-state-border-down {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-autocomplete.k-state-border-up {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-dropdown-wrap.k-state-active {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-picker-wrap.k-state-active {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-multiselect.k-state-focused {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-filebrowser .k-image {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-tooltip {
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-treemap-tile.k-state-hover {
+	box-shadow: inset 0px 0px 0px 3px #c5c5c5; -webkit-box-shadow: inset 0 0 0 3px #c5c5c5;
+}
+.k-window {
+	border-color: rgba(0, 0, 0, 0.298039); box-shadow: 1px 1px 7px 1px rgba(128,128,128,0.298039); background-color: rgb(255, 255, 255); -webkit-box-shadow: 1px 1px 7px 1px rgba(128, 128, 128, 0.298039);
+}
+.k-window.k-state-focused {
+	border-color: rgba(0, 0, 0, 0.298039); box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.298039); -webkit-box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.298039);
+}
+.k-window.k-window-maximized {
+	border-radius: 0px;
+}
+.k-window-maximized .k-window-titlebar {
+	border-radius: 0px;
+}
+.k-window-maximized .k-window-content {
+	border-radius: 0px;
+}
+.k-shadow {
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-inset {
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.298039); -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.298039);
+}
+.k-editor-inline ::selection {
+	color: rgb(255, 255, 255); text-shadow: none; background-color: rgb(80, 151, 67);
+}
+.k-widget.k-notification.k-notification-info {
+	border-color: rgb(85, 85, 85); color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0);
+}
+.k-widget.k-notification.k-notification-success {
+	border-color: rgb(85, 85, 85); color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0);
+}
+.k-widget.k-notification.k-notification-warning {
+	border-color: rgb(85, 85, 85); color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0);
+}
+.k-widget.k-notification.k-notification-error {
+	border-color: rgb(85, 85, 85); color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0);
+}
+.k-gantt .k-treelist {
+	background: rgb(245, 245, 245);
+}
+.k-gantt .k-treelist .k-alt {
+	background-color: rgb(220, 220, 220);
+}
+.k-gantt .k-treelist .k-state-selected {
+	background-color: rgb(80, 151, 67);
+}
+.k-gantt .k-treelist .k-state-selected td {
+	background-color: rgb(80, 151, 67);
+}
+.k-gantt .k-treelist .k-alt.k-state-selected {
+	background-color: rgb(80, 151, 67);
+}
+.k-gantt .k-treelist .k-alt.k-state-selected > td {
+	background-color: rgb(80, 151, 67);
+}
+.k-task-dot::after {
+	border-color: rgb(46, 46, 46); background-color: rgb(46, 46, 46);
+}
+.k-task-dot:hover::after {
+	background-color: rgb(255, 255, 255);
+}
+.k-task-summary {
+	background: rgb(110, 110, 110); border-color: rgb(110, 110, 110);
+}
+.k-task-milestone {
+	background: rgb(46, 46, 46); border-color: rgb(46, 46, 46);
+}
+.k-task-summary-complete {
+	background: rgb(46, 46, 46); border-color: rgb(46, 46, 46);
+}
+.k-state-selected.k-task-summary {
+	background: rgb(95, 174, 83); border-color: rgb(95, 174, 83);
+}
+.k-state-selected.k-task-milestone {
+	background: rgb(80, 151, 67); border-color: rgb(80, 151, 67);
+}
+.k-state-selected .k-task-summary-complete {
+	background: rgb(80, 151, 67); border-color: rgb(80, 151, 67);
+}
+.k-task-single {
+	border-color: rgb(255, 218, 193); color: rgb(46, 46, 46); background-color: rgb(255, 239, 229);
+}
+.k-state-selected.k-task-single {
+	border-color: rgb(80, 151, 67);
+}
+.k-line {
+	color: rgb(46, 46, 46); background-color: rgb(46, 46, 46);
+}
+.k-state-selected.k-line {
+	color: rgb(80, 151, 67); background-color: rgb(80, 151, 67);
+}
+.k-resource {
+	background-color: rgb(255, 255, 255);
+}
+.k-i-kpi-decrease {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi.png");
+}
+.k-i-kpi-denied {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi.png");
+}
+.k-i-kpi-equal {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi.png");
+}
+.k-i-kpi-hold {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi.png");
+}
+.k-i-kpi-increase {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi.png");
+}
+.k-i-kpi-open {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi.png");
+}
+.k-block {
+	border-radius: 4px;
+}
+.k-button {
+	border-radius: 4px;
+}
+.k-textbox {
+	border-radius: 4px;
+}
+.k-drag-clue {
+	border-radius: 4px;
+}
+.k-touch-scrollbar {
+	border-radius: 4px;
+}
+.k-window {
+	border-radius: 4px;
+}
+.k-window-titleless .k-window-content {
+	border-radius: 4px;
+}
+.k-window-action {
+	border-radius: 4px;
+}
+.k-inline-block {
+	border-radius: 4px;
+}
+.k-grid .k-filter-options {
+	border-radius: 4px;
+}
+.k-grouping-header .k-group-indicator {
+	border-radius: 4px;
+}
+.k-autocomplete {
+	border-radius: 4px;
+}
+.k-multiselect {
+	border-radius: 4px;
+}
+.k-combobox {
+	border-radius: 4px;
+}
+.k-dropdown {
+	border-radius: 4px;
+}
+.k-dropdown-wrap {
+	border-radius: 4px;
+}
+.k-datepicker {
+	border-radius: 4px;
+}
+.k-timepicker {
+	border-radius: 4px;
+}
+.k-colorpicker {
+	border-radius: 4px;
+}
+.k-datetimepicker {
+	border-radius: 4px;
+}
+.k-notification {
+	border-radius: 4px;
+}
+.k-numerictextbox {
+	border-radius: 4px;
+}
+.k-picker-wrap {
+	border-radius: 4px;
+}
+.k-numeric-wrap {
+	border-radius: 4px;
+}
+.k-colorpicker {
+	border-radius: 4px;
+}
+.k-list-container {
+	border-radius: 4px;
+}
+.k-calendar-container {
+	border-radius: 4px;
+}
+.k-calendar td {
+	border-radius: 4px;
+}
+.k-calendar .k-link {
+	border-radius: 4px;
+}
+.k-treeview .k-in {
+	border-radius: 4px;
+}
+.k-editor-inline {
+	border-radius: 4px;
+}
+.k-tooltip {
+	border-radius: 4px;
+}
+.k-tile {
+	border-radius: 4px;
+}
+.k-slider-track {
+	border-radius: 4px;
+}
+.k-slider-selection {
+	border-radius: 4px;
+}
+.k-upload {
+	border-radius: 4px;
+}
+.k-tool {
+	text-align: center; vertical-align: middle;
+}
+.k-tool.k-group-start {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-toolbar .k-split-button .k-button {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-toolbar .k-button-group .k-group-start {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-tool.k-group-start {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-tool.k-group-end {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-toolbar .k-button-group .k-group-end {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-toolbar .k-split-button .k-split-button-arrow {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-rtl .k-tool.k-group-end {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-group-start.k-group-end.k-tool {
+	border-radius: 4px;
+}
+.k-calendar-container.k-state-border-up {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-list-container.k-state-border-up {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-autocomplete.k-state-border-up {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-multiselect.k-state-border-up {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-dropdown-wrap.k-state-border-up {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-picker-wrap.k-state-border-up {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-numeric-wrap.k-state-border-up {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-window-content {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-filter-menu {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-autocomplete.k-state-border-up .k-input {
+	border-radius: 0px 0px 0px 4px;
+}
+.k-dropdown-wrap.k-state-border-up .k-input {
+	border-radius: 0px 0px 0px 4px;
+}
+.k-picker-wrap.k-state-border-up .k-input {
+	border-radius: 0px 0px 0px 4px;
+}
+.k-picker-wrap.k-state-border-up .k-selected-color {
+	border-radius: 0px 0px 0px 4px;
+}
+.k-numeric-wrap.k-state-border-up .k-input {
+	border-radius: 0px 0px 0px 4px;
+}
+.k-multiselect.k-state-border-up .k-multiselect-wrap {
+	border-radius: 0px 0px 4px 4px;
+}
+.k-window-titlebar {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-block > .k-header {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-tabstrip-items .k-item {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-panelbar .k-tabstrip-items .k-item {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-tabstrip-items .k-link {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-calendar-container.k-state-border-down {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-list-container.k-state-border-down {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-autocomplete.k-state-border-down {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-multiselect.k-state-border-down {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-dropdown-wrap.k-state-border-down {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-picker-wrap.k-state-border-down {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-numeric-wrap.k-state-border-down {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-split-button.k-state-border-down > .k-button {
+	border-radius: 4px 0px 0px;
+}
+.k-split-button.k-state-border-up > .k-button {
+	border-radius: 0px 0px 0px 4px;
+}
+.k-split-button.k-state-border-down > .k-split-button-arrow {
+	border-radius: 0px 4px 0px 0px;
+}
+.k-split-button.k-state-border-up > .k-split-button-arrow {
+	border-radius: 0px 0px 4px;
+}
+.k-dropdown-wrap .k-input {
+	border-radius: 2px 0px 0px 2px;
+}
+.k-picker-wrap .k-input {
+	border-radius: 2px 0px 0px 2px;
+}
+.k-numeric-wrap .k-input {
+	border-radius: 2px 0px 0px 2px;
+}
+.k-rtl .k-dropdown-wrap .k-input {
+	border-radius: 0px 2px 2px 0px;
+}
+.k-rtl .k-picker-wrap .k-input {
+	border-radius: 0px 2px 2px 0px;
+}
+.k-rtl .k-numeric-wrap .k-input {
+	border-radius: 0px 2px 2px 0px;
+}
+.k-numeric-wrap .k-link {
+	border-radius: 0px 2px 0px 0px;
+}
+.k-numeric-wrap .k-link + .k-link {
+	border-radius: 0px 0px 2px;
+}
+.k-colorpicker .k-selected-color {
+	border-radius: 2px 0px 0px 2px;
+}
+.k-rtl .k-colorpicker .k-selected-color {
+	border-radius: 0px 2px 2px 0px;
+}
+.k-autocomplete.k-state-border-down .k-input {
+	border-radius: 4px 4px 0px 0px;
+}
+.k-dropdown-wrap.k-state-border-down .k-input {
+	border-radius: 4px 0px 0px;
+}
+.k-picker-wrap.k-state-border-down .k-input {
+	border-radius: 4px 0px 0px;
+}
+.k-picker-wrap.k-state-border-down .k-selected-color {
+	border-radius: 4px 0px 0px;
+}
+.k-numeric-wrap.k-state-border-down .k-input {
+	border-radius: 4px 0px 0px;
+}
+.k-numeric-wrap .k-link.k-state-selected {
+	background-color: rgb(243, 88, 0);
+}
+.k-multiselect.k-state-border-down .k-multiselect-wrap {
+	border-radius: 2px 2px 0px 0px;
+}
+.k-dropdown-wrap .k-select {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-picker-wrap .k-select {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-numeric-wrap .k-select {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-datetimepicker .k-select + .k-select {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-list-container.k-state-border-right {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-rtl .k-dropdown-wrap .k-select {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-picker-wrap .k-select {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-numeric-wrap .k-select {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-datetimepicker .k-select + .k-select {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-list-container.k-state-border-right {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-numeric-wrap.k-expand-padding .k-input {
+	border-radius: 4px;
+}
+.k-textbox > input {
+	border-radius: 2px;
+}
+.k-autocomplete .k-input {
+	border-radius: 2px;
+}
+.k-multiselect-wrap {
+	border-radius: 2px;
+}
+.k-list .k-state-hover {
+	border-radius: 3px;
+}
+.k-list .k-state-focused {
+	border-radius: 3px;
+}
+.k-list .k-state-highlight {
+	border-radius: 3px;
+}
+.k-list .k-state-selected {
+	border-radius: 3px;
+}
+.k-fieldselector .k-list .k-item {
+	border-radius: 3px;
+}
+.k-list-optionlabel {
+	border-radius: 3px;
+}
+.k-dropzone {
+	border-radius: 3px;
+}
+.k-slider .k-button {
+	border-radius: 13px;
+}
+.k-grid .k-slider .k-button {
+	border-radius: 13px;
+}
+.k-draghandle {
+	border-radius: 7px;
+}
+.k-scheduler-toolbar > ul li:first-child {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-scheduler-toolbar > ul li:first-child .k-link {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-scheduler-toolbar > ul.k-scheduler-views li:first-child + li {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-scheduler-toolbar > ul.k-scheduler-views li:first-child + li .k-link {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-scheduler-toolbar > ul li:first-child {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-rtl .k-scheduler-toolbar > ul li:first-child .k-link {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-rtl .k-scheduler-toolbar > ul.k-scheduler-views li:first-child + li {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-rtl .k-scheduler-toolbar > ul.k-scheduler-views li:first-child + li .k-link {
+	border-radius: 0px 4px 4px 0px;
+}
+.km-view.k-popup-edit-form .k-scheduler-toolbar > ul li:last-child {
+	border-radius: 0px 4px 4px 0px;
+}
+.km-view.k-popup-edit-form .k-scheduler-toolbar > ul li:last-child .k-link {
+	border-radius: 0px 4px 4px 0px;
+}
+.k-scheduler-phone .k-scheduler-toolbar > ul li.k-nav-today {
+	border-radius: 4px;
+}
+.k-scheduler-phone .k-scheduler-toolbar > ul li.k-nav-today .k-link {
+	border-radius: 4px;
+}
+.k-edit-field > .k-scheduler-navigation {
+	border-radius: 4px;
+}
+.k-scheduler-toolbar .k-nav-next {
+	border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+.k-scheduler-toolbar ul + ul li:last-child {
+	border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+.k-scheduler-toolbar .k-nav-next .k-link {
+	border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+.k-scheduler-toolbar ul + ul li:last-child .k-link {
+	border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+.k-rtl .k-scheduler-toolbar .k-nav-next {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-scheduler-toolbar ul + ul li:last-child {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-scheduler-toolbar .k-nav-next .k-link {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-rtl .k-scheduler-toolbar ul + ul li:last-child .k-link {
+	border-radius: 4px 0px 0px 4px;
+}
+.k-scheduler div.k-scheduler-footer ul li {
+	border-radius: 4px;
+}
+.k-scheduler div.k-scheduler-footer .k-link {
+	border-radius: 4px;
+}
+.k-more-events {
+	border-radius: 2px;
+}
+.k-event {
+	border-radius: 2px;
+}
+.k-task-single {
+	border-radius: 2px;
+}
+.k-task-complete {
+	border-radius: 2px;
+}
+.k-event .k-link {
+	border-radius: 2px;
+}
+.k-scheduler-mobile .k-event {
+	border-radius: 1px;
+}
+.k-grid-mobile .k-column-active + th.k-header {
+	border-left-color: rgb(46, 46, 46);
+}
+html .km-pane-wrapper .km-widget {
+	color: rgb(46, 46, 46);
+}
+.k-ie .km-pane-wrapper .k-widget {
+	color: rgb(46, 46, 46);
+}
+.k-ie .km-pane-wrapper .k-group {
+	color: rgb(46, 46, 46);
+}
+.k-ie .km-pane-wrapper .k-content {
+	color: rgb(46, 46, 46);
+}
+.k-ie .km-pane-wrapper .k-header {
+	color: rgb(46, 46, 46);
+}
+.k-ie .km-pane-wrapper .k-popup-edit-form .k-edit-field .k-button {
+	color: rgb(46, 46, 46);
+}
+.km-pane-wrapper .k-mobile-list .k-item {
+	color: rgb(46, 46, 46);
+}
+.km-pane-wrapper .k-mobile-list .k-edit-label {
+	color: rgb(46, 46, 46);
+}
+.km-pane-wrapper .k-mobile-list .k-edit-field {
+	color: rgb(46, 46, 46);
+}
+@media screen and (-ms-high-contrast:none)
+{
+div.km-pane-wrapper a {
+	color: rgb(46, 46, 46);
+}
+.km-pane-wrapper .k-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 21.2em 21em;
+}
+}
+.km-pane-wrapper .k-mobile-list .k-item {
+	border-top-color: rgb(197, 197, 197); border-top-width: 1px; border-top-style: solid; background-color: rgb(255, 255, 255);
+}
+.km-pane-wrapper .k-mobile-list .k-edit-field {
+	border-top-color: rgb(197, 197, 197); border-top-width: 1px; border-top-style: solid; background-color: rgb(255, 255, 255);
+}
+.km-pane-wrapper .k-mobile-list .k-recur-view > .k-edit-field .k-check {
+	border-top-color: rgb(197, 197, 197); border-top-width: 1px; border-top-style: solid; background-color: rgb(255, 255, 255);
+}
+.km-pane-wrapper .k-mobile-list .k-edit-field textarea {
+	outline-width: 0px;
+}
+.km-pane-wrapper .k-mobile-list .k-item.k-state-selected {
+	border-top-color: rgb(80, 151, 67); background-color: rgb(80, 151, 67);
+}
+.km-pane-wrapper .k-mobile-list .k-recur-view > .k-edit-field :first-child.k-check {
+	border-top-color: transparent;
+}
+.km-pane-wrapper .k-mobile-list :last-child.k-item {
+	box-shadow: inset 0px -1px 0px #c5c5c5; -webkit-box-shadow: inset 0 -1px 0 #c5c5c5;
+}
+.km-pane-wrapper .k-mobile-list > ul > li > .k-link {
+	color: rgb(121, 121, 121);
+}
+.km-pane-wrapper .k-mobile-list .k-recur-view > :nth-child(3).k-edit-label {
+	color: rgb(121, 121, 121);
+}
+.km-pane-wrapper #recurrence .km-scroll-container > :first-child.k-edit-label {
+	color: rgb(121, 121, 121);
+}
+.km-pane-wrapper .k-mobile-list > ul > li > .k-link {
+	border-bottom-color: rgb(197, 197, 197); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.km-pane-wrapper .k-mobile-list .k-edit-field {
+	box-shadow: 0px 1px 1px #c5c5c5; -webkit-box-shadow: 0 1px 1px #c5c5c5;
+}
+.km-actionsheet .k-grid-delete {
+	border-color: rgb(226, 0, 0); color: rgb(255, 255, 255); background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15)); background-color: red;
+}
+.km-actionsheet .k-scheduler-delete {
+	border-color: rgb(226, 0, 0); color: rgb(255, 255, 255); background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15)); background-color: red;
+}
+.km-pane-wrapper .k-scheduler-delete {
+	border-color: rgb(226, 0, 0); color: rgb(255, 255, 255); background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15)); background-color: red;
+}
+.km-pane-wrapper .k-filter-menu [type=reset].k-button {
+	border-color: rgb(226, 0, 0); color: rgb(255, 255, 255); background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15)); background-color: red;
+}
+.km-actionsheet .k-grid-delete:active {
+	background-color: rgb(153, 0, 0);
+}
+.km-actionsheet .k-scheduler-delete:active {
+	background-color: rgb(153, 0, 0);
+}
+.km-pane-wrapper .k-scheduler-delete:active {
+	background-color: rgb(153, 0, 0);
+}
+.km-pane-wrapper .k-filter-menu [type=reset].k-button:active {
+	background-color: rgb(153, 0, 0);
+}
+.k-autocomplete.k-state-default {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-picker-wrap.k-state-default {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-numeric-wrap.k-state-default {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-dropdown-wrap.k-state-default {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-autocomplete.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-picker-wrap.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-numeric-wrap.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-dropdown-wrap.k-state-hover {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-multiselect.k-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-multiselect.k-header.k-state-hover {
+	border-color: rgb(188, 180, 176);
+}
+.k-autocomplete.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-picker-wrap.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-numeric-wrap.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-dropdown-wrap.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-multiselect.k-header.k-state-focused {
+	background-position: 50% 50%; border-color: rgb(188, 180, 176); box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-list-container {
+	color: rgb(46, 46, 46);
+}
+.k-dropdown .k-input {
+	color: rgb(46, 46, 46);
+}
+.k-dropdown .k-state-focused .k-input {
+	color: rgb(46, 46, 46);
+}
+.k-menu .k-popup {
+	color: rgb(46, 46, 46);
+}
+.k-state-default > .k-select {
+	border-color: rgb(197, 197, 197);
+}
+.k-state-hover > .k-select {
+	border-color: rgb(188, 180, 176);
+}
+.k-state-focused > .k-select {
+	border-color: rgb(188, 180, 176);
+}
+.k-tabstrip:focus {
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.298039); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px 0px;
+}
+.k-tabstrip-items .k-state-default .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-panelbar > li.k-state-default > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-tabstrip-items .k-state-hover .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-panelbar > li.k-state-hover > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-panelbar > li.k-state-default > .k-link.k-state-hover {
+	color: rgb(46, 46, 46);
+}
+.k-panelbar .k-state-focused.k-state-hover {
+	background: rgb(188, 180, 176); box-shadow: none; -webkit-box-shadow: none;
+}
+.k-tabstrip-items .k-state-default {
+	border-color: rgb(197, 197, 197);
+}
+.k-ie7 .k-tabstrip-items .k-state-default .k-loading {
+	border-color: rgb(197, 197, 197);
+}
+.k-tabstrip-items .k-state-hover {
+	border-color: rgb(188, 180, 176);
+}
+.k-ie7 .k-tabstrip-items .k-state-hover .k-loading {
+	border-color: rgb(188, 180, 176);
+}
+.k-tabstrip-items .k-state-active {
+	border-color: rgb(80, 151, 67); background-image: none; background-color: rgb(255, 255, 255);
+}
+.k-panelbar .k-tabstrip-items .k-state-active {
+	border-color: rgb(80, 151, 67); background-image: none; background-color: rgb(255, 255, 255);
+}
+.k-ie7 .k-tabstrip-items .k-state-active .k-loading {
+	border-color: rgb(80, 151, 67); background-image: none; background-color: rgb(255, 255, 255);
+}
+.k-tabstrip .k-content.k-state-active {
+	color: rgb(46, 46, 46); background-color: rgb(255, 255, 255);
+}
+.k-menu.k-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-menu .k-item {
+	border-color: rgb(197, 197, 197);
+}
+.k-column-menu {
+	border-color: rgb(197, 197, 197);
+}
+.k-column-menu .k-item {
+	border-color: rgb(197, 197, 197);
+}
+.k-overflow-container .k-overflow-group {
+	border-color: rgb(197, 197, 197);
+}
+.k-overflow-container .k-overflow-group {
+	box-shadow: inset 0px 1px 0px #ffffff, 0px 1px 0px #ffffff;
+}
+.k-toolbar-first-visible.k-overflow-group {
+	box-shadow: 0px 1px 0px #ffffff;
+}
+.k-overflow-container .k-overflow-group + .k-overflow-group {
+	box-shadow: 0px 1px 0px #ffffff;
+}
+.k-toolbar-last-visible.k-overflow-group {
+	box-shadow: inset 0px 1px 0px #ffffff;
+}
+.k-column-menu .k-separator {
+	border-color: rgb(197, 197, 197); background-color: transparent;
+}
+.k-menu .k-group {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-filter.k-state-active {
+	background-color: rgb(255, 255, 255);
+}
+.k-grouping-row td {
+	border-color: rgb(197, 197, 197); color: rgb(46, 46, 46); font-weight: bold;
+}
+.k-group-footer td {
+	border-color: rgb(197, 197, 197); color: rgb(46, 46, 46); font-weight: bold;
+}
+.k-grid-footer td {
+	border-color: rgb(197, 197, 197); color: rgb(46, 46, 46); font-weight: bold;
+}
+.k-grouping-header {
+	color: rgb(46, 46, 46);
+}
+.k-grid td.k-state-focused {
+	-webkit-box-shadow: inset 0 0 0 1px #bcb4b0 0px 0px 5px 1px inset;
+}
+.k-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-header-wrap {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid .k-grouping-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-grid-header {
+	border-color: rgb(197, 197, 197);
+}
+.k-pager-wrap {
+	border-color: rgb(197, 197, 197);
+}
+.k-pager-wrap .k-textbox {
+	border-color: rgb(197, 197, 197);
+}
+.k-pager-wrap .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-grouping-header .k-group-indicator {
+	border-color: rgb(197, 197, 197);
+}
+.k-gantt-toolbar .k-state-default {
+	border-color: rgb(197, 197, 197);
+}
+.k-primary {
+	background-position: 50% 50%; border-color: rgb(239, 103, 26); color: rgb(255, 255, 255); box-shadow: none; background-image: none, linear-gradient(rgb(246, 129, 63) 0px, rgb(243, 90, 3) 100%); background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-overflow-container .k-primary {
+	background-position: 50% 50%; border-color: rgb(239, 103, 26); color: rgb(255, 255, 255); box-shadow: none; background-image: none, linear-gradient(rgb(246, 129, 63) 0px, rgb(243, 90, 3) 100%); background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-primary:focus {
+	border-color: rgb(232, 66, 0); color: rgb(255, 255, 255); box-shadow: none; background-image: none; -webkit-box-shadow: none;
+}
+.k-primary.k-state-focused {
+	border-color: rgb(232, 66, 0); color: rgb(255, 255, 255); box-shadow: none; background-image: none; -webkit-box-shadow: none;
+}
+.k-primary:hover {
+	border-color: rgb(239, 103, 26); color: rgb(255, 255, 255); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+:not(.k-state-disabled):not([disabled]).k-primary:focus:active {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+:not(.k-state-disabled):not([disabled]).k-primary:focus {
+	box-shadow: none; -webkit-box-shadow: none;
+}
+.k-primary:active {
+	border-color: rgb(239, 103, 26); color: rgb(255, 255, 255); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-primary.k-state-disabled {
+	border-color: rgb(239, 103, 26); color: rgb(250, 181, 142); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-state-disabled .k-primary {
+	border-color: rgb(239, 103, 26); color: rgb(250, 181, 142); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-primary.k-state-disabled:hover {
+	border-color: rgb(239, 103, 26); color: rgb(250, 181, 142); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-state-disabled .k-primary:hover {
+	border-color: rgb(239, 103, 26); color: rgb(250, 181, 142); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-primary.k-state-disabled:hover {
+	border-color: rgb(239, 103, 26); color: rgb(250, 181, 142); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-state-disabled .k-primary:active {
+	border-color: rgb(239, 103, 26); color: rgb(250, 181, 142); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-primary.k-state-disabled:active {
+	border-color: rgb(239, 103, 26); color: rgb(250, 181, 142); box-shadow: none; background-image: none; background-color: rgb(243, 88, 0); -webkit-box-shadow: none;
+}
+.k-pager-numbers .k-link {
+	border-color: transparent;
+}
+.k-treeview .k-in {
+	border-color: transparent;
+}
+.k-treeview .k-icon {
+	border-radius: 0px; background-color: rgba(0, 0, 0, 0);
+}
+.k-scheduler-table .k-icon {
+	border-radius: 0px; background-color: rgba(0, 0, 0, 0);
+}
+.k-grid .k-hierarchy-cell .k-icon {
+	border-radius: 0px; background-color: rgba(0, 0, 0, 0);
+}
+.k-scheduler-table .k-state-hover .k-icon {
+	background-color: transparent;
+}
+.k-button:focus {
+	
+}
+.k-editor .k-tool:focus {
+	border-color: rgb(197, 197, 197); outline: 0px; box-shadow: none; -webkit-box-shadow: none;
+}
+.k-checkbox-label::before {
+	border-color: rgb(85, 85, 85); border-radius: 0px;
+}
+.k-checkbox-label::after {
+	background: rgb(255, 255, 255); border-color: rgb(197, 197, 197); border-radius: 0px;
+}
+.k-checkbox-label:hover::after {
+	border-color: rgb(169, 159, 154);
+}
+:checked.k-checkbox + .k-checkbox-label:hover::after {
+	border-color: rgb(169, 159, 154);
+}
+:checked.k-checkbox + .k-checkbox-label::after {
+	border-color: rgb(197, 197, 197); border-radius: 0px; color: rgb(85, 85, 85); background-color: rgb(197, 197, 197);
+}
+.k-checkbox-label:active::before {
+	border-color: rgb(85, 85, 85); border-radius: 0px;
+}
+.k-checkbox-label:active::after {
+	border-color: rgb(169, 159, 154); border-radius: 0px;
+}
+:checked.k-checkbox + .k-checkbox-label:active::after {
+	border-color: rgb(169, 159, 154);
+}
+:checked.k-checkbox + .k-checkbox-label:active::before {
+	border-radius: 0px;
+}
+:disabled.k-checkbox + .k-checkbox-label {
+	color: rgb(85, 85, 85);
+}
+:disabled.k-checkbox + .k-checkbox-label:hover::after {
+	
+}
+:disabled.k-checkbox + .k-checkbox-label:active::before {
+	
+}
+:checked:disabled.k-checkbox + .k-checkbox-label::after {
+	background: rgb(197, 197, 197); color: rgb(85, 85, 85);
+}
+:disabled.k-checkbox + .k-checkbox-label::after {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); border-radius: 0px;
+}
+:checked:disabled.k-checkbox + .k-checkbox-label:active::after {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); border-radius: 0px;
+}
+:disabled.k-checkbox + .k-checkbox-label:hover::before {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); border-radius: 0px;
+}
+:checked:disabled.k-checkbox + .k-checkbox-label:hover::after {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); border-radius: 0px;
+}
+.k-radio-label::before {
+	border-width: 3px; border-color: rgb(197, 197, 197); border-radius: 50%; background-color: rgb(255, 255, 255);
+}
+.k-radio-label:hover::before {
+	border-color: rgb(169, 159, 154);
+}
+:checked.k-radio + .k-radio-label:hover::before {
+	border-color: rgb(169, 159, 154);
+}
+:checked.k-radio + .k-radio-label::before {
+	border-color: rgb(197, 197, 197);
+}
+:checked.k-radio + .k-radio-label::after {
+	border-radius: 50%; background-color: rgba(0, 0, 0, 0);
+}
+.k-radio-label:active::before {
+	border-color: rgb(169, 159, 154); border-radius: 50%;
+}
+:checked.k-radio + .k-radio-label:active::before {
+	border-color: rgb(85, 85, 85); border-radius: 50%;
+}
+:disabled.k-radio + .k-radio-label {
+	color: rgb(85, 85, 85);
+}
+:disabled.k-radio + .k-radio-label::before {
+	border-color: rgb(191, 191, 191);
+}
+:disabled.k-radio + .k-radio-label:active::before {
+	background: rgba(0, 0, 0, 0);
+}
+:disabled.k-radio + .k-radio-label::before {
+	background: rgb(255, 255, 255);
+}
+:disabled.k-radio + .k-radio-label:hover::after {
+	
+}
+:disabled.k-radio + .k-radio-label:hover::before {
+	
+}
+.k-checkbox:focus + .k-checkbox-label::after {
+	border-color: rgb(169, 159, 154);
+}
+.k-radio:focus + .k-radio-label::before {
+	border-color: rgb(169, 159, 154);
+}
+@media not all, not all
+{
+:not(.k-loading).k-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-grouping-dropclue {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-drop-hint {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-callout {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-tool-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-state-hover .k-tool-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-state-active .k-tool-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-state-active.k-state-hover .k-tool-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-state-selected .k-tool-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-state-selected.k-state-hover .k-tool-icon {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-column-menu .k-sprite {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-mobile-list :checked.k-check {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-mobile-list .k-edit-field [type=checkbox]:checked {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-mobile-list .k-edit-field [type=radio]:checked {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_2x.png"); background-size: 340px 336px;
+}
+.k-dropdown-wrap .k-input {
+	border-radius: 2px 0px 0px 2px;
+}
+.k-picker-wrap .k-input {
+	border-radius: 2px 0px 0px 2px;
+}
+.k-numeric-wrap .k-input {
+	border-radius: 2px 0px 0px 2px;
+}
+.k-i-kpi-decrease {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi_2x.png"); background-size: 96px 16px;
+}
+.k-i-kpi-denied {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi_2x.png"); background-size: 96px 16px;
+}
+.k-i-kpi-equal {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi_2x.png"); background-size: 96px 16px;
+}
+.k-i-kpi-hold {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi_2x.png"); background-size: 96px 16px;
+}
+.k-i-kpi-increase {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi_2x.png"); background-size: 96px 16px;
+}
+.k-i-kpi-open {
+	background-image: url("http://da7xgjtj801h2.cloudfront.net/2015.1.429/styles/Default/sprite_kpi_2x.png"); background-size: 96px 16px;
+}
+}
+@media screen and (-ms-high-contrast:active)
+{
+.k-editor-toolbar-wrap .k-dropdown-wrap.k-state-focused {
+	border-color: rgb(255, 255, 255);
+}
+.k-editor-toolbar-wrap .k-button-group .k-tool:focus {
+	border-color: rgb(255, 255, 255);
+}
+}
+.ktb-checkbox-label-after {
+	background: rgb(255, 255, 255); border-color: rgb(197, 197, 197);
+}
+.ktb-checkbox-label-hover-after {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-checkbox-checked + .ktb-checkbox-label-hover-after {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-checkbox-checked + .ktb-checkbox-label-after {
+	border-color: rgb(197, 197, 197); color: rgb(85, 85, 85); background-color: rgb(197, 197, 197);
+}
+.ktb-checkbox-label-hover-after {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-checkbox-checked + .ktb-checkbox-label-hover-after {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-checkbox-label-active-after {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-checkbox-checked-disabled + .ktb-checkbox-label-after {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); color: rgb(85, 85, 85);
+}
+.ktb-checkbox-disabled + .ktb-checkbox-label-after {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); color: rgb(85, 85, 85);
+}
+.ktb-checkbox-checked-disabled + .ktb-checkbox-label-active-after {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); color: rgb(85, 85, 85);
+}
+.ktb-checkbox-disabled + .ktb-checkbox-label-hover-before {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); color: rgb(85, 85, 85);
+}
+.ktb-checkbox-checked-disabled + .ktb-checkbox-label-hover-after {
+	background: rgb(197, 197, 197); border-color: rgb(197, 197, 197); color: rgb(85, 85, 85);
+}
+.ktb-radio-label-before {
+	border-color: rgb(197, 197, 197); background-color: rgb(255, 255, 255);
+}
+.ktb-radio-checked + .ktb-radio-label-after {
+	background-color: rgba(0, 0, 0, 0);
+}
+.ktb-radio-checked + .ktb-radio-label-before {
+	border-color: rgb(197, 197, 197);
+}
+.ktb-radio-label-hover-before {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-radio-checked + .ktb-radio-label-hover-before {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-radio-label-active-before {
+	border-color: rgb(169, 159, 154);
+}
+.ktb-radio-checked + .ktb-radio-label-after {
+	background-color: rgba(0, 0, 0, 0);
+}
+.ktb-radio-disabled + .ktb-radio-label-before {
+	background: rgb(255, 255, 255); border-color: rgb(197, 197, 197);
+}
+.ktb-radio-disabled + .ktb-radio-label-active-before {
+	background: rgb(255, 255, 255); border-color: rgb(197, 197, 197);
+}
+@media only screen and (max-width:1024px)
+{
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-webkit .k-pager-numbers .k-current-page .k-link {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-ff .k-pager-numbers .k-current-page .k-link {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-ie11 .k-pager-numbers .k-current-page .k-link {
+	background-position: 50% 50%; border-color: rgb(197, 197, 197); background-image: none, linear-gradient(rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(233, 233, 233);
+}
+.k-webkit .k-pager-numbers .k-current-page .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-ff .k-pager-numbers .k-current-page .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-ie11 .k-pager-numbers .k-current-page .k-link {
+	border-color: rgb(197, 197, 197);
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view {
+	border-radius: 4px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view {
+	border-radius: 4px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view {
+	border-radius: 4px;
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded > li {
+	border-radius: 0px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded > li {
+	border-radius: 0px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded > li {
+	border-radius: 0px;
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded > li.k-current-view {
+	border-radius: 2px 2px 0px 0px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded > li.k-current-view {
+	border-radius: 2px 2px 0px 0px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded > li.k-current-view {
+	border-radius: 2px 2px 0px 0px;
+}
+.k-webkit .k-scheduler-toolbar > ul li:first-child {
+	border-radius: 0px;
+}
+.k-ff .k-scheduler-toolbar > ul li:first-child {
+	border-radius: 0px;
+}
+.k-ie11 .k-scheduler-toolbar > ul li:first-child {
+	border-radius: 0px;
+}
+.k-webkit .k-scheduler-toolbar > ul li:first-child .k-link {
+	border-radius: 0px;
+}
+.k-ff .k-scheduler-toolbar > ul li:first-child .k-link {
+	border-radius: 0px;
+}
+.k-ie11 .k-scheduler-toolbar > ul li:first-child .k-link {
+	border-radius: 0px;
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views li {
+	border-radius: 0px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views li {
+	border-radius: 0px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views li {
+	border-radius: 0px;
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views li .k-link {
+	border-radius: 0px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views li .k-link {
+	border-radius: 0px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views li .k-link {
+	border-radius: 0px;
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views li:last-child {
+	border-radius: 0px 0px 2px 2px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views li:last-child {
+	border-radius: 0px 0px 2px 2px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views li:last-child {
+	border-radius: 0px 0px 2px 2px;
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views li:last-child .k-link {
+	border-radius: 0px 0px 2px 2px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views li:last-child .k-link {
+	border-radius: 0px 0px 2px 2px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views li:last-child .k-link {
+	border-radius: 0px 0px 2px 2px;
+}
+.k-webkit .k-pager-numbers .k-current-page .k-link:hover {
+	border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-ff .k-pager-numbers .k-current-page .k-link:hover {
+	border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-ie11 .k-pager-numbers .k-current-page .k-link:hover {
+	border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view:hover {
+	border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view:hover {
+	border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view:hover {
+	border-color: rgb(188, 180, 176); background-image: none, linear-gradient(rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%); background-color: rgb(188, 180, 176);
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view > .k-link {
+	color: rgb(46, 46, 46); min-width: 75px;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view > .k-link {
+	color: rgb(46, 46, 46); min-width: 75px;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view > .k-link {
+	color: rgb(46, 46, 46); min-width: 75px;
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view:hover > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view:hover > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view:hover > .k-link {
+	color: rgb(46, 46, 46);
+}
+.k-webkit .k-pager-numbers .k-current-page .k-link::after {
+	top: 50%; width: 1.33em; height: 1.33em; right: 0.33em; margin-top: -0.5em; display: block; position: absolute; content: "";
+}
+.k-ff .k-pager-numbers .k-current-page .k-link::after {
+	top: 50%; width: 1.33em; height: 1.33em; right: 0.33em; margin-top: -0.5em; display: block; position: absolute; content: "";
+}
+.k-ie11 .k-pager-numbers .k-current-page .k-link::after {
+	top: 50%; width: 1.33em; height: 1.33em; right: 0.33em; margin-top: -0.5em; display: block; position: absolute; content: "";
+}
+.k-webkit .k-scheduler-views > li.k-state-selected > .k-link::after {
+	top: 50%; width: 1.33em; height: 1.33em; right: 0.33em; margin-top: -0.5em; display: block; position: absolute; content: "";
+}
+.k-ff .k-scheduler-views > li.k-state-selected > .k-link::after {
+	top: 50%; width: 1.33em; height: 1.33em; right: 0.33em; margin-top: -0.5em; display: block; position: absolute; content: "";
+}
+.k-ie11 .k-scheduler-views > li.k-state-selected > .k-link::after {
+	top: 50%; width: 1.33em; height: 1.33em; right: 0.33em; margin-top: -0.5em; display: block; position: absolute; content: "";
+}
+.k-webkit .k-pager-numbers.k-state-expanded {
+	border-width: 1px 1px 0px; border-style: solid; border-color: rgb(197, 197, 197); border-radius: 4px 4px 0px 0px; box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); background-color: rgb(227, 227, 227); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-ff .k-pager-numbers.k-state-expanded {
+	border-width: 1px 1px 0px; border-style: solid; border-color: rgb(197, 197, 197); border-radius: 4px 4px 0px 0px; box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); background-color: rgb(227, 227, 227); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-ie11 .k-pager-numbers.k-state-expanded {
+	border-width: 1px 1px 0px; border-style: solid; border-color: rgb(197, 197, 197); border-radius: 4px 4px 0px 0px; box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); background-color: rgb(227, 227, 227); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded {
+	border-width: 1px 1px 0px; border-style: solid; border-color: rgb(197, 197, 197); border-radius: 4px 4px 0px 0px; box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); background-color: rgb(227, 227, 227); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded {
+	border-width: 1px 1px 0px; border-style: solid; border-color: rgb(197, 197, 197); border-radius: 4px 4px 0px 0px; box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); background-color: rgb(227, 227, 227); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded {
+	border-width: 1px 1px 0px; border-style: solid; border-color: rgb(197, 197, 197); border-radius: 4px 4px 0px 0px; box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.298039); background-color: rgb(227, 227, 227); -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.298039);
+}
+.k-webkit .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded {
+	border-width: 1px; border-radius: 4px; background-image: none;
+}
+.k-ff .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded {
+	border-width: 1px; border-radius: 4px; background-image: none;
+}
+.k-ie11 .k-scheduler-toolbar > ul.k-scheduler-views.k-state-expanded {
+	border-width: 1px; border-radius: 4px; background-image: none;
+}
+.k-webkit .k-pager-numbers .k-state-selected {
+	border-radius: 3px;
+}
+.k-ff .k-pager-numbers .k-state-selected {
+	border-radius: 3px;
+}
+.k-ie11 .k-pager-numbers .k-state-selected {
+	border-radius: 3px;
+}
+.k-webkit .k-pager-numbers .k-link {
+	border-radius: 3px;
+}
+.k-ff .k-pager-numbers .k-link {
+	border-radius: 3px;
+}
+.k-ie11 .k-pager-numbers .k-link {
+	border-radius: 3px;
+}
+}

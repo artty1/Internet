@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ระบบการยื่นขออนุญาตฯผ่านทางอินเตอร์เน็ต สำหรับผู้ประกอบการ</title>
+  <base href="/">
+
+  <link href="assets/assets-from-did/kendo.common-bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/assets-from-did/cdss.default.green.min.css" rel="stylesheet" />
+  <link href="assets/assets-from-did/Site.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/cdss-did-header.css" />
+  <link rel="stylesheet" href="assets/cdss-table.css" />
+  <link rel="stylesheet" href="assets/cdss-form.css" />
+  <link rel="stylesheet" href="assets/cdss-image.css" />
+  <link rel="stylesheet" href="assets/cdss-modal-dialog.css" />
+  <link rel="stylesheet" href="assets/cdss-background.css" />
+
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/bootstrap-datepicker/bootstrap-datepicker.min.css" />
+
+  <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" href="assets/cdss-override-bootstrap.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+  <div id="div-did">
+    <div id="div-did-header">
+      <img src="assets/logo.png" />
+      <div id="div-did-header_title">
+        ระบบการยื่นขออนุญาตฯผ่านทางอินเตอร์เน็ต<br />สำหรับผู้ประกอบการ
+        <div id="div-did-header_title_subtitle">เพื่อเชื่อมโยงข้อมูลกับระบบ NSW ของกรมศุลกากร</div>
+      </div>
+      <div id="div-did-header-command">
+        <span id="span-user"></span> [<a href="javascript:void(0)" onclick="backtoDID('Home/Index')" style="padding-left:0px; padding-right:0px;">กลับสู่ระบบหลัก</a>]<span>&nbsp;</span>
+      </div>
+    </div>
+    <div id="div-did-menu">
+      <ul class="k-widget k-reset k-header k-menu navbar-collapse nav" id="menu">
+        <li class="k-item k-state-default"><a id="aToLicense" class="k-link" href="javascript:void(0)" onclick="backtoDID('License/Index')">ข้อมูลบัญชีรับจ่าย (ย.ภ. 8)</a></li>
+        <li class="k-item k-state-default"><a class="k-link" href="javascript:void(0)">คำขอต่ออายุ/ผลิต/มี ซึ่งยุทธภัณฑ์</a></li>
+        <li class="k-item k-state-default" id="menu-admin" style="display: none;">
+          <a class="k-link" href="javascript:void(0)" onclick="backtoDID('EventLog/Index')">ผู้ดูแลระบบ</a>
+        </li>
+        <li class="k-item k-state-default"><a id="aToChangePassEdit" class="k-link" href="javascript:void(0)" onclick="backtoDID('ChangePass/Edit')">เปลี่ยนรหัสผ่าน</a></li>
+        <li class="k-item k-state-default">
+          <a class="k-link" href="javascript:void(0)" onclick="backtoDID('DownLoadProduct/Index')">ดาวน์โหลด</a>
+        </li>
+        <li class="k-item k-state-default">
+          <a id="aToDownloadAdminManual" class="k-link" href="javascript:void(0)" onclick="backtoDID('DownloadManual/AdminManual')">ช่วยเหลือ</a>
+        </li>
+        <li class="k-item k-state-default"><a id="aToPaymentInform" class="k-link" href="javascript:void(0)" onclick="backtoDID('PaymentInform/Index')">การแจ้งชำระเงิน</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="div-header">
+    ระบบการยื่นขออนุญาตฯผ่านทางอินเตอร์เน็ต สำหรับผู้ประกอบการ
+  </div>
+
+  <app-root>
+    <div class="loading">
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+    </div>
+  </app-root>
+  <br />
+  <div id="div-footer">
+    <div id="div-footer_left"></div>
+    <div id="div-footer_right"></div>
+  </div>
+
+</body>
+</html>
+
+<script src="assets/bootstrap/jquery-3.3.1.slim.min.js"></script>
+<script src="assets/bootstrap/popper.min.js"></script>
+<script src="assets/bootstrap/bootstrap.min.js"></script>
+
+<script src="assets/bootstrap-datepicker/bootstrap-datepicker-custom.js"></script>
+<script src="assets/bootstrap-datepicker/locales/bootstrap-datepicker.th.min.js"></script>
+
+<script src="assets/moment/moment.min.js"></script>
+<script src="assets/moment/th.js"></script>
+
+<script src="assets/xlsx/xlsx.full.min.js"></script>
+
+<script src="assets/init.js"></script>
+
+<script id="script-ng-config">
+
+  var app_config = {
+    application_name: 'E-Licensing for Trader',
+    contact: 'หมายเลขติดต่อ 02-241-4049 ต่อ 607',
+    version: '1.0.0.44 (2023-11-30 10:00)'
+  }
+
+</script>
+
+<script>
+
+  function backtoDID(pageURL) {
+    if (window.goOut == undefined) {
+      // for es5
+      setTimeout(function(){
+        window.goOut(pageURL);
+      }, 500);
+    } else {
+      window.goOut(pageURL);
+    }
+}
+  //-----------------------------------------------------
+  $(function () {
+
+  });
+  //-----------------------------------------------------
+</script>

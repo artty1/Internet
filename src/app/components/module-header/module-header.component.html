@@ -1,0 +1,7 @@
+<div class="document-header">
+  <div class="document-header-title">{{title}}</div>
+  <div class="document-header-command">
+    <button class="btn btn-link" *ngIf="showRefreshButton" (click)="refreshClick()" [disabled]="isLoading">refresh</button>
+  </div>
+</div>
+

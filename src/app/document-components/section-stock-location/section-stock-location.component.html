@@ -1,0 +1,47 @@
+<div class="container-fluid div-content-box" [id]="SectionName">
+  <div class="div-content-box-header">
+    <i class="fa fa-map-marker" aria-hidden="true"></i> {{Title}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  
+  <div class="cdss-commandbar is-right is-top">
+    <span>&nbsp;</span>
+    <button class="btn btn-success btn-sm cdss-width-75" (click)="addNewLocation()" [id]="ButtonName" [hidden]="!canAddLocation">
+      <i class="fa fa-plus-square-o" aria-hidden="true"></i> เพิ่ม
+    </button>
+  </div>
+  <table class="table table-striped table-hover table-fullwidth table-sm" style="font-size: 0.875rem;" [id]="TableName">
+    <thead>
+      <tr>
+        <th class="text-center cdss"></th>
+        <th class="text-center cdss">ชื่อสถานที่</th>
+        <th class="text-center cdss">ที่อยู่</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loc of getLocations">
+        <td>
+          <button class="btn btn-link btn-sm" (click)="editLocation(loc)">แก้ไข</button>
+          <button class="btn btn-link btn-sm" (click)="removeLocation(loc)">ลบ</button>
+        </td>
+        <td>{{loc.LOCATION_NAME}}</td>
+        <td>{{transform.addressToString(loc)}}</td>
+      </tr>
+
+    </tbody>
+    <!--<tfoot>
+      <tr>
+        <td colspan="3" class="grd-footer">
+          จำนวน {{getLocations.length}} ข้อมูล
+        </td>
+      </tr>
+    </tfoot>-->
+  </table>
+  <div class="invalid-feedback">กรุณาใส่ข้อมูลสถานที่</div>
+</div>
+
+
+<cdss-popup-editor-location [ForProduction]="ForProduction" (ready)="initAddNewLocationEditor($event)"></cdss-popup-editor-location>
+<!--<cdss-editor-location-dialog (ready)="initAddNewLocationEditor($event)" (complete)="addNewLocationComplete($event)"></cdss-editor-location-dialog>-->

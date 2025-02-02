@@ -1,0 +1,112 @@
+
+#div-privacy-message-container{
+  padding: 15px;
+  max-height: 250px;
+  overflow: auto;
+  border-radius: 5px;
+  margin: 10px;
+  margin-top: 15px;
+  margin-right: 20px;
+  background-color: whitesmoke;
+}
+
+.command-palate{
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(220,220,220,1);
+  padding: 5px 5px 5px 10px;
+  border-radius: 20px 0 0 20px;
+  box-shadow: rgb(0 0 0 / 30%) 0 19px 38px, rgb(0 0 0 / 22%) 0 15px 12px;
+}
+
+.command-palate > button.first{
+  /* border-radius: 15px 0px 0px 15px !important; */
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-left: -5px;
+}
+
+
+div.div-last-reject-message{
+  background-color: #afafaf !important;
+  margin-top: 10px;
+  padding: 10px;
+
+  border-radius: 10px;
+  font-size: 14px;
+  min-width: 500px;
+  margin-bottom: 10px;
+}
+
+div.div-last-reject-message > div.reject-header{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.div-submit-box-officer{
+  display: flex;
+  padding-left: 100px;
+}
+
+.div-submit-box-officer-content{
+  border-radius: 10px;
+  flex: 1 1 auto;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  /* background-color: lightgreen; */
+  background-color: #ffbf8a;
+}
+
+.div-submit-box-user{
+  flex: 0 0 auto;
+  align-self: flex-end;
+  padding: 0px 10px
+}
+
+
+.div-attachmentbody > row > div{
+  padding: 3px;
+}
+
+.button-file{
+  margin: 3px;
+  padding: 15px;
+}
+.button-group{
+  margin-bottom: 5px;
+}
+
+/* button.button-file:has(div.div-attachment-error) {
+  background-color: lightsalmon !important;
+} */
+
+.div-attachment-error{
+  margin-left: 5px;
+  color: red;
+  font-size: 12px;
+  display: inline-block;
+}
+
+
+
+.file-box{
+  display: flex;
+}
+
+.file-caption{
+  font-size: 14px;
+  width: 140px;
+  font-weight: bold;
+}
+.file-value{
+  font-size: 14px;
+  flex: 1 1 auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.margin-top-15{
+  margin-top: 15px;
+}

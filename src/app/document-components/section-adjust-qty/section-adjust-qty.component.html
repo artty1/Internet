@@ -1,0 +1,28 @@
+<div class="container-fluid div-content-box" id="div-section-adjust-qty">
+  <div class="div-content-box-header">
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{Title}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  <div class="form-row">
+    <div class="col-xs-5 col-sm-3">
+      <label for="staticEmail2" class="sr-only">จำนวนที่เพิ่ม/ลด</label>
+      <input type="text" readonly class="form-control-plaintext form-control-sm" id="txtAdjustQTYLabel" value="จำนวนที่เพิ่ม/ลด">
+    </div>
+    <div class="col-xs-7 col-sm-3">
+      <!-- <input type="number" step="0.001" style="text-align:right;" min="0" class="form-control form-control-sm" id="txtAdjustQTY" placeholder="" [ngModel]="RefDoc.REF_ADJUST_QTY | toQTY" (ngModelChange)="RefDoc.REF_ADJUST_QTY=$event" (change)="changeAdjustQTY()"> -->
+      <input type="text" style="text-align:right;" class="form-control form-control-sm" id="txtAdjustQTY" placeholder="" [(InputNumModel)]="RefDoc.REF_ADJUST_QTY" (change)="changeAdjustQTY()">
+    </div>
+    <div class="col-xs-12 col-sm-1">
+      <label for="staticEmail2" class="sr-only">เหตุผล</label>
+      <input type="text" readonly class="form-control-plaintext form-control-sm" id="txtAdjustReasonLabel" value="เหตุผล">
+    </div>
+    <div class="col-xs-12 col-sm-5">
+      <input type="text" class="form-control form-control-sm" style="min-width: 100%;" id="txtAdjustReason" [(ngModel)]="RefDoc.REF_ADJUST_REASON" placeholder="เหตุผลการขอเพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์" (change)="changeAdjustReason()">
+      <div class="invalid-feedback">กรุณาระบุเหตุผล กรณีมีการขอเพิ่ม/ลดยอดยุทธภัณฑ์</div>
+    </div>
+   <div>&nbsp;</div>
+  </div>
+
+</div>

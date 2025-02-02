@@ -1,0 +1,123 @@
+table.cdss-table {
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+table.cdss-table > thead > tr > th {
+  background-color: #f0f0f0 !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.cdss-table > tfoot > tr > td {
+  text-align: right;
+  min-height: 50px;
+}
+
+
+  table.cdss-table > tbody > tr > td.rowLoading {
+    text-align: center;
+  }
+
+  table.cdss-table > tbody > tr > td.rowNoData {
+    text-align: center !important;
+  }
+
+  .cdss-td-right {
+    text-align: right;
+  }
+
+  .cdss-td-center {
+    text-align: center;
+  }
+
+  .cdss-td-content {
+    max-width: 35%;
+  }
+
+  .cdss-td-record-log {
+
+  }
+  /*-------------------------------------*/
+  .cdss-col-nowrap {
+    white-space: nowrap;
+  }
+  .cdss-col-no {
+    width: 50px;
+  }
+
+/*-------------------------------------*/
+  .cdss-td-record-log > div {
+    display:block;
+    overflow: visible;
+    text-align:center;
+  }
+
+  .cdss-col-select{
+
+  }
+
+tr.cdss-tr-active > td {
+}
+tr.cdss-tr-inactive > td {
+  background-color: #f0f0f0 !important;
+  color: #808080;
+}
+
+tr.cdss-tr-warning > td {
+  background-color: #f8ce83 !important;
+  color: black;
+}
+
+tr.cdss-tr-warning.remain-3day > td {
+  background-color: #f8a883 !important;
+  color: black;
+}
+
+
+/*.cdss-button-active {
+  visibility: hidden;
+}
+.cdss-button-inactive {
+  visibility: hidden;
+}*/
+
+/*.btn {
+  cursor: pointer;
+  font-size: 0.8em;
+}*/
+
+
+/*.div-command-right{
+  float:right;
+}*/
+
+td.is-update{
+  background-color: pink;
+}
+
+tr.is-invalid{
+  border:solid 2px #ff0000;
+}
+
+.disabled-link{
+  cursor: default;
+}
+
+.command-all{
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.td-person-name{
+  min-width: 200px;
+}
+.td-age{
+  word-break: keep-all;
+  white-space: nowrap;
+  width: 50px;
+  text-align: right;
+}
+.td-idcard {
+  width: 150px;
+}

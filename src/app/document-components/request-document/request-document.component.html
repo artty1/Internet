@@ -1,0 +1,293 @@
+<div *ngIf="isTraderExpire">
+  Trader Expire !!!!, Please contact DID Officer.
+</div>
+
+<cdss-module-header [show-refresh-button]="false" [title]="requestDocumentType | toNameOfRequestDocumentType"></cdss-module-header>
+<!-- <button (click)="logDoc()">...</button> -->
+
+<div *ngIf="!isTraderExpire && repo.currentDocument!=null" [hidden]="isSaveSuccess">
+
+  <div class="command-palate" [hidden]="!isShowCommandPalate">
+    <button class="btn btn-info btn-sm first" (click)="swabCommandPalate()">
+      <i class="fa fa-play" aria-hidden="true"></i>
+    </button>
+
+    <button *ngIf="!isLock" class="btn btn-light btn-sm" (click)="showDialogtraderDocument()" [disabled]="whileSaving">
+      <i class="fa fa-book" aria-hidden="true"></i> เอกสารในระบบ
+    </button>
+
+    <button *ngIf="!isLock" class="btn btn-primary btn-sm cdss-width-75" (click)="saveDraft()" [disabled]="whileSaving">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i> บันทึกร่างคำขอ
+    </button>
+    <button *ngIf="!isLock" class="btn btn-success btn-sm cdss-width-75" (click)="confirmSubmit()" [disabled]="whileSaving">
+      <i class="fa fa-check" aria-hidden="true"></i> บันทึกและยื่นคำขอให้เจ้าหน้าที่
+    </button>
+    <button *ngIf="!isLock" class="btn btn-danger btn-sm cdss-width-75" (click)="discardDraft()" [disabled]="whileSaving">
+      <i class="fa fa-undo" aria-hidden="true"></i> ยกเลิก
+    </button>
+
+    <!-- <button *ngIf="isDocumentSubmited" class="btn btn-danger btn-sm cdss-width-75" (click)="rejectSubmit()" [disabled]="whileSaving">
+      <i class="fa fa-undo" aria-hidden="true"></i> ยกเลิกการยื่นคำขอ
+    </button> -->
+
+    <!-- <button class="btn btn-info btn-sm" style="border-radius: 15px;" (click)="showHelp()">
+      <i class="fa fa-question-circle" aria-hidden="true"></i>
+    </button> -->
+  </div>
+
+  <div class="command-palate" [hidden]="isShowCommandPalate">
+    <button class="btn btn-info btn-sm first" (click)="swabCommandPalate()">
+      <i class="fa fa-play fa-rotate-180" aria-hidden="true"></i>
+    </button>
+  </div>
+
+
+
+  <cdss-section-header validator-order="1" Title=""></cdss-section-header>
+
+  <div *ngIf="hasLastOfficerReject" class="div-last-reject-message">
+    <div class="reject-header">การยื่นครั้งที่ {{SubmitInfoLength}} เมื่อ {{LastOfficerRejectInfo.OFFICER_COMMENT_DATE | toDateString}}</div>
+    <!-- <div class="div-submit-box-officer" *ngIf="LastOfficerRejectInfo.OFFICER_COMMENT_DATE"> -->
+    <div class="div-submit-box-officer">
+      <div class="div-submit-box-user" style="text-align: right;">
+        {{LastOfficerRejectInfo.OFFICER_NAME}}<br />
+        {{LastOfficerRejectInfo.OFFICER_COMMENT_DATE | toDateString: 'D MMM YYYY HH:mm:ss'}}
+      </div>
+      <div class="div-submit-box-officer-content" [innerHtml]="LastOfficerRejectInfo.OFFICER_COMMENT"></div>
+    </div>
+  </div>
+
+
+  <cdss-section-payment-type *ngIf="!IsRequest_GroupOfExport" validator-order="2" (ready)="initSection($event)" Title="วิธีการชำระเงิน"></cdss-section-payment-type>
+  <cdss-section-trader-profile Title="นิติบุคคล"></cdss-section-trader-profile>
+
+  <!-- <div *ngIf="IsRequest_CrossBorder">
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <cdss-section-stock-location validator-order="6" (ready)="initSection($event)" [ForProduction]="false" Title="สถานที่เก็บ"></cdss-section-stock-location>
+    <cdss-section-source-of-enter validator-order="7" (ready)="initSection($event)" Title="การสั่งเข้ามา"></cdss-section-source-of-enter>
+    <cdss-section-appendix validator-order="9" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <cdss-section-appendix-concession validator-order="10" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>
+  </div> -->
+
+  <div *ngIf="IsRequest_Enter">
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-document-reference validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <cdss-section-stock-location validator-order="6" (ready)="initSection($event)" [ForProduction]="false" Title="สถานที่เก็บ"></cdss-section-stock-location>
+    <cdss-section-source-of-enter validator-order="7" (ready)="initSection($event)" Title="การสั่งเข้ามา"></cdss-section-source-of-enter>
+
+    <cdss-section-monthly-inventory *ngIf="IsRequest_Renewal" validator-order="8" (ready)="initSection($event)" Title="อัตราการใช้ จำหน่าย ในแต่ละเดือน และยอดคงเหลือ"></cdss-section-monthly-inventory>
+    
+    <!--<cdss-section-adjust-qty validator-order="8" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>-->
+    <cdss-section-appendix validator-order="9" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <cdss-section-appendix-concession validator-order="10" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>
+    <!--<cdss-section-file-include validator-order="11" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_Import">
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-document-reference validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <cdss-section-stock-location validator-order="6" (ready)="initSection($event)" [ForProduction]="false" Title="สถานที่เก็บ"></cdss-section-stock-location>
+    <cdss-section-source-of-enter validator-order="7" (ready)="initSection($event)" Title="การนำเข้ามา"></cdss-section-source-of-enter>
+    
+    <cdss-section-monthly-inventory *ngIf="IsRequest_Renewal" validator-order="8" (ready)="initSection($event)" Title="อัตราการใช้ จำหน่าย ในแต่ละเดือน และยอดคงเหลือ"></cdss-section-monthly-inventory>
+    
+    <!--<cdss-section-adjust-qty validator-order="8" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>-->
+    <cdss-section-appendix validator-order="9" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <cdss-section-appendix-concession validator-order="10" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>
+    <!--<cdss-section-file-include validator-order="11" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_Production">
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-document-reference validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <cdss-section-stock-location validator-order="6" (ready)="initSection($event)" [ForProduction]="true" Title="สถานที่ผลิต"></cdss-section-stock-location>
+    <cdss-section-stock-location validator-order="7" (ready)="initSection($event)" [ForProduction]="false" Title="สถานที่เก็บ"></cdss-section-stock-location>
+    <cdss-section-permission-production validator-order="8" (ready)="initSection($event)" Title="การขออนุญาตผลิต"></cdss-section-permission-production>
+
+    <cdss-section-monthly-inventory *ngIf="IsRequest_Renewal" validator-order="9" (ready)="initSection($event)" Title="อัตราการใช้ จำหน่าย ในแต่ละเดือน และยอดคงเหลือ"></cdss-section-monthly-inventory>    
+
+    <!--<cdss-section-adjust-qty validator-order="9" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>-->
+    <cdss-section-appendix validator-order="10" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <cdss-section-appendix-concession validator-order="11" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>
+    <!--<cdss-section-file-include validator-order="12" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_Owner">
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-document-reference validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (กรณีเคยมีใบอนุญาตแล้ว)"></cdss-section-document-reference>
+    <!-- <cdss-section-document-reference validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference> -->
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <cdss-section-stock-location validator-order="6" (ready)="initSection($event)" [ForProduction]="false" Title="สถานที่เก็บ"></cdss-section-stock-location>
+    <cdss-section-domestic-ordering *ngIf="IsRequest_Substitute" validator-order="7" (ready)="initSection($event)" Title="การสั่งซื้อภายในประเทศ"></cdss-section-domestic-ordering>
+    <!--<cdss-section-adjust-qty validator-order="8" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>-->
+    <cdss-section-appendix validator-order="9" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <cdss-section-appendix-concession validator-order="10" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>
+    <!--<cdss-section-file-include validator-order="11" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_Substitute">
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <cdss-section-stock-location validator-order="6" (ready)="initSection($event)" [ForProduction]="false" Title="สถานที่เก็บ"></cdss-section-stock-location>
+    <cdss-section-domestic-ordering *ngIf="IsRequest_Owner" validator-order="7" (ready)="initSection($event)" Title="การสั่งซื้อภายในประเทศ"></cdss-section-domestic-ordering>
+    <cdss-section-monthly-inventory validator-order="8" (ready)="initSection($event)" Title="อัตราการใช้ จำหน่าย ในแต่ละเดือน และยอดคงเหลือ"></cdss-section-monthly-inventory>
+    <!--<cdss-section-adjust-qty validator-order="9" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>-->
+    <cdss-section-reason-of-substitute validator-order="10" (ready)="initSection($event)" Title="เหตุผลในการขอใบแทน"></cdss-section-reason-of-substitute>
+    <cdss-section-appendix validator-order="11" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <cdss-section-appendix-concession validator-order="12" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>
+  </div>
+
+  <div *ngIf="IsRequest_Sample">
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <!-- <cdss-section-document-reference *ngIf="IsShowSectionReference" validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference> -->
+    <cdss-section-detail-of-export validator-order="6" (ready)="initSection($event)" Title="การส่งออก"></cdss-section-detail-of-export>
+    <!--<cdss-section-adjust-qty validator-order="7" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>-->
+    <cdss-section-appendix validator-order="8" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <!-- <cdss-section-appendix-concession validator-order="9" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession> -->
+    <!--<cdss-section-file-include validator-order="10" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_Export">
+    <!--<div class="div-debug">IsRequest_Export</div>-->
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <!-- <cdss-section-document-reference *ngIf="IsShowSectionReference" validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference> -->
+    <cdss-section-detail-of-export validator-order="6" (ready)="initSection($event)" title="การส่งออก"></cdss-section-detail-of-export>
+    <!--<cdss-section-adjust-qty validator-order="7" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>-->
+    <cdss-section-appendix validator-order="8" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <!-- <cdss-section-appendix-concession validator-order="9" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession> -->
+    <!--<cdss-section-file-include validator-order="10" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_ExportSpecial">
+    <!--<div class="div-debug">IsRequest_ExportSpecial</div>-->
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <!-- <cdss-section-document-reference *ngIf="IsShowSectionReference" validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference> -->
+    <cdss-section-detail-of-export validator-order="6" (ready)="initSection($event)" Title="การส่งออก"></cdss-section-detail-of-export>
+    <cdss-section-adjust-qty validator-order="7" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>
+    <cdss-section-appendix validator-order="8" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <!-- <cdss-section-appendix-concession validator-order="9" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession> -->
+    <!--<cdss-section-file-include validator-order="10" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_CrossBorder">
+    <!--<div class="div-debug">IsRequest_CrossBorder</div>-->
+    <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
+    <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
+    <cdss-section-armament validator-order="5" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
+    <!-- <cdss-section-document-reference *ngIf="IsShowSectionReference" validator-order="12" (ready)="initSection($event)" Title="การอ้างอิงใบอนุญาต (ถ้ามี)"></cdss-section-document-reference> -->
+    <cdss-section-cross-border validator-order="6" (ready)="initSection($event)" Title="ส่งผ่านแดน"></cdss-section-cross-border>
+    <cdss-section-adjust-qty validator-order="7" (ready)="initSection($event)" Title="เพิ่ม/ลดยอดขออนุญาตยุทธภัณฑ์จากเดิม"></cdss-section-adjust-qty>
+    <cdss-section-appendix validator-order="8" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
+    <!--<cdss-section-appendix-concession validator-order="9" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>-->
+    <!--<cdss-section-file-include validator-order="10" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <cdss-section-print-include validator-order="20" (ready)="initSection($event)" Title="การแนบเอกสารหลักฐานต่าง ๆ"></cdss-section-print-include>
+  <cdss-section-file-include validator-order="30" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>
+
+  <cdss-section-trader-comment Title="หมายเหตุ"></cdss-section-trader-comment>
+  <cdss-section-note Title="หมายเหตุ : แก้ไขคำขอ"></cdss-section-note>
+
+
+  <!-- <div class="cdss-commandbar is-right">
+    <button class="btn btn-primary btn-sm cdss-width-75" (click)="saveDraft()" [disabled]="whileSaving">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i> บันทึกร่างคำขอ
+    </button>
+    <button class="btn btn-success btn-sm cdss-width-75" (click)="confirmSubmit()" [disabled]="whileSaving">
+      <i class="fa fa-check" aria-hidden="true"></i> บันทึกและยื่นคำขอให้เจ้าหน้าที่
+    </button>
+    <button class="btn btn-danger btn-sm cdss-width-75" (click)="discardDraft()" [disabled]="whileSaving">
+      <i class="fa fa-undo" aria-hidden="true"></i> ยกเลิก
+    </button>
+  </div> -->
+
+</div>
+
+<div style="height: 10px;"></div>
+
+<cdss-confirm-dialog tag="x" (ready)="initModal($event)">
+  คุณต้องการยกเลิกการบันทึก ?
+</cdss-confirm-dialog>
+
+<cdss-confirm-dialog tag="p" (ready)="initModal($event)">
+  <!-- คุณต้องการยื่นคำร้อง ? -->
+  <div>
+    <div style="margin-bottom: 15px;">คุณต้องการยื่นคำร้อง ?</div>
+    <div class="container-fluid">
+      <div class="form-row col-12">
+        <label for="txtResubmitInfo" class="col-form-label-sm">หมายเหตุ</label>
+        <textarea id="txtResubmitInfo" class="form-control" [(ngModel)]="submit_message"></textarea>
+      </div>
+     
+      <div class="form-row col-12" id="div-privacy-message-container">
+        ข้าพเจ้าขอรับรองว่า ข้อความข้างต้นเป็นความจริงทุกประการ หากปรากฏเป็นความเท็จข้าพเจ้าขอรับผิดตามกฎหมาย
+      </div>
+
+      <div class="form-row col-12 margin-top-15">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" [(ngModel)]="confirm_submit" (ngModelChange)="swapSaveButton()">
+          <label class="form-check-label" for="inlineCheckbox1">ยืนยันการบันทึกข้อมูล</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</cdss-confirm-dialog>
+
+<cdss-confirm-dialog tag="r" (ready)="initModal($event)">
+  <div>
+    <div style="margin-bottom: 15px;">คุณต้องการยื่นคำร้องอีกครั้ง ?</div>
+    <div class="container-fluid">
+      <div class="form-row col-12">
+        <label for="txtResubmitInfo" class="col-form-label-sm">หมายเหตุ</label>
+        <textarea id="txtResubmitInfo" class="form-control" [(ngModel)]="submit_message"></textarea>
+      </div>
+    </div>
+  </div>
+</cdss-confirm-dialog>
+
+<cdss-waiting-dialog tag="wait" (ready)="initModal($event)">
+
+  <div [hidden]="!whileSaving">
+    กำลังบันทึกคำร้อง<span [hidden]="!isSaveSubmit">และนำยื่นต่อเจ้าหน้าที่</span> ...
+    <cdss-loading></cdss-loading>
+  </div>
+  <!-- ------------------------------------------- -->
+  <div [hidden]="!isSaveSuccess">
+    <p>
+      บันทึกคำร้อง<span [hidden]="!isSaveSubmit">และนำยื่นต่อเจ้าหน้าที่</span>เรียบร้อยแล้ว
+    </p>
+    <p [hidden]="!isSaveSuccess">
+      click เพื่อไปยังหน้า
+      <button (click)="gotoPageSubmit()" [hidden]="!isSaveSubmit" class="btn btn-link">รายการคำขอที่ยื่นแล้ว</button>
+      <button (click)="gotoPageDraft()" [hidden]="isSaveSubmit" class="btn btn-link">รายการคำขอร่าง</button>
+      <!-- <button (click)="stillEditDocument()" [hidden]="isSaveSubmit" class="btn btn-link">แก้ไขเอกสารต่อ</button> -->
+    </p>
+
+  </div>
+  <div [hidden]="!isSaveError" class="div-error">
+    Error !!!
+  </div>
+</cdss-waiting-dialog>
+
+<cdss-message-dialog tag="error" (ready)="initModal($event)" cancel-caption="Close" [show-ok]="false" style="z-index: 99999;">
+  {{errorMessage}}
+</cdss-message-dialog>
+
+<cdss-popup-trader-document #popupTraderDocument></cdss-popup-trader-document>

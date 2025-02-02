@@ -1,0 +1,15 @@
+
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'-title'" aria-hidden="true">  
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content cdss-modal-content">
+      <div class="text-center">
+        <div class="cdss-image-name">รูปภาพที่ 1 </div>
+        <img *ngIf="HasImage" [src]="ImageSource" class="img-fluid cdss-image-view" />
+        <div>
+          <button class="btn btn-warning">ลบ</button>
+          <!--<button class="btn btn-primary">ปิด</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

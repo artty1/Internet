@@ -1,0 +1,153 @@
+<div class="container-fluid div-content-box" id="div-section-source-of-enter">
+  <div class="div-content-box-header">
+    <i class="fa fa-info-circle" aria-hidden="true"></i> {{SectionHeader}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  
+  <div class="form-row" [hidden]="!IsShowReferenceDoc_License">
+
+    <div class="form-group col-xs-1 col-sm-6 col-lg-3">
+      <label for="txtLicenseNo" class="col-form-label col-form-label-sm">ใบอนุญาตเลขที่</label>
+      <input type="text" [value]="DocRef.REF_LICENSE_NO" id="txtLicenseNo" class="form-control form-control-sm" style="text-align:center;" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseIssueDate" class="col-form-label col-form-label-sm">ลงวันที่ </label>
+      <input type="text" [value]="DocRef.REF_LICENSE_ISSUE_DATE | toDateString" id="txtLicenseIssueDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" [value]="DocRef.REF_LICENSE_EXPIRY_DATE | toDateString" id="txtLicenseExpireDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-8 col-sm-4 col-lg-3">
+      <label for="txtLicenseQTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต <span class="txt-require">*</span></label>
+      <input type="text" [value]="DocRef.REF_LICENSE_QTY | toQTY:DocRef.refLicenseQTYUnitText" id="txtLicenseQTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+  </div>
+
+  <div class="form-row" [hidden]="!IsShowReferenceDoc_OwnerLicense">
+
+    <div class="form-group col-xs-1 col-sm-6 col-lg-3">
+      <label for="txtLicenseNo" class="col-form-label col-form-label-sm">ใบอนุญาตมีเลขที่</label>
+      <input type="text" [value]="DocRef.REF_HAS_LICENSE_NO" id="txtOwnerLicenseNo" class="form-control form-control-sm" style="text-align:center;" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseIssueDate" class="col-form-label col-form-label-sm">ลงวันที่ </label>
+      <input type="text" [value]="DocRef.REF_HAS_LICENSE_ISSUE_DATE | toDateString" id="txtOwnerLicenseIssueDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" [value]="DocRef.REF_HAS_LICENSE_EXPIRY_DATE | toDateString" id="txtOwnerLicenseExpireDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-8 col-sm-4 col-lg-3">
+      <label for="txtLicenseQTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต <span class="txt-require">*</span></label>
+      <input type="text" [value]="DocRef.REF_HAS_LICENSE_QTY | toQTY:DocRef.refHasLicenseQTYUnitText " id="txtOwnerLicenseQTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtImport_PeriodQTY" class="col-form-label col-form-label-sm">ทยอยสั่งเข้ามาครั้งละ <span class="txt-require">*</span></label>
+      <!-- <input type="number" step="0.001" [ngModel]="DocRef.GRADUAL_QUANTITY | toQTY" (ngModelChange)="DocRef.GRADUAL_QUANTITY=$event" id="txtImport_PeriodQTY" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_PeriodQTY')" /> -->
+      <input type="text" [(InputNumModel)]="DocRef.GRADUAL_QUANTITY" id="txtImport_PeriodQTY" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_PeriodQTY')" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลการทยอยการสั่งเข้ามาให้มากกว่า 0</div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtImport_Done" class="col-form-label col-form-label-sm">จำนวนทีนำเข้าแล้ว <span class="txt-require">*</span></label>
+      <!-- <input type="number" step="0.001" [ngModel]="DocRef.ACTUAL_QUANTITY | toQTY" (ngModelChange)="DocRef.ACTUAL_QUANTITY=$event" id="txtImport_Done" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_Done')" /> -->
+      <input type="text" [(InputNumModel)]="DocRef.ACTUAL_QUANTITY" id="txtImport_Done" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_Done')" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลจำนวนที่นำเข้าแล้วให้มากกว่า 0</div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtImport_Rest" class="col-form-label col-form-label-sm">จำนวนที่ยังไม่ได้นำเข้า <span class="txt-require">*</span></label>
+      <!-- <input type="number" step="0.001" [ngModel]="DocRef.REMAIN_QUANTITY | toQTY" (ngModelChange)="DocRef.REMAIN_QUANTITY=$event" id="txtImport_Rest" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_Rest')" /> -->
+      <input type="text" [(InputNumModel)]="DocRef.REMAIN_QUANTITY" id="txtImport_Rest" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_Rest')" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลจำนวนที่ยังไม่ได้นำเข้าให้มากกว่า 0</div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtImport_Rest" class="col-form-label col-form-label-sm">ราคาต่อหน่วย (บาท) <span class="txt-require">*</span></label>
+      <!-- <input type="number" step="0.001" [ngModel]="DocRef.INVOICE_UNIT_PRICE | toMoney" (ngModelChange)="DocRef.INVOICE_UNIT_PRICE=$event" id="txtImport_UnitPrice" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_UnitPrice')" /> -->
+      <input type="text" [(InputNumModel)]="DocRef.INVOICE_UNIT_PRICE" id="txtImport_UnitPrice" min="0" class="form-control form-control-sm txt-right" (change)="clearValidate('txtImport_UnitPrice')" />
+      <div class="invalid-feedback">กรุณาใส่ข้อมูลราคาต่อหน่วยให้มากกว่า 0</div>
+      <small class="text-muted">(ราคาโดยประมาณ)</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="txtImportForm_01" class="col-xs-12 col-sm-4 col-lg-3 col-form-label col-form-label-sm">สั่งซื้อจากประเทศ (1)</label>
+    <div class="col-xs-12 col-sm-8 col-lg-6">
+      <select class="form-control form-control-sm" id="txtImportForm_01" [(ngModel)]="Country[0]" (change)="displayCountry($event, 0)">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="txtImportForm_02" class="col-xs-12 col-sm-4 col-lg-3 col-form-label col-form-label-sm">สั่งซื้อจากประเทศ (2)</label>
+    <div class="col-xs-12 col-sm-8 col-lg-6">
+      <select class="form-control form-control-sm" id="txtImportForm_02" [(ngModel)]="Country[1]" (change)="displayCountry($event, 1)">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="txtImportForm_03" class="col-xs-12 col-sm-4 col-lg-3 col-form-label col-form-label-sm">สั่งซื้อจากประเทศ (3)</label>
+    <div class="col-xs-12 col-sm-8 col-lg-6">
+      <select class="form-control form-control-sm" id="txtImportForm_03" [(ngModel)]="Country[2]" (change)="displayCountry($event, 2)">
+        <option value="">-- ไม่ระบุ --</option>
+        <option *ngFor=" let c of CountryList " [value]="c.code" [ngClass]="{ 'cdss-prohibit' : c.isProhibit }">{{c.name}}</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="form-group row">
+    <label for="txtImportForm_03" class="col-12 col-form-label col-form-label-sm">(กรณีที่มีประเทศที่นำเข้ามากกว่า 3 ประเทศ ให้ใส่เพียง 3 ประเทศเท่านั้น)</label>
+  </div>
+  <!-- ------------------------------------------------------------- -->
+  <!-- ------------------------------------------------------------- -->
+  
+
+  <div class="form-group row">
+  <div class="form-group col-12">
+    <label for="IsImportByShip" class="col-sm-12 col-md-6 col-lg-6 col-form-label col-form-label-sm">
+      ขนส่งโดย (เลือกได้มากกว่า 1 ข้อ หรือ ไม่ระบุ)
+    </label>
+  </div>
+</div>
+
+<div class="form-group row form-control-sm">
+
+  <!-- <label for="IsImportByShip" class="col-sm-12 col-md-6 col-lg-6 col-form-label col-form-label-sm">
+    ขนส่งโดย (เลือกได้มากกว่า 1 ข้อ หรือ ไม่ระบุ)
+  </label> -->
+
+  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" value="1" id="IsImportByShip" [checked]="DocRef.TRANSPORT_BY_BOAT==1" (change)="setCheckbox('IsImportByShip', 'BOAT')">
+    <label class="form-check-label" for="IsImportByShip">ทางเรือ</label>
+  </div>
+
+  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" value="1" id="IsImportByAir" [checked]="DocRef.TRANSPORT_BY_PLANE==1" (change)="setCheckbox('IsImportByAir', 'PLANE')">
+    <label class="form-check-label" for="IsImportByAir">ทางเครื่องบิน</label>
+  </div>
+
+  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" value="1" id="IsImportByCar" [checked]="DocRef.TRANSPORT_BY_TRUCK==1" (change)="setCheckbox('IsImportByCar', 'TRUCK')">
+    <label class="form-check-label" for="IsImportByCar">ทางรถยนต์</label>
+  </div>
+
+</div>
+
+  <div class="clearfix">&nbsp;<br /></div>
+  <div class="form-group row">
+    <label for="txtImportForm_03" class="col-xs-12 col-sm-4 col-lg-2 col-form-label col-form-label-sm">ใช้เวลาเดินทาง</label>
+    <input type="text" [(ngModel)]="DocRef.DELIVERY_TIME_TEXT" id="txtTransportTime" class="col-xs-12 col-sm-6 col-lg-4 form-control form-control-sm" />
+  </div>
+
+</div>

@@ -1,0 +1,59 @@
+<div class="container-fluid div-content-box" id="div-section-domestic-ordering">
+  <div class="div-content-box-header">
+    <i class="fa fa-info-circle" aria-hidden="true"></i> {{Title}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  <div class="form-row">
+    <!-- <div class="form-group col-4">
+      <label for="txtOwnerLicenseNo_DomesticOrder" class="col-form-label col-form-label-sm">ใบอนุญาตมีเลขที่</label>
+      <div class="input-group input-group-sm">
+        <input type="text" [value]="RefDoc.REF_HAS_LICENSE_NO" id="txtLicenseOwnerNo" class="form-control form-control-sm" style="text-align:center;" readonly (change)="clearValidate('txtLicenseOwnerNo')" />
+        <div class="input-group-append">
+          <button class="input-group-text" (click)="searchReferenceLicense()">@</button>
+        </div>
+        <div class="invalid-feedback">กรุณาระบุเลขที่ใบอนุญาตมี</div>
+      </div>
+    </div> -->
+
+    <div class="form-group col-4">
+        <label for="txtOwnerLicense_DomesticOrder_No" class="col-form-label col-form-label-sm">ใบอนุญาตมีเลขที่</label>
+        <input type="text" id="txtOwnerLicense_DomesticOrder_No" [value]="RefDoc.REF_HAS_LICENSE_ISSUE_DATE | toDateString" class="form-control form-control-sm" readonly />
+      </div>
+
+    <div class="form-group col-4">
+      <label for="txtOwnerLicense_DomesticOrder_IssueDate" class="col-form-label col-form-label-sm">ลงวันที่</label>
+      <input type="text" id="txtOwnerLicense_DomesticOrder_IssueDate" [value]="RefDoc.REF_HAS_LICENSE_ISSUE_DATE | toDateString" class="form-control form-control-sm" readonly />
+    </div>
+
+    <div class="form-group col-4">
+      <label for="txtOwnerLicense_DomesticOrder_ExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" id="txtOwnerLicense_DomesticOrder_ExpireDate" [value]="RefDoc.REF_HAS_LICENSE_EXPIRY_DATE | toDateString" class="form-control form-control-sm txt-center" readonly />
+    </div>
+
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-4">
+      <label for="txtOwnerLicense_DomesticOrder_QTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต</label>
+      <input type="text" [value]="RefDoc.REF_HAS_LICENSE_QTY" id="txtOwnerLicense_DomesticOrder_QTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+
+    <div class="form-group col-4">
+      <label for="txtOwnerLicense_DomesticOrder_Actual" class="col-form-label col-form-label-sm">ซื้อไปแล้วจำนวน</label>
+      <!-- <input type="number" id="txtOwnerLicense_DomesticOrder_Actual" [value]="0" class="form-control form-control-sm txt-right" min="0" [readonly]="RefDoc.REF_HAS_LICENSE_NO==''" /> -->
+      <input type="text" id="txtOwnerLicense_DomesticOrder_Actual"  class="form-control form-control-sm txt-right" min="0" [readonly]="RefDoc.REF_HAS_LICENSE_NO==''" [(InputNumModel)]="RefDoc.ACTUAL_QUANTITY" (change)="calRemain()" />
+    </div>
+
+    <div class="form-group col-4">
+      <label for="txtOwnerLicense_DomesticOrder_Onhand" class="col-form-label col-form-label-sm">คงเหลือยังซื้อได้อีก</label>
+      <input type="text" id="txtOwnerLicense_DomesticOrder_Onhand" [value]="AvailableQuantity" class="form-control form-control-sm" readonly />
+    </div>
+
+  </div>
+</div>
+
+
+<cdss-popup-search-ref-license tag="search-license" (ready)="initialPopup($event)"></cdss-popup-search-ref-license>

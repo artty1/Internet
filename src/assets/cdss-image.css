@@ -1,0 +1,37 @@
+
+  .card-body.img-owner
+  {
+    background-image: url(icon-set/icon-owner.png);
+  }
+  .card-body.img-production
+  {
+    background-image: url(icon-set/icon-production.png);
+  }
+  .card-body.img-enter
+  {
+    background-image: url(icon-set/icon-enter.png);
+  }
+  .card-body.img-import
+  {
+    background-image: url(icon-set/icon-import.png);
+  }
+  .card-body.img-export
+  {
+    background-image: url(icon-set/icon-export.png);
+  }
+  .card-body.img-export-special
+  {
+    background-image: url(icon-set/icon-export-special.png);
+  }
+  .card-body.img-cross-border{
+    background-image: url(icon-set/icon-cross-border.png);
+  }
+  .card-body.img-substitue{
+    background-image: url(icon-set/icon-substitue.png);
+  }
+  .card-body.img-renevel{
+    background-image: url(icon-set/icon-renevel.png);
+  }
+  .card-body.img-send-sample{
+    background-image: url(icon-set/icon-sample.png);
+  }

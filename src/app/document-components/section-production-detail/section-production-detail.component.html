@@ -1,0 +1,95 @@
+<div class="container-fluid div-content-box" id="div-section-production-detail">
+  <div class="div-content-box-header">
+    <i class="fa fa-info-circle" aria-hidden="true"></i> {{Title}}
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    <!-- #message suggestion -->
+  </div>
+  <div class="form-row">
+
+    <div class="form-group col-xs-12 col-sm-4 col-lg-3">
+      <label for="txtProductionAverage" class="col-form-label-sm">กำลังการผลิตเฉลี่ยต่อปี *</label>
+      <!-- <input type="number" min="0" [value]="0" id="txtProductionAverage" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtProductionAverage" class="form-control form-control-sm txt-right" [(InputNumModel)]="RefDoc.CAPACITY_QUANTITY_AVG" />
+    </div>
+    <div class="form-group col-xs-12 col-sm-4 col-lg-3 offset-lg-1">
+      <label for="txtProductionMax" class="col-form-label-sm">กำลังการผลิตสูงสุดต่อปี *</label>
+      <!-- <input type="number" min="0" [value]="0" id="txtProductionMax" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtProductionMax" class="form-control form-control-sm txt-right" [(InputNumModel)]="RefDoc.CAPACITY_QUANTITY_MAX" />
+    </div>
+    <div class="form-group col-xs-12 col-sm-4 col-lg-3 offset-lg-1">
+      <label for="txtProductionMin" class="col-form-label-sm">กำลังการผลิตต่ำสุดต่อปี *</label>
+      <!-- <input type="number" min="0" [value]="0" id="txtProductionMin" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtProductionMin" class="form-control form-control-sm txt-right" [(InputNumModel)]="RefDoc.CAPACITY_QUANTITY_MIN" />
+    </div>
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-xs-1 col-sm-6 col-lg-3">
+      <label for="txtLicenseNo" class="col-form-label col-form-label-sm">ใบอนุญาตเลขที่</label>
+      <div class="input-group input-group-sm mb-2">
+        <input type="text" [value]="" id="txtLicenseNo" class="form-control form-control-sm" style="text-align:center;" />
+        <div class="input-group-append">
+          <button class="input-group-text">@</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseIssueDate" class="col-form-label col-form-label-sm">ลงวันที่ </label>
+      <input type="text" [value]="" id="txtLicenseIssueDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtLicenseExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" [value]="" id="txtLicenseExpireDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-8 col-sm-4 col-lg-2">
+      <label for="txtLicenseQTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต *</label>
+      <input type="text" [value]="0" id="txtLicenseQTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+    <div class="form-group col-xs-4 col-sm-2 col-lg-1">
+      <label for="txtLicenseQTYUnit" class="col-form-label col-form-label-sm">&nbsp;</label>
+      <input type="text" readonly class="form-control-plaintext form-control-sm" id="txtLicenseQTYUnit" [value]="'หน่วย'">
+    </div>
+
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-xs-1 col-sm-6 col-lg-3">
+      <label for="txtOwnerLicenseNo" class="col-form-label col-form-label-sm">ใบอนุญาตมีเลขที่</label>
+      <div class="input-group input-group-sm mb-2">
+        <input type="text" [value]="" id="txtOwnerLicenseNo" class="form-control form-control-sm" style="text-align:center;" />
+        <div class="input-group-append">
+          <button class="input-group-text">@</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtOwnerLicenseIssueDate" class="col-form-label col-form-label-sm">ลงวันที่ </label>
+      <input type="text" [value]="" id="txtOwnerLicenseIssueDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-12 col-sm-6 col-lg-3">
+      <label for="txtOwnerLicenseExpireDate" class="col-form-label col-form-label-sm">วันหมดอายุ</label>
+      <input type="text" [value]="" id="txtOwnerLicenseExpireDate" class="form-control form-control-sm txt-center" readonly />
+    </div>
+    <div class="form-group col-xs-8 col-sm-4 col-lg-2">
+      <label for="txtOwnerLicenseQTY" class="col-form-label col-form-label-sm">จำนวนที่ได้รับอนุญาต *</label>
+      <input type="text" [value]="0" id="txtOwnerLicenseQTY" class="form-control form-control-sm txt-right" readonly />
+    </div>
+    <div class="form-group col-xs-4 col-sm-2 col-lg-1">
+      <label for="txtOwnerLicenseQTYUnit" class="col-form-label col-form-label-sm">&nbsp;</label>
+      <input type="text" readonly class="form-control-plaintext form-control-sm" id="txtOwnerLicenseQTYUnit" [value]="'หน่วย'">
+    </div>
+
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-4">
+      <label for="txtProductionActual" class="col-form-label-sm">ผลิตแล้วจำนวน</label>
+      <!-- <input type="number" min="0" [value]="0" id="txtProductionAverage" class="form-control form-control-sm txt-right" /> -->
+      <input type="text" id="txtProductionActual" class="form-control form-control-sm txt-right" [(InputNumModel)]="RefDoc.ACTUAL_QUANTITY" />
+    </div>
+  </div>
+
+</div>

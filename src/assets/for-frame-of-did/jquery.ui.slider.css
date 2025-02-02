@@ -1,0 +1,39 @@
+.ui-slider {
+	text-align: left; position: relative;
+}
+.ui-slider .ui-slider-handle {
+	width: 1.2em; height: 1.2em; position: absolute; z-index: 2; cursor: default;
+}
+.ui-slider .ui-slider-range {
+	background-position: 0px 0px; border: 0px currentColor; border-image: none; font-size: 0.7em; display: block; position: absolute; z-index: 1;
+}
+.ui-slider-horizontal {
+	height: 0.8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -0.3em; margin-left: -0.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0px; height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0px;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0px;
+}
+.ui-slider-vertical {
+	width: 0.8em; height: 100px;
+}
+.ui-slider-vertical .ui-slider-handle {
+	left: -0.3em; margin-bottom: -0.6em; margin-left: 0px;
+}
+.ui-slider-vertical .ui-slider-range {
+	left: 0px; width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+	bottom: 0px;
+}
+.ui-slider-vertical .ui-slider-range-max {
+	top: 0px;
+}

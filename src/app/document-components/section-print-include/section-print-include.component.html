@@ -1,0 +1,268 @@
+<div class="container-fluid div-content-box" id="div-section-print-include">
+    <div class="div-content-box-header">
+      <i class="fa fa-info-circle" aria-hidden="true"></i> {{Title}}
+    </div>
+    <div class="div-content-box_suggestion is-warning">
+      หมายเหตุ: กรุณาตั้งชื่อไฟล์เอกสารที่แนบมาให้สอดคล้องกับรายการเอกสารที่ติ๊กเลือก
+    </div>
+    <div class="form-row" *ngIf="repo.isImport">
+      <div class="col-12 line-gap">
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-01" (change)="changeCheckInclude(1)" [checked]="getSequenceCheck(1)">
+          <label class="custom-control-label" for="print-include-01">สำเนาเอกสารแสดงการเป็นห้างหุ้นส่วนนิติบุคคล บริษัทจำกัดหรือบริษัทมหาชนจำกัดในกรณีที่เป็นนิติบุคคล</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-02" (change)="changeCheckInclude(2)" [checked]="getSequenceCheck(2)">
+          <label class="custom-control-label" for="print-include-02">สำเนาบัตรประจำตัวประชาชนหรือบัตรอื่นซึ่งใช้แทนบัตรประจำตัวประชาชนของผู้ขอรับใบอนุญาต</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-03" (change)="changeCheckInclude(3)" [checked]="getSequenceCheck(3)">
+          <label class="custom-control-label" for="print-include-03">สำเนาทะเบียนบ้านของผู้ขอรับใบอนุญาต</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-04" (change)="changeCheckInclude(4)" [checked]="getSequenceCheck(4)">
+          <label class="custom-control-label" for="print-include-04">สำเนาใบทะเบียนการค้าหรือใบทะเบียนพาณิชย์</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-05" (change)="changeCheckInclude(5)" [checked]="getSequenceCheck(5)">
+          <label class="custom-control-label" for="print-include-05">สำเนาใบอนุญาตตั้งโรงงานและใบอนุญาตประกอบกิจการโรงงานตามกฏหมายว่าด้วยโรงงาน กับแผนที่แสดงที่ตั้งของสถานที่ผลิตยุทธภัณฑ์และแผนผังภายในบริเวณสถานที่ผลิตยุทธภัณฑ์ในกรณีที่ขอรับใบอนุญาตผลิตซึ่งยุทธภัณฑ์</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">แผนที่แสดงที่ตั้งของสถานที่เก็บยุทธภัณฑ์</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-07" (change)="changeCheckInclude(7)" [checked]="getSequenceCheck(7)">
+          <label class="custom-control-label" for="print-include-07">สำเนาหนังสือเดินทาง สำเนาใบอนุญาตตามกฏหมายว่าด้วยการทำงานของคนต่างด้าว และสำเนาใบอนุญาตหรือหนังสือรับรองตามกฏหมายว่าด้วยการควบคุมการประกอบธุรกิจของคนต่างด้าวในกรณีที่เป็นคนต่างด้าว</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-08" (change)="changeCheckInclude(8)" [checked]="getSequenceCheck(8)">
+          <label class="custom-control-label" for="print-include-08">สำเนาเอกสารแสดงลักษณะและคุณสมบัติของยุทธภัณฑ์</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-09" (change)="changeCheckInclude(9)" [checked]="getSequenceCheck(9)">
+          <label class="custom-control-label" for="print-include-09">หนังสือมอบอำนาจ ในกรณีที่ผู้ยื่นคำขอได้รับมอบอำนาจให้ยื่นคำขอแทน</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-10" (change)="swapImport10()" [checked]="isImport10Active" />
+          <label class="custom-control-label" for="print-include-10">เอกสารหลักฐานอื่น ๆ</label>&nbsp;&nbsp;
+          <input class="form-control" type="text" [(ngModel)]="Import10Comment" id="txtOtherDocument" placeholder="พิมพ์รายละเอียดเอกสารอื่น ๆ" [hidden]="!isImport10Active" />
+          <div class="invalid-feedback">กรุณากรอกข้อมูลรายละเอียดเอกสารอื่น ๆ, หากไม่มีกรุณาปลดตัวเลือก "เอกสารหลักฐานอื่น ๆ "</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="form-row" *ngIf="ForOwnerOrImportIntoBorder_WithRenew">
+      <div class="col-12 line-gap">
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-08" (change)="changeCheckInclude(8)" [checked]="getSequenceCheck(8)">
+          <label class="custom-control-label" for="print-include-08">สำเนาหรือรูปถ่ายใบอนุญาตหรือใบแทน</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-09" (change)="changeCheckInclude(9)" [checked]="getSequenceCheck(9)">
+          <label class="custom-control-label" for="print-include-09">หนังสือมอบอำนาจ ในกรณีที่ผู้ยื่นคำขอได้รับมอบอำนาจให้ยื่นคำขอแทน</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-10" (change)="swapImport10()" [checked]="isImport10Active" />
+          <label class="custom-control-label" for="print-include-10">เอกสารหลักฐานอื่น ๆ</label>&nbsp;&nbsp;
+          <input class="form-control" type="text" [(ngModel)]="Import10Comment" id="txtOtherDocument" placeholder="พิมพ์รายละเอียดเอกสารอื่น ๆ" [hidden]="!isImport10Active" />
+          <div class="invalid-feedback">กรุณากรอกข้อมูลรายละเอียดเอกสารอื่น ๆ, หากไม่มีกรุณาปลดตัวเลือก "เอกสารหลักฐานอื่น ๆ "</div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="form-row" *ngIf="repo.isExport">
+      <div class="col-12 line-gap">
+
+        <div>4.1 มาตรา 5</div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-01" (change)="changeCheckInclude(1)" [checked]="getSequenceCheck(1)">
+          <label class="custom-control-label" for="print-include-ex-01">(1) เมื่อรัฐบาลต่างประเทศร้องขอตามข้อตกลงซึ่งได้ทำไว้กับรัฐบาล</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-02" (change)="changeCheckInclude(2)" [checked]="getSequenceCheck(2)">
+          <label class="custom-control-label" for="print-include-ex-02">(2) อาวุธยุทธภัณฑ์ ฯ ของทางราชการ</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-03" (change)="changeCheckInclude(3)" [checked]="getSequenceCheck(3)">
+          <label class="custom-control-label" for="print-include-ex-03">(3) เป็นการกระทำโดยเปิดเผยในธุรกิจเพื่อการค้าตามปกติ</label>
+        </div>
+
+        <div>4.2 มาตรา 6</div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-04" (change)="changeCheckInclude(4)" [checked]="getSequenceCheck(4)">
+          <label class="custom-control-label" for="print-include-ex-04">เป็นการนำติดตัวออกไปตามความจำเป็น หรือเพื่อปรับปรุงซ่อมแซม หรือส่งออกไปเพื่อเป็นตัวอย่าง</label>
+        </div>
+
+        <div>5. พร้อมกับคำสั่งนี้ ข้าพเจ้าได้แนบหลักฐานต่าง ๆ มาด้วยแล้วคือ</div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-05" (change)="changeCheckInclude(5)" [checked]="getSequenceCheck(5)">
+          <label class="custom-control-label" for="print-include-ex-05">สำเนาเอกสารแสดงการเป็นห้างหุ้นส่วนนิติบุคคล บริษัทจำกัดหรือบริษัทมหาชน จำกัด</label>
+        </div>
+
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-ex-06">สำเนาบัตรประจำตัวประชาชนหรือบัตรอื่นซึ่งใช้แทนบัตรประจำตัวประชาชนของผู้ขอรับหนังสืออนุญาตส่งออก/ส่งผ่านแดน/ส่งตัวอย่างยุทธภัณฑ์</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-07" (change)="changeCheckInclude(7)" [checked]="getSequenceCheck(7)">
+          <label class="custom-control-label" for="print-include-ex-07">สำเนาทะเบียนบ้านของผู้ขอรับหนังสืออนุญาตส่องออก/ส่งผ่านแดน/ส่งตัวอย่างยุทธภัณฑ์</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-08" (change)="changeCheckInclude(8)" [checked]="getSequenceCheck(8)">
+          <label class="custom-control-label" for="print-include-ex-08">สำเนาใบทะเบียนการค้าหรือใบทะเบียนพาณิชย์</label>
+        </div>
+
+        <!-- <div class="custom-control custom-checkbox" [hidden]="HideIfCrossBorder"> -->
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-09" (change)="changeCheckInclude(9)" [checked]="getSequenceCheck(9)">
+          <label class="custom-control-label" for="print-include-ex-09">สำเนาใบอนุญาตตั้งโรงงานและใบอนุญาตประกอบกิจการโรงงานตามกฏหมายว่าด้วยโรงงาน (ยกเว้นใบขออนุญาตส่งผ่านแดน)</label>
+        </div>
+
+        <!-- <div class="custom-control custom-checkbox" [hidden]="HideIfCrossBorder"> -->
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-10" (change)="changeCheckInclude(10)" [checked]="getSequenceCheck(10)">
+          <label class="custom-control-label" for="print-include-ex-10">แผนที่แสดงที่ตั้งพร้อมแผนผังภายในบริเวณของสถานที่เก็บยุทธภัณฑ์ (ยกเว้นใบขออนุญาตส่งผ่านแดน)</label>
+        </div>
+
+        <!-- <div class="custom-control custom-checkbox" [hidden]="!HideIfCrossBorder"> -->
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-11" (change)="changeCheckInclude(11)" [checked]="getSequenceCheck(11)">
+          <label class="custom-control-label" for="print-include-ex-11">แผนที่แสดงเส้นทางการขนส่งผ่านแดน (กรณีส่งผ่านแดน)</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-12" (change)="changeCheckInclude(12)" [checked]="getSequenceCheck(12)">
+          <label class="custom-control-label" for="print-include-ex-12">สำเนาเอกสารแสดงคุณลักษณะและคุณสมบัติของยุทธภัณฑ์</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-13" (change)="changeCheckInclude(13)" [checked]="getSequenceCheck(13)">
+          <label class="custom-control-label" for="print-include-ex-13">หนังสือมอบอำนาจในกรณีที่ผู้ยื่นคำขอได้รับมอบอำนาจให้ยื่นคำขอแทน</label>
+        </div>
+
+        <!-- <div class="custom-control custom-checkbox" [hidden]="!HideIfCrossBorder"> -->
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-14" (change)="changeCheckInclude(14)" [checked]="getSequenceCheck(14)">
+          <label class="custom-control-label" for="print-include-ex-14">หนังสือแต่งตั้งหรือหนังสือมอบหมายให้เป็นตัวแทนดำเนินการส่งผ่านแดน (กรณีส่งผ่านแดน)</label>
+        </div>
+
+        <!-- <div class="custom-control custom-checkbox" [hidden]="HideIfCrossBorder"> -->
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-15" (change)="changeCheckInclude(15)" [checked]="getSequenceCheck(15)">
+          <label class="custom-control-label" for="print-include-ex-15">สำเนาใบอนุญาตผลิต สั่งเข้ามา นำเข้ามา และมีซึ่งยุทธภัณฑ์ ตาม พรบ.ควบคุมยุทธภัณฑ์ พ.ศ.2530 (ยกเว้นขออนุญาตส่งผ่านแดน)</label>
+        </div>
+
+        <!-- <div class="custom-control custom-checkbox" [hidden]="HideIfCrossBorder"> -->
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-16" (change)="changeCheckInclude(16)" [checked]="getSequenceCheck(16)">
+          <label class="custom-control-label" for="print-include-ex-16">บัญชีรับจ่ายยุทธภัณฑ์ (ยกเว้นขออนุญาตส่งผ่านแดน)</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-17" (change)="changeCheckInclude(17)" [checked]="getSequenceCheck(17)">
+          <label class="custom-control-label" for="print-include-ex-17">สำเนาใบสั่งซื้อ (เฉพาะวัตถุระเบิด/แอมโมเนียมไนเตรท)</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-18" (change)="changeCheckInclude(18)" [checked]="getSequenceCheck(18)">
+          <label class="custom-control-label" for="print-include-ex-18">หนังสือรับรองการเป้นผู้ใช้ปลายทาง (End User Certificate) (เฉพาะวัตถุระเบิด/แอมโมเนียมไนเตรท)</label>
+        </div>
+
+        <div>
+          6 กรณีขออนุญาตส่งออกยุทธภัณฑ์ (ประเภทแอมโมเนียมไนเตรท และวัตถุระเบิด) และส่งผ่านแดนแนบเอกสารเพิ่มเติมจากข้อ 5 คือ
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-ex-21" (change)="changeCheckInclude(21)" [checked]="getSequenceCheck(21)">
+          <label class="custom-control-label" for="print-include-ex-21">สำเนาหนังสือกำกับสินค้า (Invoice) และสำเนาหนังสือกำกับหีบห่อ (Packing List)</label>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+
+<!--
+การแนบเอกสารหลักฐานต่าง ๆ
+
+code (sequan no)
+1	4.1	◻	มาตรา 5
+2			◻	(1) เมื่อรัฐบาลต่างประเทศร้องขอตามข้อตกลงซึ่งได้ทำไว้กับรัฐบาล
+3			◻	(2) อาวุธยุทธภัณฑ์ ฯ ของทางราชการ
+4			◻	(3) เป็นการกระทำโดยเปิดเผยในธุรกิจเพื่อการค้าตามปกติ
+5	4.2	◻	มาตรา 6 เป็นการนำติดตัวออกไปตามความจำเป็น หรือเพื่อปรับปรุงซ่อมแซม หรือส่งออกไปเพื่อเป็นตัวอย่าง
+
+	5		พร้อมกับคำสั่งนี้ ข้าพเจ้าได้แนบหลักฐานต่าง ๆ มาด้วยแล้วคือ
+6			◻	สำเนาเอกสารแสดงการเป็นห้างหุ้นส่วนนิติบุคคล บริษัทจำกัดหรือบริษัทมหาชน จำกัด
+7			◻	สำเนาบัตรประจำตัวประชาชนหรือบัตรอื่นซึ่งใช้แทนบัตรประจำตัวประชาชนของผู้ขอรับหนังสืออนุญาตส่งออก/ส่งผ่านแดน/ส่งตัวอย่างยุทธภัณฑ์
+8			◻	สำเนาทะเบียนบ้านของผู้ขอรับหนังสืออนุญาตส่องออก/ส่งผ่านแดน/ส่งตัวอย่างยุทธภัณฑ์
+9			◻	สำเนาใบทะเบียนการค้าหรือใบทะเบียนพาณิชย์
+10			◻	สำเนาใบอนุญาตตั้งโรงงานและใบอนุญาตประกอบกิจการโรงงานตามกฏหมายว่าด้วยโรงงาน (ยกเว้นใบขออนุญาตส่งผ่านแดน)
+11			◻	แผนที่แสดงที่ตั้งพร้อมแผนผังภายในบริเวณของสถานที่เก็บยุทะภัณฑ์ (ยกเว้นใบขออนุญาตส่งผ่านแดน)
+12			◻	แผนที่แสดงเส้นทางการขนส่งผ่านแดน (กรณีส่งผ่านแดน)
+13			◻	สำเนาเอกสารแสดงคุณลักษณะและคุณสมบัติของยุทธภัณฑ์
+14			◻	หนังสือมอบอำนาจในกรณีที่ผู้ยื่นคำขอได้รับมอบอำนาจให้ยื่นคำขอแทน
+15			◻	หนังสือแต่งตั้งหรือหนังสือมอบหมายให้เป็นตัวแทนดำเนินการส่งผ่านแดน (กรณีส่งผ่านแดน)
+16			◻	สำเนาใบอนุญาตผลิต สั่งเข้ามา นำเข้ามา และมีซึ่งยุทธภัณฑ์ ตาม พรบ.ควบคุมยุทธภัณฑ์ พ.ศ.2530 (ยกเว้นขออนุญาตส่งผ่านแดน)
+17			◻	บัญชีรับจ่ายยุทธภัณฑ์ (ยกเว้นขออนุญาตส่งผ่านแดน)
+18			◻	สำเนาใบสั่งซื้อ (เฉพาะวัตถุระเบิด/แอมโมเนียมไนเตรท)
+19			◻	หนังสือรับรองการเป้นผู้ใช้ปลายทาง (End User Certificate) (เฉพาะวัตถุระเบิด/แอมโมเนียมไนเตรท)
+20			◻	อื่น ๆ ....................................
+
+	6		กรณีขออนุญาตส่งออกยุทธภัณฑ์ (ประเภทแอมโมเนียมไนเตรท และวัตถุระเบิด) และส่งผ่านแดนแนบเอกสารเพิ่มเติมจากข้อ 5 คือ
+21			◻	สำเนาใบสั่งซื้อ เลขที่ ................................ ลงวันที่ ...................................
+22			◻	สำเนาหนังสือกำกับสินค้า (Invoice) และสำเนาหนังสือกำกับหีบห่อ (Packing List)
+23			◻	หนังสือรับรองการเป็นผู้ใช้ปลายทาง (End User Certificate)
+
+//------------------------------------------------------
+1			◻	สำเนาเอกสารแสดงการเป็นห้างหุ้นส่วนนิติบุคคล บริษัทจำกัดหรือบริษัทมหาชนจำกัดในกรณีที่เป็นนิติบุคคล
+2			◻	สำเนาบัตรประจำตัวประชาชนหรือบัตรอื่นซึ่งใช้แทนบัตรประจำตัวประชาชนของผู้ขอรับใบอนุญาต
+3			◻	สำเนาทะเบียนบ้านของผู้ขอรับใบอนุญาต
+4			◻	สำเนาใบทะเบียนการค้าหรือใบทะเบียนพาณิชย์
+5			◻	สำเนาใบอนุญาตตั้งโรงงานและใบอนุญาตประกอบกิจการโรงงานตามกฏหมายว่าด้วยโรงงานกับแผนที่แสดงที่ตั้งของสถานที่ผลิตยุทธภัณฑ์และแผนผังภายในบริเวณสถานที่ผลิตยุทธภัณฑ์ในกรณีที่ขอรับใบอนุญาตผลิตซึ่งยุทธภัณฑ์
+6			◻	แผนที่แสดงที่ตั้งของสถานที่เก็บยุทธภัณฑ์
+7			◻	สำเนาหนังสือเดินทาง สำเนาใบอนุญาตตามกฏหมายว่าด้วยการทำงานของคนต่างด้าว และสำเนาใบอนุญาตหรือหนังสือรับรองตามกฏหมายว่าด้วยการควบคุมการประกอบธุรกิจของคนต่างด้าวในกรณีที่เป็นนต่างด้าว
+8			◻	สำเนาเอกสารแสดงลักษณะและคุณสมบัติของยุทธภัณฑ์
+9			◻	หนังสือมอบอำนาจ ในกรณีที่ผู้ยื่นคำขอได้รับมอบอำนาจให้ยื่นคำขอแทน
+10			◻	เอกสารหลักฐานอื่น ๆ
+
+
+1		4.1	◻	มาตรา 5
+2				◻	(1) เมื่อรัฐบาลต่างประเทศร้องขอตามข้อตกลงซึ่งได้ทำไว้กับรัฐบาล
+3				◻	(2) อาวุธยุทธภัณฑ์ ฯ ของทางราชการ
+4				◻	(3) เป็นการกระทำโดยเปิดเผยในธุรกิจเพื่อการค้าตามปกติ
+5		4.2	◻	มาตรา 6 เป็นการนำติดตัวออกไปตามความจำเป็น หรือเพื่อปรับปรุงซ่อมแซม หรือส่งออกไปเพื่อเป็นตัวอย่าง
+
+		5		พร้อมกับคำสั่งนี้ ข้าพเจ้าได้แนบหลักฐานต่าง ๆ มาด้วยแล้วคือ
+6				◻	สำเนาเอกสารแสดงการเป็นห้างหุ้นส่วนนิติบุคคล บริษัทจำกัดหรือบริษัทมหาชน จำกัด
+7				◻	สำเนาบัตรประจำตัวประชาชนหรือบัตรอื่นซึ่งใช้แทนบัตรประจำตัวประชาชนของผู้ขอรับหนังสืออนุญาตส่งออก/ส่งผ่านแดน/ส่งตัวอย่างยุทธภัณฑ์
+8				◻	สำเนาทะเบียนบ้านของผู้ขอรับหนังสืออนุญาตส่องออก/ส่งผ่านแดน/ส่งตัวอย่างยุทธภัณฑ์
+9				◻	สำเนาใบทะเบียนการค้าหรือใบทะเบียนพาณิชย์
+10				◻	สำเนาใบอนุญาตตั้งโรงงานและใบอนุญาตประกอบกิจการโรงงานตามกฏหมายว่าด้วยโรงงาน (ยกเว้นใบขออนุญาตส่งผ่านแดน)
+11				◻	แผนที่แสดงที่ตั้งพร้อมแผนผังภายในบริเวณของสถานที่เก็บยุทะภัณฑ์ (ยกเว้นใบขออนุญาตส่งผ่านแดน)
+12				◻	แผนที่แสดงเส้นทางการขนส่งผ่านแดน (กรณีส่งผ่านแดน)
+13				◻	สำเนาเอกสารแสดงคุณลักษณะและคุณสมบัติของยุทธภัณฑ์
+14				◻	หนังสือมอบอำนาจในกรณีที่ผู้ยื่นคำขอได้รับมอบอำนาจให้ยื่นคำขอแทน
+15				◻	หนังสือแต่งตั้งหรือหนังสือมอบหมายให้เป็นตัวแทนดำเนินการส่งผ่านแดน (กรณีส่งผ่านแดน)
+16				◻	สำเนาใบอนุญาตผลิต สั่งเข้ามา นำเข้ามา และมีซึ่งยุทธภัณฑ์ ตาม พรบ.ควบคุมยุทธภัณฑ์ พ.ศ.2530 (ยกเว้นขออนุญาตส่งผ่านแดน)
+17				◻	บัญชีรับจ่ายยุทธภัณฑ์ (ยกเว้นขออนุญาตส่งผ่านแดน)
+18				◻	สำเนาใบสั่งซื้อ (เฉพาะวัตถุระเบิด/แอมโมเนียมไนเตรท)
+19				◻	หนังสือรับรองการเป้นผู้ใช้ปลายทาง (End User Certificate) (เฉพาะวัตถุระเบิด/แอมโมเนียมไนเตรท)
+20				◻	อื่น ๆ ....................................
+
+		6		กรณีขออนุญาตส่งออกยุทธภัณฑ์ (ประเภทแอมโมเนียมไนเตรท และวัตถุระเบิด) และส่งผ่านแดนแนบเอกสารเพิ่มเติมจากข้อ 5 คือ
+21				◻	สำเนาใบสั่งซื้อ เลขที่ ................................ ลงวันที่ ...................................
+22				◻	สำเนาหนังสือกำกับสินค้า (Invoice) และสำเนาหนังสือกำกับหีบห่อ (Packing List)
+23				◻	หนังสือรับรองการเป็นผู้ใช้ปลายทาง (End User Certificate)
+-->

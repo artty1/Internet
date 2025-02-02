@@ -1,0 +1,72 @@
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'modalTitle'" data-backdrop="static" aria-hidden="true" [attr.data-keyboard]="allowEscape">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="id+'-title'">ผนวกประทานบัตร</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" *ngIf="allowEscape">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container-fluid div-content-box-without-header">
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Name" class="form-control-sm">เลขที่ประทานบัตร <span class="txt-require">*</span></label>
+              <input type="text" class="form-control form-control-sm" id="txtConsessionEditor_DocumentNO" placeholder="" [(ngModel)]="consession.DOCUMENT_NO" (change)="clearValidate('txtConsessionEditor_DocumentNO')">
+              <div class="invalid-feedback">กรุณาระบุเลขที่ประทานบัตร</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Note" class="col-form-label form-control-sm">ลงวันที่</label>
+              <div class="input-group input-group-sm mb-2">
+                <input type="text" class="form-control form-control-sm txt-center" id="txtConsessionEditor_DocumentDate" [value]="consession.DOCUMENT_DATE | toDateString:'D MMMM YYYY'" readonly>
+                <div class="input-group-append">
+                  <button class="input-group-text" [id]="CMD_FOR_DATE">
+                    <!--<button class="input-group-text" id="cmdConcessEditor_DocumentDate">-->
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Note" class="col-form-label form-control-sm">วันหมดอายุ</label>
+              <div class="input-group input-group-sm mb-2">
+                <input type="text" class="form-control form-control-sm txt-center" id="txtConsessionEditor_ExpireDate" readonly [value]="temp_date_to_note | toDateString:'D MMMM YYYY'">
+                <!-- <input type="text" class="form-control form-control-sm txt-center" id="txtConsessionEditor_ExpireDate" [value]="consession.DOCUMENT_DATE | toDateString:'D MMMM YYYY'" readonly> -->
+                <div class="input-group-append">
+                  <button class="input-group-text" [id]="CMD_FOR_EXIREDATE">
+                    <!--<button class="input-group-text" id="cmdConcessEditor_DocumentDate">-->
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="txtAppendixEditor_Note" class="col-form-label form-control-sm">หมายเหตุ</label>
+              <textarea class="form-control form-control-sm" id="txtConsessionEditor_Remark" placeholder="" [(ngModel)]="consession.CONTACT_INFO"></textarea>
+              <!-- <textarea class="form-control form-control-sm" id="txtConsessionEditor_Remark" placeholder="">
+{{ temp_date_to_note | toDateString }}
+              </textarea> -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelDialog()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="saveData()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

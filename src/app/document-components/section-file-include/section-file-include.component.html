@@ -1,0 +1,73 @@
+<div class="container-fluid div-content-box" id="div-section-domestic-ordering">
+  <div class="div-content-box-header">
+    <i class="fa fa-paperclip" aria-hidden="true"></i> {{Title}}
+  </div>
+  <!-- <div class="div-content-box_suggestion is-warning">
+    (แนบแยกประเภทเอกสาร ตัวอย่างเช่น เอกสาร 1 ชุดต่อ 1 ไฟล์และขนาดไฟล์ไม่เกิน 3MB.)
+  </div> -->
+  <div class="cdss-commandbar is-right is-top">
+    <!-- <button class="btn btn-primary btn-sm cdss-width-75" (click)="addFileUpload(FILE_CATAGORY_IMAGE)">
+      <i class="fa fa-picture-o" aria-hidden="true"></i> แนบข้อมูลรูปภาพ
+    </button>
+    -->
+    <!-- <button class="btn btn-success btn-sm cdss-width-75" (click)="addFileUpload()"> -->
+
+    <button class="btn btn-success btn-sm cdss-width-75"
+      cdssFileUpload file-extension="pdf"
+        [multiple]="true"
+        message-error-file-size="ไฟล์แนบมีขนาดเกิน 3 MB กรุณาแนบเอกสารใหม่"
+        (on-done)="uploadDone($event)"
+        (on-upload-error)="uploadError($event)"
+        (on-upload-begin)="beginUpload($event)"
+      >
+      <i class="fa fa-file" aria-hidden="true"></i> แนบเอกสารเพิ่มเติม ...
+    </button>
+
+    <!-- <div class="is-warning">
+      (แนบแยกประเภทเอกสาร ตัวอย่างเช่น เอกสาร 1 ชุดต่อ 1 ไฟล์และขนาดไฟล์ไม่เกิน 3MB.)
+    </div> -->
+    <div class="is-warning">
+      กรุณาแนบไฟล์เอกสารที่เป็น pdf ขนาดไม่เกิน 3MB.<br />โดยไฟล์แนบจะต้องเป็นเอกสาร 1 ชุดต่อ 1 ไฟล์ และต้องตั้งชื่อไฟล์ตามการแนบเอกสารหลักฐานต่างๆ
+    </div>
+  </div>
+
+  <div>
+
+    <div class="file-item" *ngFor="let item of fileIncludeList.fileItems" [ngClass]=" { 'remove': item.for_delete }">
+      <div class="file-item-header" [title]="item.name">
+        <i class="fa fa-star red" aria-hidden="true" [hidden]="item.id>0"></i>
+        {{item.name}}
+      </div>
+      <div style="margin-bottom: -5px; display: flex;">
+        <div style="flex: 1 1 auto">
+          <button class="btn btn-link btn-sm item-button" title="edit" (click)="editItemName(item)" hidden>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div style="text-align: right; flex: 1 1 auto">
+          <button class="btn btn-link btn-sm item-button" title="view" (click)="viewItem(item)">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-link btn-sm item-button" title="remove" [hidden]="item.for_delete" (click)="swapRemoveItem(item)">
+            <i class="fa fa-trash red" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-link btn-sm item-button" title="cancel remove" [hidden]="!item.for_delete" (click)="swapRemoveItem(item)">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="div-include-footer">{{Footer}}</div>
+
+</div>
+
+<!-- <cdss-image-dialog [ImageSource]="'assets/icon-set/icon-status-approve.png'" (ready)="initImageDialog($event)"></cdss-image-dialog>
+<cdss-popup-file-upload #popupUpload></cdss-popup-file-upload> -->
+
+<cdss-confirm-dialog [show-cancel-button]="false" #dialogError>
+  <div [innerHTML]="uploadErrorMessage">
+  </div>
+</cdss-confirm-dialog>

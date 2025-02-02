@@ -1,0 +1,24 @@
+<div class="modal fade" [id]="id" tabindex="-1" role="dialog" [attr.aria-labelledby]="id+'modalTitle'" data-backdrop="static" aria-hidden="true" [attr.data-keyboard]="allowEscape">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="id+'-title'">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" *ngIf="allowEscape">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        Reference only License No or all of License in same Request Doc ????
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="renewOnly()">หนังสืออนุญาต {{ref_license_no}}</button>
+        <button type="button" class="btn btn-primary" (click)="renewAll()">เอกสารใบคำร้อง {{ref_req_no}}</button>
+        <button type="button" class="btn btn-secondary" (click)="closeDialog()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

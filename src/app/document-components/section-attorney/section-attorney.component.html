@@ -1,0 +1,56 @@
+<div class="container-fluid div-content-box" id="div-section-attorney">
+  
+  <div class="div-content-box-header">
+    <i class="fa fa-users" aria-hidden="true"></i> {{Title}}    
+  </div>
+  <div class="div-content-box_suggestion is-warning">
+    (หากต้องการเพิ่ม ผู้รับมอบอำนาจ กรุณาติดต่อเจ้าหน้าที่)
+  </div>
+
+  <table class="table table-striped table-hover table-fullwidth table-sm" style="font-size: 0.875rem;" id="tbAttorney">
+    <thead>
+      <tr>
+        <th class="text-center cdss">รับมอบอำนาจ</th>
+        <th class="text-center cdss">ชื่อ-นามสกุล</th>
+        <th class="text-center cdss">อายุ</th>
+        <th class="text-center cdss">เลขที่บัตรประชาชน</th>
+        <th class="text-center cdss">ที่อยู่</th>
+        <th class="text-center cdss">หมายเลขโทรศัพท์</th>
+        <th class="text-center cdss">หมายเลขโทรสาร</th>
+        <th class="text-center cdss">E-Mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of getPerson">
+        <td>
+          <div class="form-check" style="text-align: center;">
+            <input class="form-check-input position-static" type="checkbox" name="attorny-person" aria-label="..."
+            [value]="p.ID"
+            [checked]="isCheck(p.ID)"
+            (click)="setCommitteePerson($event, p)">
+          </div>
+        </td>
+        <td class="td-person-name">
+          {{p.PERSON_NAME | toFullName : p.PERSON_NAME_PREFIX : p.PERSON_SURNAME}}
+        </td>
+        <td class="td-age">{{p.BIRTHDATE | toAge}}</td>
+        <td class="td-idcard">{{p.ID_CARD_NO}}</td>
+        <td>
+          {{p.ADDRESS_NO}} {{p.BUILDING_NAME}} {{p.VILLAGE}} {{p.MOO}} {{p.SOI}} {{p.STREET}}
+          {{p.DISTRICT_NAME}} {{p.SUB_PROVINCE_NAME}} {{p.PROVINCE_NAME}} {{p.POSTCODE}}
+        </td>
+        <td>{{p.PHONE_NO}}</td>
+        <td>{{p.FAX_NO}}</td>
+        <td>{{p.E_MAIL_ADDRESS}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="8" class="grd-footer">
+          จำนวน {{getPerson.length}} ข้อมูล
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="invalid-feedback">ข้อมูลผู้มีอำนาจลงลายมือชื่อแทนนิติบุคคลต้องเลือกอย่างน้อย 1 คนขึ้นไป</div>
+</div>
