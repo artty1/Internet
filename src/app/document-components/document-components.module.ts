@@ -54,6 +54,7 @@ import { PopupTraderDocument } from './popup-trader-document/popup-trader-docume
 import { SectionTraderDepartmentComponent } from './section-trader-department/section-trader-department.component';
 import { SectionArmamentInformationComponent } from './section-armament-information/section-armament-information.component';
 import { SectionUseComponent } from './section-use/section-use.component';
+import { SectionCoordinatorComponent } from './section-coordinator/section-coordinator.component';
 
 
 
@@ -63,7 +64,7 @@ import { SectionUseComponent } from './section-use/section-use.component';
 @NgModule({
   declarations: [
     RequestDocumentComponent, SectionHeaderComponent, SectionPaymentTypeComponent, SectionTraderProfileComponent, SectionCommitteeComponent, SectionAttorneyComponent, SectionArmamentComponent, SectionStockLocationComponent, SectionDomesticOrderingComponent, SectionAppendixComponent, SectionNoteComponent, SectionCrossBorderComponent, SectionMonthlyInventoryComponent, SectionPermissionProductionComponent, SectionSourceOfEnterComponent, SectionAdjustQtyComponent, SectionAppendixConcessionComponent, SectionProductionDetailComponent, SectionReasonOfSubstituteComponent, SectionDetailOfExportComponent
-    , PopupListLocation, PopupEditorLocation, PopupEditorAppendixConcession, PopupEditorAppendix, SectionTraderCommentComponent, PopupSearchProductGroup, PopupSearchProduct, PopupSearchTariff, PopupUploadExcel, DialogRenewAllDoc, PopupSearchRefLicense, PopupListExcelAppendix, PopupListExcelAppendixConsession, SectionFileInclude, PopupFileUploadComponent, SectionPrintInclude, SectionDocumentReferenceComponent, PopupTraderDocument, SectionTraderDepartmentComponent, SectionArmamentInformationComponent, SectionUseComponent
+    , PopupListLocation, PopupEditorLocation, PopupEditorAppendixConcession, PopupEditorAppendix, SectionTraderCommentComponent, PopupSearchProductGroup, PopupSearchProduct, PopupSearchTariff, PopupUploadExcel, DialogRenewAllDoc, PopupSearchRefLicense, PopupListExcelAppendix, PopupListExcelAppendixConsession, SectionFileInclude, PopupFileUploadComponent, SectionPrintInclude, SectionDocumentReferenceComponent, PopupTraderDocument, SectionTraderDepartmentComponent, SectionArmamentInformationComponent, SectionUseComponent, SectionCoordinatorComponent
   ],
   imports: [
     CommonModule, FormsModule, ComponentsModule, PipesModule, DirectiveModule
