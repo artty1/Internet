@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'export', component: NewComponent, data: { reqType: RequestDocumentType.Export } },
   { path: 'export-special', component: NewComponent, data: { reqType: RequestDocumentType.ExportSpecial } },
   { path: 'cross-border', component: NewComponent, data: { reqType: RequestDocumentType.CrossBorder } },
+  { path: 'artty', component: NewComponent, data: { reqType: RequestDocumentType.Artty } },
   //{ path: 'renewal', component: NewComponent, data: { reqType: RequestDocumentType.Renewal } },
 
 

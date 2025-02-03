@@ -131,6 +131,18 @@
         </div>
       </div>
     </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-cross-border">
+          <h5 class="card-title">หารือความเป็นยุทธภัณฑ์</h5>
+          <p class="card-text">
+            สำหรับทำ คำขอหารือความเป็นยุทธภัณฑ์
+          </p>
+          <button (click)="gotoCreateArt()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftCrossBorder }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

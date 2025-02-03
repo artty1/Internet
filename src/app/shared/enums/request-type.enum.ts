@@ -84,6 +84,9 @@ export enum RequestDocumentType{
   CrossBorder = 700,
   CrossBorderWithOwner = 750,
 
+  Artty = 800,
+  ArttyWithOwner,
+
   // ------------------------------------------
   Renewal = 10000,
   Renewal_Owner = 10050,

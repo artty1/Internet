@@ -307,6 +307,9 @@ export class ApplicationContext {
       case RequestDocumentType.Substitute:
         url = routeDef.buildPathWithRoot(routeDef.pageNew, routeDef.pageNew_Substiture);
         break;
+      case RequestDocumentType.Artty:
+        url = routeDef.buildPathWithRoot(routeDef.pageNew, routeDef.pageArtty);
+        break;
     }
     //----------------------------------
     if (reqType > 10000 && reqType < 20000) {

@@ -148,6 +148,9 @@ export class DashboardComponent implements OnInit {
   public gotoCreateDraftSendSample() {
     this.gotoCreateDraft(RequestDocumentType.SendSample);
   }
+  public gotoCreateArt() {
+    this.gotoCreateDraft(RequestDocumentType.Artty);
+  }
   //public gotoCreateDraftSubstitute() {
   //   //use command in license page instead !!!
   //  this.gotoCreateDraft(RequestDocumentType.Substitute);

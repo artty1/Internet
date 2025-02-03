@@ -414,7 +414,7 @@ export class RequestDocumentComponent implements OnInit {
   }
   //--------------------------------------------------------
   public get IsRequest_GroupOfExport():boolean{
-    return (this.IsRequest_CrossBorder || this.IsRequest_Export || this.IsRequest_ExportSpecial || this.IsRequest_Sample );
+    return (this.IsRequest_CrossBorder || this.IsRequest_Export || this.IsRequest_ExportSpecial || this.IsRequest_Sample || this.IsRequest_Artty);
   }
   //--------------------------------------------------------
   public get IsRequest_Sample() {
@@ -460,6 +460,14 @@ export class RequestDocumentComponent implements OnInit {
     // if(result) console.log("IsRequest_CrossBorder : ", result);
    return result;
   }
+
+  public get IsRequest_Artty() {
+    let result = (
+      this.requestDocumentType == RequestDocumentType.Artty
+    );
+   return result;
+  }
+  
   //--------------------------------------------------------
   //--------------------------------------------------------
   public get IsRenewal():boolean{

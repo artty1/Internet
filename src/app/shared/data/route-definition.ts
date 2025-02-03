@@ -33,6 +33,7 @@ class RouteDefinition {
   public pageRecycleBin = 'bin';
 
   public pageUnAuthorize = 'un-authorize';
+  public pageArtty = 'artty';
 
   //-----------------------------------------------------
   public buildPathWithRoot(...path) {

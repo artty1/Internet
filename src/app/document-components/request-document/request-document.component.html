@@ -60,7 +60,7 @@
 
   <cdss-section-payment-type *ngIf="!IsRequest_GroupOfExport" validator-order="2" (ready)="initSection($event)" Title="วิธีการชำระเงิน"></cdss-section-payment-type>
   <cdss-section-trader-profile Title="นิติบุคคล"></cdss-section-trader-profile>
-
+  <cdss-section-trader-department Title="หน่วยงาน"></cdss-section-trader-department>
   <!-- <div *ngIf="IsRequest_CrossBorder">
     <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
     <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
@@ -196,6 +196,10 @@
     <cdss-section-appendix validator-order="8" (ready)="initSection($event)" Title="ผนวกแนบท้ายใบอนุญาต"></cdss-section-appendix>
     <!--<cdss-section-appendix-concession validator-order="9" (ready)="initSection($event)" Title="ผนวกประทานบัตร"></cdss-section-appendix-concession>-->
     <!--<cdss-section-file-include validator-order="10" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>-->
+  </div>
+
+  <div *ngIf="IsRequest_Artty">
+    <cdss-section-armament validator-order="9" (ready)="initSection($event)" Title="รายการยุทธภัณฑ์"></cdss-section-armament>
   </div>
 
   <cdss-section-print-include validator-order="20" (ready)="initSection($event)" Title="การแนบเอกสารหลักฐานต่าง ๆ"></cdss-section-print-include>
