@@ -1,0 +1,57 @@
+<div class="container-fluid div-content-box" id="div-section-armament-information">
+    <div style="cursor:pointer;" class="div-content-box-header" data-toggle="collapse" data-target="#ProfileCollapse" aria-expanded="false" aria-controls="ProfileCollapse">
+      <i class="fa fa-building" aria-hidden="true"></i> ข้อมูลยุทธภัณฑ์  
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </div>
+    <div class="div-content-box_suggestion is-warning">
+      <!-- #message suggestion -->
+    </div>
+    <div class="collapse" id="ProfileCollapse">
+      <!-- ------------------------------------------------------ -->
+      <div class="form-row">
+        <div class="form-group col-sm-12 col-md-8">
+          <label for="txtTaxID" class="col-form-label-sm">ประเภทใบอนุญาต</label>
+          <!--<input type="text" class="form-control form-control-sm" id="txtTaxID" placeholder="เลขประจำตัวผู้เสียภาษี" [readonly]="!isEditMode" [(ngModel)]="datasource.taxID">-->
+          <!-- <input type="text" class="form-control form-control-sm" id="txtTaxID" placeholder="-" readonly [value]="app.traderInformation.TRADER_TAX_NO"> -->
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.TRADER_TAX_NO">
+        </div>
+        
+        <div class="form-group col-sm-12 col-md-4">
+          <label for="txtRegisterCapital" class="col-form-label-sm">ประเภทยุทธภัณฑ์</label>
+          <!--<input type="text" class="form-control form-control-sm" id="txtRegisterCapital" placeholder="ทุนจดทะเบียน" [readonly]="!isEditMode" [(ngModel)]="datasource.registerCapital">-->
+          <!-- <input type="text" class="form-control form-control-sm" id="txtRegisterCapital" placeholder="-" readonly [value]="app.traderInformation.CAPITAL_AMOUNT"> -->
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.CAPITAL_AMOUNT">
+        </div>
+      </div>
+      <!-- ------------------------------------------------------ -->
+      <div class="form-row">
+        <div class="form-group col-sm-12 col-md-4">
+          <label for="txtBusinessType" class="col-form-label-sm">ชื่อยุทธภัณฑ์</label>
+          <!--<input type="text" class="form-control form-control-sm" id="txtBusinessType" placeholder="ประเภทกิจการ" [readonly]="!isEditMode" [(ngModel)]="datasource.businessType">-->
+          <!-- <input type="text" class="form-control form-control-sm" id="txtBusinessType" placeholder="-" readonly [value]="NameOfTraderType"> -->
+          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="NameOfTraderType">
+        </div>
+        <!-- <div class="form-group col-sm-12 col-md-8">
+          <label for="txtCorporationName" class="col-form-label-sm">ชื่อหน่วยงาน</label>
+          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.TRADER_NAME">
+        </div> -->
+      </div>
+      <!-- ------------------------------------------------------ -->
+      <!-- ------------------------------------------------------ -->
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label for="txtAppendixEditor_Note" class="col-form-label form-control-sm">รายละเอียดยุทธภัณฑ์</label>
+          <textarea class="form-control form-control-sm" id="txtAppendixEditor_Note" placeholder="" [(ngModel)]="appendix.NOTE1" maxlength="300"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label for="txtAppendixEditor_Note" class="col-form-label form-control-sm">เพื่อ</label>
+          <textarea class="form-control form-control-sm" id="txtAppendixEditor_Note" placeholder="" [(ngModel)]="appendix.NOTE1" maxlength="300"></textarea>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  

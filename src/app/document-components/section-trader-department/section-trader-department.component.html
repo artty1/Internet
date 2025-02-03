@@ -1,31 +1,30 @@
-<div class="container-fluid div-content-box" id="div-section-trader-profile">
+<div class="container-fluid div-content-box" id="div-section-trader-department">
     <div style="cursor:pointer;" class="div-content-box-header" data-toggle="collapse" data-target="#ProfileCollapse" aria-expanded="false" aria-controls="ProfileCollapse">
-      <i class="fa fa-building" aria-hidden="true"></i> {{NameOfTraderType}}    
+      <i class="fa fa-building" aria-hidden="true"></i> หน่วยงาน   
       <i class="fa fa-chevron-down" aria-hidden="true"></i>
     </div>
+    <!-- <div class="div-content-box-header">
+        <i class="fa fa-user" aria-hidden="true"></i> หน่วยงาน
+      </div> -->
+      
     <div class="div-content-box_suggestion is-warning">
       <!-- #message suggestion -->
     </div>
     <div class="collapse" id="ProfileCollapse">
       <!-- ------------------------------------------------------ -->
       <div class="form-row">
-        <div class="form-group col-sm-12 col-md-4">
-          <label for="txtTaxID" class="col-form-label-sm">เลขประจำตัวผู้เสียภาษี</label>
+        <div class="form-group col-sm-12 col-md-8">
+          <label for="txtTaxID" class="col-form-label-sm">ชื่อหน่วยงาน</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtTaxID" placeholder="เลขประจำตัวผู้เสียภาษี" [readonly]="!isEditMode" [(ngModel)]="datasource.taxID">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtTaxID" placeholder="-" readonly [value]="app.traderInformation.TRADER_TAX_NO"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.TRADER_TAX_NO">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.TRADER_TAX_NO">
         </div>
+        
         <div class="form-group col-sm-12 col-md-4">
-          <label for="txtBranch" class="col-form-label-sm">สาขา</label>
-          <!--<input type="text" class="form-control form-control-sm" id="txtBranch" placeholder="สาขา" [readonly]="!isEditMode" [(ngModel)]="datasource.branch">-->
-          <!-- <input type="text" class="form-control form-control-sm" id="txtBranch" placeholder="-" readonly [value]="app.traderInformation.TRADER_BRANCH_NO"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.TRADER_BRANCH_NO">
-        </div>
-        <div class="form-group col-sm-12 col-md-4">
-          <label for="txtRegisterCapital" class="col-form-label-sm">ทุนจดทะเบียน</label>
+          <label for="txtRegisterCapital" class="col-form-label-sm">เลขประจำตัวผู้เสียภาษี</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtRegisterCapital" placeholder="ทุนจดทะเบียน" [readonly]="!isEditMode" [(ngModel)]="datasource.registerCapital">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtRegisterCapital" placeholder="-" readonly [value]="app.traderInformation.CAPITAL_AMOUNT"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.CAPITAL_AMOUNT">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.CAPITAL_AMOUNT">
         </div>
       </div>
       <!-- ------------------------------------------------------ -->
@@ -36,60 +35,38 @@
           <!-- <input type="text" class="form-control form-control-sm" id="txtBusinessType" placeholder="-" readonly [value]="NameOfTraderType"> -->
           <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="NameOfTraderType">
         </div>
-        <div class="form-group col-sm-12 col-md-8">
+        <!-- <div class="form-group col-sm-12 col-md-8">
           <label for="txtCorporationName" class="col-form-label-sm">ชื่อหน่วยงาน</label>
-          <!--<input type="text" class="form-control form-control-sm" id="txtCorporationName" placeholder="ชื่อหน่วยงาน" [readonly]="!isEditMode" [(ngModel)]="datasource.corporationName">-->
-          <!-- <input type="text" class="form-control form-control-sm" id="txtCorporationName" placeholder="-" readonly [value]="app.traderInformation.TRADER_NAME"> -->
           <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.TRADER_NAME">
-        </div>
+        </div> -->
       </div>
       <!-- ------------------------------------------------------ -->
-      <div class="form-row">
-        <div class="form-group col-sm-12 col-md-4">
-          <label for="txtRegisterPlace" class="col-form-label-sm">จดทะเบียนไว้ ณ</label>
-          <!--<input type="text" class="form-control form-control-sm" id="txtRegisterPlace" placeholder="จดทะเบียนไว้ ณ" [readonly]="!isEditMode" [(ngModel)]="datasource.registerPlace">-->
-          <!-- <input type="text" class="form-control form-control-sm" id="txtRegisterPlace" placeholder="-" readonly [value]="registerPlace"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="registerPlace">
-        </div>
-        <div class="form-group col-sm-12 col-md-4">
-          <label for="txtRegisterDate" class="col-form-label-sm">วันที่จดทะเบียน</label>
-          <!--<input type="text" class="form-control form-control-sm" id="txtRegisterDate" placeholder="วันที่จดทะเบียน" [readonly]="!isEditMode" [(ngModel)]="datasource.registerDate">-->
-          <!-- <input type="text" class="form-control form-control-sm" id="txtRegisterDate" placeholder="-" readonly [value]="app.traderInformation.REGISTER_DATE | toDateString"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.REGISTER_DATE | toDateString">
-        </div>
-        <div class="form-group col-sm-12 col-md-4">
-          <label for="txtRegisterNo" class="col-form-label-sm">เลขทะเบียนที่</label>
-          <!--<input type="text" class="form-control form-control-sm" id="txtRegisterNo" placeholder="เลขทะเบียนที่" [readonly]="!isEditMode" [(ngModel)]="datasource.registerNo">-->
-          <!-- <input type="text" class="form-control form-control-sm" id="txtRegisterNo" placeholder="-" readonly [value]="app.traderInformation.REGISTER_NO"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.REGISTER_NO">
-        </div>
-      </div>
       <!-- ------------------------------------------------------ -->
       <div class="form-row">
         <div class="form-group col-sm-7 col-md-3">
           <label for="txtAddressNo" class="col-form-label-sm">บ้านเลขที่</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressNo" placeholder="บ้านเลขที่" [readonly]="!isEditMode" [(ngModel)]="datasource.addressNo">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressNo" placeholder="-" readonly [value]="app.traderInformation.ADDRESS_NO"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.ADDRESS_NO">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.ADDRESS_NO">
         </div>
         <div class="form-group col-sm-5 col-md-1">
           <label for="txtAddressMoo" class="col-form-label-sm">หมู่ที่</label>
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressMoo" placeholder="-" readonly [value]="app.traderInformation.MOO"> -->        
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressMoo" placeholder="หมู่ที่" [readonly]="!isEditMode" [(ngModel)]="datasource.addressMoo">-->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.MOO">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.MOO">
         </div>
   
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtAddressBuilding" class="col-form-label-sm">อาคาร</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressBuilding" placeholder="อาคาร" [readonly]="!isEditMode" [(ngModel)]="datasource.addressBuilding">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressBuilding" placeholder="-" readonly [value]="app.traderInformation.BUILDING_NAME"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.BUILDING_NAME">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.BUILDING_NAME">
         </div>
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtAddressVillage" class="col-form-label-sm">หมู่บ้าน</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressVillage" placeholder="หมู่บ้าน" [readonly]="!isEditMode" [(ngModel)]="datasource.addressVillage">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressVillage" placeholder="-" readonly [value]="app.traderInformation.VILLAGE"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.VILLAGE">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.VILLAGE">
         </div>
       </div>
       <!-- ------------------------------------------------------ -->
@@ -98,19 +75,19 @@
           <label for="txtAddressSoi" class="col-form-label-sm">ตรอก/ซอย</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressSoi" placeholder="ตรอก/ซอย" [readonly]="!isEditMode" [(ngModel)]="datasource.addressSoi">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressSoi" placeholder="-" readonly [value]="app.traderInformation.SOI"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.SOI">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.SOI">
         </div>
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtAddressStreet" class="col-form-label-sm">ถนน</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressStreet" placeholder="ถนน" [readonly]="!isEditMode" [(ngModel)]="datasource.addressStreet">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressStreet" placeholder="-" readonly [value]="app.traderInformation.STREET"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="-" readonly [value]="app.traderInformation.STREET">
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.STREET">
         </div>
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtAddressSubDistrict">ตำบล/แขวง</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressSubDistrict" placeholder="ตำบล/แขวง" [readonly]="!isEditMode" [(ngModel)]="datasource.addressSubDistrict">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressSubDistrict" placeholder="ตำบล/แขวง" readonly [value]="app.traderInformation.DISTRICT_NAME"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="ตำบล/แขวง" readonly [value]="app.traderInformation.DISTRICT_NAME">
+          <input type="text" class="form-control form-control-sm" placeholder="ตำบล/แขวง"  [value]="app.traderInformation.DISTRICT_NAME">
         </div>
       </div>
       <!-- ------------------------------------------------------ -->
@@ -119,19 +96,19 @@
           <label for="txtAddressDistrict" class="col-form-label-sm">อำเภอ/เขต</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressDistrict" placeholder="อำเภอ/เขต" [readonly]="!isEditMode" [(ngModel)]="datasource.addressDistrict">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressDistrict" placeholder="อำเภอ/เขต" readonly [value]="app.traderInformation.SUB_PROVINCE_NAME"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="อำเภอ/เขต" readonly [value]="app.traderInformation.SUB_PROVINCE_NAME">
+          <input type="text" class="form-control form-control-sm" placeholder="อำเภอ/เขต"  [value]="app.traderInformation.SUB_PROVINCE_NAME">
         </div>
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtAddressProvince" class="col-form-label-sm">จังหวัด</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressProvince" placeholder="จังหวัด" [readonly]="!isEditMode" [(ngModel)]="datasource.addressProvince">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressProvince" placeholder="จังหวัด" readonly [value]="app.traderInformation.PROVINCE_NAME"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="จังหวัด" readonly [value]="app.traderInformation.PROVINCE_NAME">
+          <input type="text" class="form-control form-control-sm" placeholder="จังหวัด"  [value]="app.traderInformation.PROVINCE_NAME">
         </div>
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtAddressZipcode" class="col-form-label-sm">รหัสไปรษณีย์</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtAddressZipcode" placeholder="รหัสไปรษณีย์" [readonly]="!isEditMode" [(ngModel)]="datasource.addressZipcode">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtAddressZipcode" placeholder="รหัสไปรษณีย์" readonly [value]="app.traderInformation.POSTCODE"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="รหัสไปรษณีย์" readonly [value]="app.traderInformation.POSTCODE">
+          <input type="text" class="form-control form-control-sm" placeholder="รหัสไปรษณีย์"  [value]="app.traderInformation.POSTCODE">
         </div>
       </div>
       <!-- ------------------------------------------------------ -->
@@ -140,19 +117,19 @@
           <label for="txtPhone" class="col-form-label-sm">หมายเลขโทรศัพท์</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtPhone" placeholder="หมายเลขโทรศัพท์" [readonly]="!isEditMode" [(ngModel)]="datasource.phone">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtPhone" placeholder="หมายเลขโทรศัพท์" readonly [value]="app.traderInformation.PHONE_NO"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="หมายเลขโทรศัพท์" readonly [value]="app.traderInformation.PHONE_NO">
+          <input type="text" class="form-control form-control-sm" placeholder="หมายเลขโทรศัพท์"  [value]="app.traderInformation.PHONE_NO">
         </div>
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtFax" class="col-form-label-sm">โทรสาร</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtFax" placeholder="โทรสาร" [readonly]="!isEditMode" [(ngModel)]="datasource.fax">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtFax" placeholder="โทรสาร" readonly [value]="app.traderInformation.FAX_NO"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="โทรสาร" readonly [value]="app.traderInformation.FAX_NO">
+          <input type="text" class="form-control form-control-sm" placeholder="โทรสาร"  [value]="app.traderInformation.FAX_NO">
         </div>
         <div class="form-group col-sm-12 col-md-4">
           <label for="txtEmail" class="col-form-label-sm">E-mail</label>
           <!--<input type="text" class="form-control form-control-sm" id="txtEmail" placeholder="E-mail" [readonly]="!isEditMode" [(ngModel)]="datasource.email">-->
           <!-- <input type="text" class="form-control form-control-sm" id="txtEmail" placeholder="E-mail" readonly [value]="app.traderInformation.E_MAIL_ADDRESS"> -->
-          <input type="text" class="form-control form-control-sm" placeholder="E-mail" readonly [value]="app.traderInformation.E_MAIL_ADDRESS">
+          <input type="text" class="form-control form-control-sm" placeholder="E-mail"  [value]="app.traderInformation.E_MAIL_ADDRESS">
         </div>
       </div>
       <!-- ------------------------------------------------------ -->
