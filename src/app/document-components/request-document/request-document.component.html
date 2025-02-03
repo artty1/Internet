@@ -202,6 +202,8 @@
     <cdss-section-armament-information validator-order="9" (ready)="initSection($event)" Title="ข้อมูลยุทธภัณฑ์"></cdss-section-armament-information>
     <cdss-section-use validator-order="9" (ready)="initSection($event)" Title="การนำไปใช้"></cdss-section-use>
     <cdss-section-coordinator validator-order="9" (ready)="initSection($event)" Title="ผู้ประสานงาน"></cdss-section-coordinator>
+    <cdss-session-attached-document validator-order="9" (ready)="initSection($event)" Title="รายการเอกสารแนบเคำขอ"></cdss-session-attached-document>
+    
   </div>
 
   <cdss-section-print-include *ngIf="!IsRequest_Artty" validator-order="20" (ready)="initSection($event)" Title="การแนบเอกสารหลักฐานต่าง ๆ"></cdss-section-print-include>
