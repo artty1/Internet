@@ -60,7 +60,7 @@
   
   <cdss-section-payment-type *ngIf="!IsRequest_GroupOfExport" validator-order="2" (ready)="initSection($event)" Title="วิธีการชำระเงิน"></cdss-section-payment-type>
   <cdss-section-trader-profile *ngIf="!IsRequest_Artty" Title="นิติบุคคล"></cdss-section-trader-profile>
-  <cdss-section-trader-department Title="หน่วยงาน"></cdss-section-trader-department>
+  <cdss-section-trader-department *ngIf="IsRequest_Artty" Title="หน่วยงาน"></cdss-section-trader-department>
   <!-- <div *ngIf="IsRequest_CrossBorder">
     <cdss-section-committee validator-order="3" (ready)="initSection($event)" Title="ผู้มีอำนาจลงนามลายมือชื่อแทนนิติบุคคล"></cdss-section-committee>
     <cdss-section-attorney validator-order="4" (ready)="initSection($event)" Title="ผู้รับมอบอำนาจ"></cdss-section-attorney>
@@ -200,13 +200,14 @@
 
   <div *ngIf="IsRequest_Artty">
     <cdss-section-armament-information validator-order="9" (ready)="initSection($event)" Title="ข้อมูลยุทธภัณฑ์"></cdss-section-armament-information>
-    <cdss-section-use validator-order="9" (ready)="initSection($event)" Title="การนำไปใช้"></cdss-section-use>
-    <cdss-section-coordinator validator-order="9" (ready)="initSection($event)" Title="ผู้ประสานงาน"></cdss-section-coordinator>
-    <cdss-session-attached-document validator-order="9" (ready)="initSection($event)" Title="รายการเอกสารแนบเคำขอ"></cdss-session-attached-document>
+    <cdss-section-use validator-order="10" (ready)="initSection($event)" Title="การนำไปใช้"></cdss-section-use>
+    <cdss-section-coordinator validator-order="11" (ready)="initSection($event)" Title="ผู้ประสานงาน"></cdss-section-coordinator>
+    <cdss-session-attached-document validator-order="12" (ready)="initSection($event)" Title="รายการเอกสารแนบเคำขอ"></cdss-session-attached-document>
   </div>
 
   <div *ngIf="IsRequest_Destroy_Armament">
-
+    <cdss-section-armament-information validator-order="9" (ready)="initSection($event)" Title="ข้อมูลยุทธภัณฑ์"></cdss-section-armament-information>
+    <cdss-session-destroy-armament-detail validator-order="10" (ready)="initSection($event)" Title="รายละเอียดการทำลายยุทธภัณฑ์"></cdss-session-destroy-armament-detail>
   </div>
 
   <cdss-section-print-include *ngIf="!IsRequest_Artty" validator-order="20" (ready)="initSection($event)" Title="การแนบเอกสารหลักฐานต่าง ๆ"></cdss-section-print-include>

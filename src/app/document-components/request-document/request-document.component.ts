@@ -312,7 +312,7 @@ export class RequestDocumentComponent implements OnInit {
     let result =
       this.requestDocumentType == RequestDocumentType.EnterWithOwner ||
       this.requestDocumentType == RequestDocumentType.Renewal_Enter;
-      // ||      this.requestDocumentType == RequestDocumentType.Renewal_EnterWithOwner
+    // ||      this.requestDocumentType == RequestDocumentType.Renewal_EnterWithOwner
 
     // if(result) console.log("IsRequest_Enter : ", result);
 
@@ -323,7 +323,7 @@ export class RequestDocumentComponent implements OnInit {
     let result =
       this.requestDocumentType == RequestDocumentType.ImportWithOwner ||
       this.requestDocumentType == RequestDocumentType.Renewal_Import;
-      // ||      this.requestDocumentType == RequestDocumentType.Renewal_ImportWithOwner
+    // ||      this.requestDocumentType == RequestDocumentType.Renewal_ImportWithOwner
     // if(result) console.log("IsRequest_Import : ", result);
 
     return result;
@@ -335,8 +335,8 @@ export class RequestDocumentComponent implements OnInit {
     let result =
       this.requestDocumentType == RequestDocumentType.ProductionWithOwner ||
       this.requestDocumentType == RequestDocumentType.Renewal_Production;
-      // || this.requestDocumentType == RequestDocumentType.Renewal_ProductionWithOwner
-      // || this.requestDocumentType == RequestDocumentType.Substitute_Production
+    // || this.requestDocumentType == RequestDocumentType.Renewal_ProductionWithOwner
+    // || this.requestDocumentType == RequestDocumentType.Substitute_Production
 
     // if(result) console.log("IsRequest_Production : ", result);
 
@@ -392,7 +392,8 @@ export class RequestDocumentComponent implements OnInit {
       this.IsRequest_Export ||
       this.IsRequest_ExportSpecial ||
       this.IsRequest_Sample ||
-      this.IsRequest_Artty
+      this.IsRequest_Artty ||
+      this.IsRequest_Destroy_Armament
     );
   }
   //--------------------------------------------------------
@@ -400,7 +401,7 @@ export class RequestDocumentComponent implements OnInit {
     let result =
       this.requestDocumentType == RequestDocumentType.SendSample ||
       this.requestDocumentType == RequestDocumentType.Renewal_SendSample;
-      // ||      this.requestDocumentType == RequestDocumentType.Renewal_SendSampleWithOwner
+    // ||      this.requestDocumentType == RequestDocumentType.Renewal_SendSampleWithOwner
 
     // if(result) console.log("IsRequest_Sample : ", result);
     return result;
@@ -410,7 +411,7 @@ export class RequestDocumentComponent implements OnInit {
     let result =
       this.requestDocumentType == RequestDocumentType.Export ||
       this.requestDocumentType == RequestDocumentType.Renewal_Export;
-      // ||      this.requestDocumentType == RequestDocumentType.Renewal_ExportWithOwner
+    // ||      this.requestDocumentType == RequestDocumentType.Renewal_ExportWithOwner
 
     // if(result) console.log("IsRequest_Export: ", result);
     return result;
@@ -420,7 +421,7 @@ export class RequestDocumentComponent implements OnInit {
     let result =
       this.requestDocumentType == RequestDocumentType.ExportSpecial ||
       this.requestDocumentType == RequestDocumentType.Renewal_ExportSpecial;
-      // ||      this.requestDocumentType == RequestDocumentType.Renewal_ExportSpecialWithOwner
+    // ||      this.requestDocumentType == RequestDocumentType.Renewal_ExportSpecialWithOwner
 
     // if(result) console.log("IsRequest_ExportSpecial : ", result);
     return result;
@@ -430,7 +431,7 @@ export class RequestDocumentComponent implements OnInit {
     let result =
       this.requestDocumentType == RequestDocumentType.CrossBorder ||
       this.requestDocumentType == RequestDocumentType.Renewal_CrossBorder;
-      // ||      this.requestDocumentType == RequestDocumentType.Renewal_CrossBorderWithOwner
+    // ||      this.requestDocumentType == RequestDocumentType.Renewal_CrossBorderWithOwner
 
     // if(result) console.log("IsRequest_CrossBorder : ", result);
     return result;
