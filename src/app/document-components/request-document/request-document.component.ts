@@ -1,37 +1,45 @@
-import { Component, OnInit, Input, Output, OnDestroy, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  OnDestroy,
+  ViewChild,
+} from "@angular/core";
 
-import { RequestDocumentType } from './../../shared/enums/request-type.enum';
-import { ApplicationContext } from '../../application-context';
+import { RequestDocumentType } from "./../../shared/enums/request-type.enum";
+import { ApplicationContext } from "../../application-context";
 //import { ModalDialogComponent } from '../../components/modal-dialog/modal-dialog.component';
 //import { EventResult } from '../../shared/models/result';
 
-import routeDef from './../../shared/data/route-definition';
-import { RequestDocumentService } from '../../shared/services/request-document.service';
-import { DialogResult } from '../../shared/base/base-modal-dialog';
-import { ConfirmDialog } from '../../components/confirm-dialog/confirm-dialog.component';
-import { MessageDialog } from '../../components/message-dialog/message-dialog.component';
-import { WaitingDialog } from '../../components/waiting-dialog/waiting-dialog.component';
+import routeDef from "./../../shared/data/route-definition";
+import { RequestDocumentService } from "../../shared/services/request-document.service";
+import { DialogResult } from "../../shared/base/base-modal-dialog";
+import { ConfirmDialog } from "../../components/confirm-dialog/confirm-dialog.component";
+import { MessageDialog } from "../../components/message-dialog/message-dialog.component";
+import { WaitingDialog } from "../../components/waiting-dialog/waiting-dialog.component";
 
-import { BaseSection } from '../../shared/base/base-section';
-import { RequestDocument, SubmitInfo } from '../../shared/models/request-document';
-import { DocumentStatus } from 'src/app/shared/enums/document-status.enum';
-import { UploadService } from '../section-file-include/upload.service';
-import { HttpClient } from '@angular/common/http';
-import { ELicensingService } from 'src/app/shared/services/elicensing.service';
-import { ServerResult } from 'src/app/shared/models/result';
-import { PopupTraderDocument } from '../popup-trader-document/popup-trader-document.component';
-
+import { BaseSection } from "../../shared/base/base-section";
+import {
+  RequestDocument,
+  SubmitInfo,
+} from "../../shared/models/request-document";
+import { DocumentStatus } from "src/app/shared/enums/document-status.enum";
+import { UploadService } from "../section-file-include/upload.service";
+import { HttpClient } from "@angular/common/http";
+import { ELicensingService } from "src/app/shared/services/elicensing.service";
+import { ServerResult } from "src/app/shared/models/result";
+import { PopupTraderDocument } from "../popup-trader-document/popup-trader-document.component";
 
 declare var $: any;
 
 @Component({
-  selector: 'cdss-request-document',
-  templateUrl: './request-document.component.html',
-  styleUrls: ['./request-document.component.css']
+  selector: "cdss-request-document",
+  templateUrl: "./request-document.component.html",
+  styleUrls: ["./request-document.component.css"],
 })
 //export class RequestDocumentComponent implements OnInit, OnDestroy {
 export class RequestDocumentComponent implements OnInit {
-
   private _reqType: RequestDocumentType;
 
   public cancelDialog: ConfirmDialog;
@@ -50,20 +58,24 @@ export class RequestDocumentComponent implements OnInit {
 
   private sections: Array<BaseSection> = new Array();
 
-  public isShowCommandPalate:boolean = true;
+  public isShowCommandPalate: boolean = true;
 
   private eLicensingService: ELicensingService = null;
   // private popupTraderDocument: PopupTraderDocument = null;
   // public submit_message:string = '';
 
-  @ViewChild("popupTraderDocument", { static: true }) private popupTraderDocument: PopupTraderDocument;
+  @ViewChild("popupTraderDocument", { static: true })
+  private popupTraderDocument: PopupTraderDocument;
 
   //-------------------------------------------------------
-  constructor(private app: ApplicationContext, public repo: RequestDocumentService, public http: HttpClient) {
+  constructor(
+    private app: ApplicationContext,
+    public repo: RequestDocumentService,
+    public http: HttpClient
+  ) {
     this.resetModalState();
 
     // console.log('document: ', this.repo.currentDocument);
-
   }
   //-------------------------------------------------------
   //-------------------------------------------------------
@@ -71,13 +83,10 @@ export class RequestDocumentComponent implements OnInit {
   //   this.destroyDialogtraderDocument();
   // }
   //-------------------------------------------------------
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
   //-------------------------------------------------------
   //-------------------------------------------------------
   public initModal(args: DialogResult) {
-
     if (args.sender.tag == "x") {
       this.cancelDialog = args.sender;
     } else if (args.sender.tag == "p") {
@@ -87,35 +96,34 @@ export class RequestDocumentComponent implements OnInit {
       this.messageDialog = args.sender;
     } else if (args.sender.tag == "wait") {
       this.waitSaveDialog = args.sender;
-    } else if(args.sender.tag == "r"){
+    } else if (args.sender.tag == "r") {
       this.reSubmitDialog = args.sender;
     }
-
   }
   //-------------------------------------------------------
   //-------------------------------------------------------
-  public get submit_message():string{
+  public get submit_message(): string {
     return this.repo.currentDocument.submit_message;
   }
   //-------------------------------------------------------
-  public set submit_message(value:string){
+  public set submit_message(value: string) {
     this.repo.currentDocument.submit_message = value;
   }
   //-------------------------------------------------------
   //-------------------------------------------------------
   public isConfirmSubmit: boolean = false;
   //return this.repo.currentDocument.confirm??????;
-  public get confirm_submit(): boolean{
+  public get confirm_submit(): boolean {
     return this.isConfirmSubmit;
     //return this.repo.currentDocument.confirm??????;
   }
   //-------------------------------------------------------
-  public set confirm_submit(value: boolean){
+  public set confirm_submit(value: boolean) {
     this.isConfirmSubmit = value;
   }
   //-------------------------------------------------------
   //-------------------------------------------------------
-  public swapSaveButton(){
+  public swapSaveButton() {
     this.submitDialog.isEnableButtonOK = this.isConfirmSubmit;
   }
   //-------------------------------------------------------
@@ -135,7 +143,6 @@ export class RequestDocumentComponent implements OnInit {
   }
   //-------------------------------------------------------
   public saveDraft() {
-
     if (!this.validateData(false)) {
       return false;
     }
@@ -147,76 +154,63 @@ export class RequestDocumentComponent implements OnInit {
     this.waitSaveDialog.openDialog();
 
     setTimeout(() => {
-
       this.repo.saveDraft((is_success, message) => {
-
         this.whileSaving = false;
         this.isSaveSuccess = is_success;
 
         if (is_success) {
           // console.log('Save Draft Success : ', message);
-
         } else {
           this.waitSaveDialog.closeDialog();
           this.isSaveError = true;
           this.messageDialog.openDialog();
-          console.log('Save Draft Error : ', message);
+          console.log("Save Draft Error : ", message);
         }
-
       });
-
     }, 50);
 
     //----------------------------------
-
-
   }
   //-------------------------------------------------------
   public confirmSubmit() {
-
-    if(!this.repo.currentDocument.SubmitInfoHistory){
+    if (!this.repo.currentDocument.SubmitInfoHistory) {
       this.repo.currentDocument.SubmitInfoHistory = new Array();
     }
 
+    console.log(
+      "SubmitInfoHistory: ",
+      this.repo.currentDocument.SubmitInfoHistory
+    );
+    const isReSubmit: boolean =
+      this.repo.currentDocument.SubmitInfoHistory.length > 0;
 
-    console.log('SubmitInfoHistory: ', this.repo.currentDocument.SubmitInfoHistory);
-    const isReSubmit: boolean = (this.repo.currentDocument.SubmitInfoHistory.length>0);
-
-    if(!this.validateData(true)){
+    if (!this.validateData(true)) {
       return false;
     }
     //-----------------------------------
 
-    if(isReSubmit){
-
+    if (isReSubmit) {
       this.reSubmitDialog.openDialog((result: DialogResult) => {
         if (result.data == true) {
           this.submitRequest(isReSubmit);
         }
       });
-    }else{
-
+    } else {
       this.submitDialog.openDialog((result: DialogResult) => {
         if (result.data == true) {
           this.submitRequest(isReSubmit);
         }
       });
-
     }
-
-
-
   }
   //-------------------------------------------------------
   public submitRequest(isResubmit: boolean = false) {
-
     //----------------------------------
     this.whileSaving = true;
-    this.isSaveSubmit = true
+    this.isSaveSubmit = true;
     this.waitSaveDialog.openDialog();
     //----------------------------------
     this.repo.saveSubmit((is_success, message) => {
-
       //this.whileSaving = false;
       //this.isSaveSuccess = is_success;
       //alert('is_success : ' + is_success);
@@ -226,14 +220,12 @@ export class RequestDocumentComponent implements OnInit {
         this.isSaveSuccess = is_success;
         // console.log('Submit Request Success : ', message);
       } else {
-        console.log('Submit Request Error : ', message);
+        console.log("Submit Request Error : ", message);
         this.waitSaveDialog.closeDialog();
         this.isSaveError = true;
         this.messageDialog.openDialog();
       }
-
     });
-
   }
   //-------------------------------------------------------
   public discardDraft() {
@@ -252,18 +244,14 @@ export class RequestDocumentComponent implements OnInit {
   public gotoPageDraft() {
     this.waitSaveDialog.closeDialog();
     this.app.gotoDraftDashboard();
-
   }
   //--------------------------------------------------------
   public stillEditDocument() {
-
     this.waitSaveDialog.closeDialog();
 
     const draftId = this.repo.currentDocument.ID;
 
-    this.repo.loadDraftDocument(draftId, (isOk:boolean, message:string)=>{
-
-
+    this.repo.loadDraftDocument(draftId, (isOk: boolean, message: string) => {
       this.isSaveError = false;
       this.whileSaving = false;
       this.isSaveSuccess = false;
@@ -271,19 +259,14 @@ export class RequestDocumentComponent implements OnInit {
       const uploadService = new UploadService(this.app, this.http);
       uploadService.loadIncludeFileList(this.repo.currentDocument);
 
-      if(isOk){
-
+      if (isOk) {
       }
 
       this.app.gotoDraft(draftId);
-
     });
-
-
-
   }
   //--------------------------------------------------------
-  private validateData(forSubmit:boolean=false): boolean {
+  private validateData(forSubmit: boolean = false): boolean {
     let hasError: boolean = false;
     // ----------------------------------------------
     let sectionByOrder = this.sections.sort((s1, s2) => {
@@ -300,7 +283,7 @@ export class RequestDocumentComponent implements OnInit {
     sectionByOrder.forEach((s) => {
       let isValidate = s.Validate(forSubmit, !hasError);
       //console.log(s.Title, " | isValidate : ", isValidate);
-      hasError = (hasError || !isValidate);
+      hasError = hasError || !isValidate;
     });
     // ----------------------------------------------
     this.isValidateError = hasError;
@@ -309,7 +292,7 @@ export class RequestDocumentComponent implements OnInit {
       //this.whileSaving = false;
     } else {
       //console.log('----------------- OK ----------------');
-     // console.log(this.repo.currentDocument);
+      // console.log(this.repo.currentDocument);
     }
 
     //console.log('hasError : ', hasError);
@@ -318,7 +301,6 @@ export class RequestDocumentComponent implements OnInit {
   }
   //--------------------------------------------------------
   public resetModalState() {
-
     this.whileSaving = false;
     this.isSaveSubmit = false;
     this.isSaveSuccess = false;
@@ -327,39 +309,34 @@ export class RequestDocumentComponent implements OnInit {
   }
   //--------------------------------------------------------
   public get IsRequest_Enter() {
-
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.EnterWithOwner ||
-      this.requestDocumentType == RequestDocumentType.Renewal_Enter
+      this.requestDocumentType == RequestDocumentType.Renewal_Enter;
       // ||      this.requestDocumentType == RequestDocumentType.Renewal_EnterWithOwner
-      );
 
-      // if(result) console.log("IsRequest_Enter : ", result);
+    // if(result) console.log("IsRequest_Enter : ", result);
 
     return result;
   }
   //--------------------------------------------------------
   public get IsRequest_Import() {
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.ImportWithOwner ||
-      this.requestDocumentType == RequestDocumentType.Renewal_Import
+      this.requestDocumentType == RequestDocumentType.Renewal_Import;
       // ||      this.requestDocumentType == RequestDocumentType.Renewal_ImportWithOwner
-    );
     // if(result) console.log("IsRequest_Import : ", result);
 
     return result;
   }
   //--------------------------------------------------------
   public get IsRequest_Production() {
-
     // console.log("IsRequest_Production : ", this.requestDocumentType);
 
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.ProductionWithOwner ||
-      this.requestDocumentType == RequestDocumentType.Renewal_Production
+      this.requestDocumentType == RequestDocumentType.Renewal_Production;
       // || this.requestDocumentType == RequestDocumentType.Renewal_ProductionWithOwner
       // || this.requestDocumentType == RequestDocumentType.Substitute_Production
-    );
 
     // if(result) console.log("IsRequest_Production : ", result);
 
@@ -367,11 +344,10 @@ export class RequestDocumentComponent implements OnInit {
   }
   //--------------------------------------------------------
   public get IsRequest_Owner() {
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.Owner ||
-      this.requestDocumentType== RequestDocumentType.Renewal_Owner ||
-      this.requestDocumentType== RequestDocumentType.Substitute_Owner
-    );
+      this.requestDocumentType == RequestDocumentType.Renewal_Owner ||
+      this.requestDocumentType == RequestDocumentType.Substitute_Owner;
 
     // if(result) console.log("IsRequest_Owner : ", result);
 
@@ -379,109 +355,115 @@ export class RequestDocumentComponent implements OnInit {
   }
   //--------------------------------------------------------
   public get IsRequest_OwnerOnly() {
-
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.Owner ||
-      this.requestDocumentType == RequestDocumentType.Renewal_Owner
-    );
+      this.requestDocumentType == RequestDocumentType.Renewal_Owner;
 
     return result;
   }
   //--------------------------------------------------------
   public get IsRequest_Renewal() {
-   let docType: number = this.repo.currentRequestType;
-   let result = (docType>=10000 && docType<20000);
+    let docType: number = this.repo.currentRequestType;
+    let result = docType >= 10000 && docType < 20000;
 
-   return result;
+    return result;
   }
   //--------------------------------------------------------
   public get IsRequest_Substitute() {
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.Substitute ||
       this.requestDocumentType == RequestDocumentType.Substitute_CrossBorder ||
       this.requestDocumentType == RequestDocumentType.Substitute_Enter ||
       this.requestDocumentType == RequestDocumentType.Substitute_Export ||
-      this.requestDocumentType == RequestDocumentType.Substitute_ExportSpecial ||
+      this.requestDocumentType ==
+        RequestDocumentType.Substitute_ExportSpecial ||
       this.requestDocumentType == RequestDocumentType.Substitute_Import ||
       // this.requestDocumentType == RequestDocumentType.Substitute_Owner ||
       this.requestDocumentType == RequestDocumentType.Substitute_Production ||
-      this.requestDocumentType == RequestDocumentType.Substitute_SendSample
-
-    );
+      this.requestDocumentType == RequestDocumentType.Substitute_SendSample;
 
     // if(result) console.log("IsRequest_Substitute : ", result);
-   return result;
+    return result;
   }
   //--------------------------------------------------------
-  public get IsRequest_GroupOfExport():boolean{
-    return (this.IsRequest_CrossBorder || this.IsRequest_Export || this.IsRequest_ExportSpecial || this.IsRequest_Sample || this.IsRequest_Artty);
+  public get IsRequest_GroupOfExport(): boolean {
+    return (
+      this.IsRequest_CrossBorder ||
+      this.IsRequest_Export ||
+      this.IsRequest_ExportSpecial ||
+      this.IsRequest_Sample ||
+      this.IsRequest_Artty
+    );
   }
   //--------------------------------------------------------
   public get IsRequest_Sample() {
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.SendSample ||
-      this.requestDocumentType == RequestDocumentType.Renewal_SendSample
+      this.requestDocumentType == RequestDocumentType.Renewal_SendSample;
       // ||      this.requestDocumentType == RequestDocumentType.Renewal_SendSampleWithOwner
-    );
 
     // if(result) console.log("IsRequest_Sample : ", result);
-   return result;
+    return result;
   }
   //--------------------------------------------------------
   public get IsRequest_Export() {
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.Export ||
-      this.requestDocumentType == RequestDocumentType.Renewal_Export
+      this.requestDocumentType == RequestDocumentType.Renewal_Export;
       // ||      this.requestDocumentType == RequestDocumentType.Renewal_ExportWithOwner
-    );
 
     // if(result) console.log("IsRequest_Export: ", result);
-   return result;
+    return result;
   }
   //--------------------------------------------------------
   public get IsRequest_ExportSpecial() {
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.ExportSpecial ||
-      this.requestDocumentType == RequestDocumentType.Renewal_ExportSpecial
+      this.requestDocumentType == RequestDocumentType.Renewal_ExportSpecial;
       // ||      this.requestDocumentType == RequestDocumentType.Renewal_ExportSpecialWithOwner
-    );
 
     // if(result) console.log("IsRequest_ExportSpecial : ", result);
-   return result;
+    return result;
   }
   //--------------------------------------------------------
   public get IsRequest_CrossBorder() {
-    let result = (
+    let result =
       this.requestDocumentType == RequestDocumentType.CrossBorder ||
-      this.requestDocumentType == RequestDocumentType.Renewal_CrossBorder
+      this.requestDocumentType == RequestDocumentType.Renewal_CrossBorder;
       // ||      this.requestDocumentType == RequestDocumentType.Renewal_CrossBorderWithOwner
-    );
 
     // if(result) console.log("IsRequest_CrossBorder : ", result);
-   return result;
+    return result;
   }
 
   public get IsRequest_Artty() {
-    let result = (
-      this.requestDocumentType == RequestDocumentType.Artty
-    );
-   return result;
+    let result = this.requestDocumentType == RequestDocumentType.Artty;
+    return result;
   }
-  
+
+  public get IsRequest_Destroy_Armament() {
+    let result =
+      this.requestDocumentType == RequestDocumentType.DestroyArmament;
+    return result;
+  }
+
   //--------------------------------------------------------
   //--------------------------------------------------------
-  public get IsRenewal():boolean{
+  public get IsRenewal(): boolean {
     // return (this.requestDocumentType >= RequestDocumentType.Renewal) && (this.requestDocumentType <= RequestDocumentType.Renewal_CrossBorderWithOwner);
-    let result = (this.requestDocumentType >= RequestDocumentType.Renewal) && (this.requestDocumentType <= RequestDocumentType.Renewal_CrossBorder);
+    let result =
+      this.requestDocumentType >= RequestDocumentType.Renewal &&
+      this.requestDocumentType <= RequestDocumentType.Renewal_CrossBorder;
 
     // if(result) console.log("IsRenewal", result);
     return result;
   }
   //--------------------------------------------------------
-  public get IsSubstitute():boolean{
+  public get IsSubstitute(): boolean {
     // return (this.requestDocumentType >= RequestDocumentType.Substitute) && (this.requestDocumentType <= RequestDocumentType.Substitute_CrossBorderWithOwner);
-    let result = (this.requestDocumentType >= RequestDocumentType.Substitute) && (this.requestDocumentType <= RequestDocumentType.Substitute_CrossBorder);
-
+    let result =
+      this.requestDocumentType >= RequestDocumentType.Substitute &&
+      this.requestDocumentType <= RequestDocumentType.Substitute_CrossBorder;
 
     // if(result) console.log("IsSubstitute", result);
     return result;
@@ -493,67 +475,65 @@ export class RequestDocumentComponent implements OnInit {
   // }
   //--------------------------------------------------------
   //--------------------------------------------------------
-  public get isLock():boolean{
+  public get isLock(): boolean {
     return this.repo.isLock;
   }
   //--------------------------------------------------------
-  public get isDocumentSubmited():boolean{
+  public get isDocumentSubmited(): boolean {
     return (
       this.repo.currentDocument.SUBMIT_STATUS == 1 &&
       this.repo.currentDocument.STATUS == 0
     );
   }
   //--------------------------------------------------------
-  public rejectSubmit(){
-
+  public rejectSubmit() {
     this.app.ShowWaitingDialog();
 
     this.repo
       .rejectSubmit()
-      .then((result:any)=>{
-
-      })
-      .catch((err: any)=>{
+      .then((result: any) => {})
+      .catch((err: any) => {
         console.log(err);
       })
-      .finally(()=>{
+      .finally(() => {
         this.app.CloseWaitingDialog();
       });
   }
   //--------------------------------------------------------
-  public logDoc(){
+  public logDoc() {
     console.log(this.repo.currentDocument);
   }
   //--------------------------------------------------------
-  public swabCommandPalate(){
+  public swabCommandPalate() {
     this.isShowCommandPalate = !this.isShowCommandPalate;
   }
   //--------------------------------------------------------
-  public showHelp(){
-
+  public showHelp() {}
+  //--------------------------------------------------------
+  //--------------------------------------------------------
+  public get hasLastOfficerReject(): boolean {
+    return (
+      this.repo.currentDocument.SubmitInfoHistory &&
+      this.repo.currentDocument.SubmitInfoHistory.length > 0 &&
+      this.repo.currentDocument.SubmitInfoHistory[0].OFFICER_COMMENT_DATE !=
+        null
+    );
   }
   //--------------------------------------------------------
-  //--------------------------------------------------------
-  public get hasLastOfficerReject():boolean{
-    return (this.repo.currentDocument.SubmitInfoHistory && this.repo.currentDocument.SubmitInfoHistory.length>0) && (this.repo.currentDocument.SubmitInfoHistory[0].OFFICER_COMMENT_DATE!=null);
-  }
-  //--------------------------------------------------------
-  public get SubmitInfoLength():number{
+  public get SubmitInfoLength(): number {
     return this.repo.currentDocument.SubmitInfoHistory.length;
   }
   //--------------------------------------------------------
-  public get LastOfficerRejectInfo():SubmitInfo {
-
-    if(this.hasLastOfficerReject){
+  public get LastOfficerRejectInfo(): SubmitInfo {
+    if (this.hasLastOfficerReject) {
       return this.repo.currentDocument.SubmitInfoHistory[0];
-    }else{
+    } else {
       return null;
     }
-
   }
   //--------------------------------------------------------
   //--------------------------------------------------------
-  public showDialogtraderDocument(forceRequest: boolean = false){
+  public showDialogtraderDocument(forceRequest: boolean = false) {
     this.popupTraderDocument.showDialogtraderDocument();
     // this.popupTraderDocument.openDialog(()=>{
 
@@ -561,10 +541,9 @@ export class RequestDocumentComponent implements OnInit {
   }
   //--------------------------------------------------------
   //--------------------------------------------------------
-  private _errorMessage:string = '';
-  public get errorMessage():string{
+  private _errorMessage: string = "";
+  public get errorMessage(): string {
     return this._errorMessage;
   }
   //--------------------------------------------------------
 }
-

@@ -1,31 +1,29 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ApplicationContext } from '../../../application-context';
-import { PermissionMode, RequestDocumentType } from '../../../shared/enums/request-type.enum';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { ApplicationContext } from "../../../application-context";
+import {
+  PermissionMode,
+  RequestDocumentType,
+} from "../../../shared/enums/request-type.enum";
 //import { EventResult } from '../../../shared/models/result';
 //import { ModalDialogComponent } from '../../../components/modal-dialog/modal-dialog.component';
-import { MessageDialog } from '../../../components/message-dialog/message-dialog.component';
-import { DialogResult } from '../../../shared/base/base-modal-dialog';
-import { RequestDocument } from '../../../shared/models/request-document';
-import { WaitingDialog } from 'src/app/components/waiting-dialog/waiting-dialog.component';
-import { ProductService } from 'src/app/shared/services/lookup/product.service';
-import { ProductGroupService } from 'src/app/shared/services/lookup/product-group.service';
-import { ELicensingService } from 'src/app/shared/services/elicensing.service';
-import { ServerResult } from 'src/app/shared/models/result';
-import { UnitService } from 'src/app/shared/services/lookup/unit.service';
-import { DownloadService } from 'src/app/shared/services/download.service';
-
-
-
+import { MessageDialog } from "../../../components/message-dialog/message-dialog.component";
+import { DialogResult } from "../../../shared/base/base-modal-dialog";
+import { RequestDocument } from "../../../shared/models/request-document";
+import { WaitingDialog } from "src/app/components/waiting-dialog/waiting-dialog.component";
+import { ProductService } from "src/app/shared/services/lookup/product.service";
+import { ProductGroupService } from "src/app/shared/services/lookup/product-group.service";
+import { ELicensingService } from "src/app/shared/services/elicensing.service";
+import { ServerResult } from "src/app/shared/models/result";
+import { UnitService } from "src/app/shared/services/lookup/unit.service";
+import { DownloadService } from "src/app/shared/services/download.service";
 
 @Component({
-  selector: 'cdss-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: "cdss-dashboard",
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.css"],
 })
 export class DashboardComponent implements OnInit {
-
   // @ViewChild("waitingDialog", { static: false}) waitingDialog:WaitingDialog;
-
 
   public isShowExpireDialog: boolean;
 
@@ -33,8 +31,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     public app: ApplicationContext,
-    private repoProduct:ProductService,
-    private repoProductGroup:ProductGroupService,
+    private repoProduct: ProductService,
+    private repoProductGroup: ProductGroupService,
     private repoUnit: UnitService,
     private attachment: ELicensingService,
     private downloadService: DownloadService,
@@ -53,22 +51,20 @@ export class DashboardComponent implements OnInit {
       // console.log("preload product data...");
       this.eLicensingService
         .loadDocumentAttactment()
-        .then((result: ServerResult)=>{
+        .then((result: ServerResult) => {
           this.app.setTraderDocumentInfo(result.data);
         })
-        .catch((err: any)=>{
-          alert('error load document: ');
-          console.log('error load document: ', err);
+        .catch((err: any) => {
+          alert("error load document: ");
+          console.log("error load document: ", err);
         });
       this.init_preload_data();
     }, 50);
-
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  private init_preload_data(){
+  private init_preload_data() {
     this.repoProductGroup.refresh();
     this.repoProduct.refresh();
     this.repoUnit.refresh();
@@ -82,29 +78,25 @@ export class DashboardComponent implements OnInit {
     }
 
     // ---- https://app.clickup.com/t/860qugcwj -------------------------
-    if(arg.sender.tag == "message-warinig"){
+    if (arg.sender.tag == "message-warinig") {
       this.popupWarningDialog = arg.sender;
 
-      if(!this.app.isShowFirstPageWarning){
-
-        setTimeout(()=>{
+      if (!this.app.isShowFirstPageWarning) {
+        setTimeout(() => {
           this.popupWarningDialog.openDialog();
           this.app.isShowFirstPageWarning = true;
         }, 50);
       }
-
     }
     // ----------------------------------------------------------------------
   }
   //----------------------------------------------------------
-  public get isTraderExpired():boolean {
+  public get isTraderExpired(): boolean {
     return this.app.isTraderExpire;
   }
 
-
   //public gotoCreateDraft(reqType: RequestType) {
   public gotoCreateDraft(reqType: RequestDocumentType) {
-
     // console.log();
 
     if (this.app.isTraderExpire) {
@@ -112,7 +104,6 @@ export class DashboardComponent implements OnInit {
     } else {
       this.app.gotoNewDraft(reqType);
     }
-
   }
   // -----------------------------------------
   public closeExpireDialog() {
@@ -151,6 +142,10 @@ export class DashboardComponent implements OnInit {
   public gotoCreateArt() {
     this.gotoCreateDraft(RequestDocumentType.Artty);
   }
+  public gotoCreateDestroyArmament() {
+    this.gotoCreateDraft(RequestDocumentType.DestroyArmament);
+  }
+
   //public gotoCreateDraftSubstitute() {
   //   //use command in license page instead !!!
   //  this.gotoCreateDraft(RequestDocumentType.Substitute);
@@ -161,18 +156,20 @@ export class DashboardComponent implements OnInit {
   }
   //--------------------------------------------
   public get CanCreateDraftEnter(): boolean {
-
     //---------------------------------------------
     // ------------- disabled for https://app.clickup.com/t/860quhxan  -------------------
     // return false;
     return (
       !this.app.isTraderExpire &&
-      this.app.IsPermissionForRequest(RequestDocumentType.EnterWithOwner, PermissionMode.CREATE)
+      this.app.IsPermissionForRequest(
+        RequestDocumentType.EnterWithOwner,
+        PermissionMode.CREATE
+      )
     );
     //---------------------------------------------
   }
   public get CanCreateDraftImport(): boolean {
-      //---------------------------------------------
+    //---------------------------------------------
     // ------------- disabled for https://app.clickup.com/t/860quhxan  -------------------
     // return false;
     // temp true for test 20230612
@@ -193,7 +190,6 @@ export class DashboardComponent implements OnInit {
     // );
   }
   public get CanCreateDraftOwner(): boolean {
-
     //---------------------------------------------
     // ------------- disabled for https://app.clickup.com/t/860quhxan  -------------------
     // return false;
@@ -223,11 +219,13 @@ export class DashboardComponent implements OnInit {
   public get CanCreateDraftSubstitute(): boolean {
     return (
       !this.app.isTraderExpire &&
-      this.app.IsPermissionForRequest(RequestDocumentType.Substitute, PermissionMode.CREATE)
+      this.app.IsPermissionForRequest(
+        RequestDocumentType.Substitute,
+        PermissionMode.CREATE
+      )
     );
   }
   public get CanCreateDraftSample(): boolean {
-
     // ------------- disabled for https://app.clickup.com/t/860quhxan  -------------------
     // return false;
     // temp true for test 20230612
@@ -259,7 +257,7 @@ export class DashboardComponent implements OnInit {
     //   !this.app.isTraderExpire &&
     //   this.app.IsPermissionForRequest(RequestDocumentType.ExportSpecial, PermissionMode.CREATE)
     // );
-      //---------------------------------------------
+    //---------------------------------------------
   }
   public get CanCreateDraftCrossBorder(): boolean {
     // ------------- disabled for https://app.clickup.com/t/860quhxan  -------------------
@@ -272,9 +270,8 @@ export class DashboardComponent implements OnInit {
     // );
     //---------------------------------------------
   }
-  public gotoRenewManual(){
+  public gotoRenewManual() {
     this.downloadService.manualRenew();
   }
   //---------------------------------------------
-
 }

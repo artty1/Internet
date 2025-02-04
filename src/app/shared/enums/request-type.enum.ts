@@ -14,44 +14,49 @@
 //   TYPE_20 = 20
 // }
 
-export enum LicenseType{
-  Unknown	=	0	,
-  Req_Enter	=	1	,
-  License_Enter	=	2	,
-  License_Import	=	3	,
-  License_Production	=	4	,
-  License_Owning	=	5	,
-  Req_Renew	=	6	,
-  Req_Substitue	=	7	,
-  License_Export	=	8	,
-  License_CrossBorder	=	9	,
-  Substitue_License	=	10	,
-  Form_ExplanRequest	=	11	,
-  Doc_RequestExamBackground	=	12	,
-    // =	13	,
-  Doc_ExamBackground	=	14	,
-  Doc_Report	=	15	,
-  Req_Export	=	16	,
-  Req_InformExport	=	17	,
-  Doc_InformExport	=	18	,
-  License_Example	=	19	,
-  License_ExportYearly	=	20	,
-  Doc_PlaceReview	=	21	,
-  Result_PlaceReview	=	22	,
-  Doc_Appendix	=	23	,
-  Report_AmamentList	=	24	,
-  Doc_DocumentReview	=	25	,
-  Form_InformExport	=	26	,
-  Doc_Concession	=	27	,
-  Report_InformImport	=	28	
+export enum LicenseType {
+  Unknown = 0,
+  Req_Enter = 1,
+  License_Enter = 2,
+  License_Import = 3,
+  License_Production = 4,
+  License_Owning = 5,
+  Req_Renew = 6,
+  Req_Substitue = 7,
+  License_Export = 8,
+  License_CrossBorder = 9,
+  Substitue_License = 10,
+  Form_ExplanRequest = 11,
+  Doc_RequestExamBackground = 12,
+  // =	13	,
+  Doc_ExamBackground = 14,
+  Doc_Report = 15,
+  Req_Export = 16,
+  Req_InformExport = 17,
+  Doc_InformExport = 18,
+  License_Example = 19,
+  License_ExportYearly = 20,
+  Doc_PlaceReview = 21,
+  Result_PlaceReview = 22,
+  Doc_Appendix = 23,
+  Report_AmamentList = 24,
+  Doc_DocumentReview = 25,
+  Form_InformExport = 26,
+  Doc_Concession = 27,
+  Report_InformImport = 28,
 }
 
 export enum PermissionMode {
-  CREATE = 'C', EDIT = 'E', VIEW = 'V', DELETE = 'D', SUBMIT = 'P', TAKEOWNER = 'T'
+  CREATE = "C",
+  EDIT = "E",
+  VIEW = "V",
+  DELETE = "D",
+  SUBMIT = "P",
+  TAKEOWNER = "T",
 }
 
 //for replace RequestType
-export enum RequestDocumentType{
+export enum RequestDocumentType {
   NONE = 0,
   Owner = 50,
   // --------------------------
@@ -86,6 +91,9 @@ export enum RequestDocumentType{
 
   Artty = 800,
   ArttyWithOwner,
+
+  DestroyArmament = 900,
+  DestroyArmamentWithOwner,
 
   // ------------------------------------------
   Renewal = 10000,
@@ -134,7 +142,6 @@ export enum RequestDocumentType{
   Substitute_ExportSpecial = 20600,
   // Substitute_ExportSpecialWithOwner = 20650,
 
-  Substitute_CrossBorder = 20700
+  Substitute_CrossBorder = 20700,
   // Substitute_CrossBorderWithOwner = 20750,
-  
 }
