@@ -62,9 +62,9 @@
           <h5 class="card-title">ต่อใบอนุญาต</h5>
           <p class="card-text">
             สำหรับทำ คำขอต่ออายุใบอนุญาต สามารถเลือกรายการใบอนุญาตที่ต้องการต่ออายุจากรายการได้ที่หน้า <a [routerLink]="['/license/renew']">ใบอนุญาต</a>
-            <a class="a-download" href="javascript: null;" (click)="gotoRenewManual()">คู่มือขั้นตอนการต่ออายุ</a>  
+            <a class="a-download" href="javascript: null;" (click)="gotoRenewManual()">คู่มือขั้นตอนการต่ออายุ</a>
           </p>
-          
+
         </div>
       </div>
     </div>
@@ -155,7 +155,19 @@
         </div>
       </div>
     </div>
-    
+
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="card">
+        <div class="card-body img-cross-border">
+          <h5 class="card-title">E-Internet</h5>
+          <p class="card-text">
+            menu ชั่วคราวสำหรับเทส
+          </p>
+          <button (click)="gotoCreateEInternet()" class="btn btn-info" [ngClass]="{ 'no-permission': false }">สร้างคำขอ</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 

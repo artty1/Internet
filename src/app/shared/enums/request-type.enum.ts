@@ -95,6 +95,10 @@ export enum RequestDocumentType {
   DestroyArmament = 900,
   DestroyArmamentWithOwner,
 
+  //เพิ่มโดย P
+  EInternet = 1100,
+  EInternetWithOwner = 1150,
+
   // ------------------------------------------
   Renewal = 10000,
   Renewal_Owner = 10050,

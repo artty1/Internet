@@ -63,6 +63,11 @@ const routes: Routes = [
     data: { reqType: RequestDocumentType.CrossBorder },
   },
   {
+    path: "e-internet",
+    component: NewComponent,
+    data: { reqType: RequestDocumentType.EInternet }
+  },
+  {
     path: "artty",
     component: NewComponent,
     data: { reqType: RequestDocumentType.Artty },

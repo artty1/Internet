@@ -146,6 +146,10 @@ export class DashboardComponent implements OnInit {
     this.gotoCreateDraft(RequestDocumentType.DestroyArmament);
   }
 
+  public gotoCreateEInternet() {
+    this.gotoCreateDraft(RequestDocumentType.EInternet);
+  }
+
   //public gotoCreateDraftSubstitute() {
   //   //use command in license page instead !!!
   //  this.gotoCreateDraft(RequestDocumentType.Substitute);

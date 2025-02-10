@@ -14,6 +14,7 @@ class RouteDefinition {
   public pageNew_Export = "export";
   public pageNew_ExportSpecial = "export-special";
   public pageNew_CrossBorder = "cross-border";
+  public pageNew_EInternet = "e-internet";
   public pageNew_Renewal = "renewal";
   public pageNew_Reject = "reject";
 

@@ -4,7 +4,7 @@ import { Router, Route } from "@angular/router";
 
 import {
   PermissionMode,
-  RequestDocumentType,
+  RequestDocumentType
 } from "./shared/enums/request-type.enum";
 
 import { Trader, Person, Address } from "./shared/models/common";
@@ -33,7 +33,7 @@ declare var window: any;
 //}
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class ApplicationContext {
   private waitingDialog: WaitingDialog;
@@ -97,7 +97,7 @@ export class ApplicationContext {
       var TOKEN = this.token;
       var DIDJUMPURL = this.config.did_url;
       // console.log('generate goout()');
-      window.goOut = function (url) {
+      window.goOut = function(url) {
         let gotoURL = DIDJUMPURL + "?module=" + url + "&token=" + TOKEN;
 
         document.location.href = gotoURL;
@@ -109,14 +109,14 @@ export class ApplicationContext {
     http
       .get("assets/config.json")
       .toPromise<any>()
-      .then((config_from_html) => {
+      .then(config_from_html => {
         this.config.SetConfig(config_from_html);
         // console.log("read config : ", config_from_html);
         // console.log('read config : ', this.config);
         // console.log('-------------------------');
         callback(true);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log("error loading config file :", err);
         callback(false);
       });
@@ -164,10 +164,12 @@ export class ApplicationContext {
   }
   //-------------------------------------------
   private initialPage() {
-    document.getElementById("div-footer_left").innerHTML =
-      this.getAppDetailForFooter;
-    document.getElementById("div-footer_right").innerHTML =
-      this.getUserDetailForFooter;
+    document.getElementById(
+      "div-footer_left"
+    ).innerHTML = this.getAppDetailForFooter;
+    document.getElementById(
+      "div-footer_right"
+    ).innerHTML = this.getUserDetailForFooter;
 
     let menuAdmin = document.getElementById("menu-admin");
 
@@ -338,6 +340,15 @@ export class ApplicationContext {
           routeDef.pageDestroyArmament
         );
         break;
+      case RequestDocumentType.EInternet:
+        //P: เพิ่มเป็น default เพราะเห็นทุก case ทำงานเหมือนกันหมด
+        url = routeDef.buildPathWithRoot(
+          routeDef.pageNew,
+          routeDef.pageNew_EInternet
+        );
+
+      default:
+        break;
     }
     //----------------------------------
     if (reqType > 10000 && reqType < 20000) {
@@ -461,7 +472,7 @@ export class ApplicationContext {
   //-------------------------------------------
   public get httpOptionsOfElicensing(): any {
     const headers = new HttpHeaders({
-      Authorization: "Bearer " + this.eLicensingToken,
+      Authorization: "Bearer " + this.eLicensingToken
     });
 
     return { headers, observe: "response" };
@@ -469,7 +480,7 @@ export class ApplicationContext {
   //-------------------------------------------
   public get httpOptionsFromBlobOfElicensing(): any {
     const headers = new HttpHeaders({
-      Authorization: "Bearer " + this.eLicensingToken,
+      Authorization: "Bearer " + this.eLicensingToken
     });
 
     return { headers, responseType: "blob" };
@@ -478,8 +489,8 @@ export class ApplicationContext {
   public buildAPIURL(...urlSections: Array<string>): string {
     let result = this.config.api_url;
     result += urlSections
-      .map((item) => item.trim())
-      .filter((item) => item.length > 0)
+      .map(item => item.trim())
+      .filter(item => item.length > 0)
       .join("/");
     return result;
   }
@@ -487,8 +498,8 @@ export class ApplicationContext {
   public buildELicensingAPIURL(...urlSections: Array<string>): string {
     let result = this.config.elicensing_api_url;
     result += urlSections
-      .map((item) => item.trim())
-      .filter((item) => item.length > 0)
+      .map(item => item.trim())
+      .filter(item => item.length > 0)
       .join("/");
     return result;
   }
