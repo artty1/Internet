@@ -4,7 +4,7 @@ import { LicenseType, RequestDocumentType } from "../enums/request-type.enum";
 import { DocumentStatus } from "../enums/document-status.enum";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class EnumToStringService {
   constructor() {}
@@ -228,6 +228,12 @@ export class EnumToStringService {
         break;
       case RequestDocumentType.CrossBorder:
         result = "คำขอหนังสืออนุญาตส่งผ่านแดน";
+        break;
+      case RequestDocumentType.Artty:
+        result = "คำขอหารือความเป็นยุทธภัณฑ์";
+        break;
+      case RequestDocumentType.DestroyArmament:
+        result = "คำขออนุญาตทำลายยุทธภัณฑ์";
         break;
       case RequestDocumentType.EInternet:
         result = "E-Internet";

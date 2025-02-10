@@ -210,8 +210,8 @@
     <cdss-session-destroy-armament-detail validator-order="10" (ready)="initSection($event)" Title="รายละเอียดการทำลายยุทธภัณฑ์"></cdss-session-destroy-armament-detail>
     <cdss-section-coordinator validator-order="11" (ready)="initSection($event)" Title="ผู้ประสานงาน"></cdss-section-coordinator>
     <cdss-session-attached-document validator-order="12" (ready)="initSection($event)" Title="รายการเอกสารแนบคำขอ"></cdss-session-attached-document>
-    <cdss-session-results-destruction-armament  validator-order="30" (ready)="initSection($event)" Title=" ผลการทำลายยุทธภัณฑ์"></cdss-session-results-destruction-armament>
-    <cdss-session-attached-document validator-order="31" (ready)="initSection($event)" Title="รายการเอกสารแนบคำขอ"></cdss-session-attached-document>
+    <cdss-session-results-destruction-armament  validator-order="31" (ready)="initSection($event)" Title=" ผลการทำลายยุทธภัณฑ์"></cdss-session-results-destruction-armament>
+    <cdss-session-attached-document validator-order="32" (ready)="initSection($event)" Title="รายการเอกสารแนบคำขอ"></cdss-session-attached-document>
   </div>
 
   <cdss-section-print-include *ngIf="!IsRequest_Artty || !IsRequest_Destroy_Armament" validator-order="20" (ready)="initSection($event)" Title="การแนบเอกสารหลักฐานต่าง ๆ"></cdss-section-print-include>

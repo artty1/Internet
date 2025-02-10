@@ -1,37 +1,43 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { BaseSection } from '../../shared/base/base-section';
-import { ApplicationContext } from '../../application-context';
-import { RequestDocumentService } from '../../shared/services/request-document.service';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { BaseSection } from "../../shared/base/base-section";
+import { ApplicationContext } from "../../application-context";
+import { RequestDocumentService } from "../../shared/services/request-document.service";
 //import { FileInclude } from '../../shared/models/request-document';
 
-import { UploadFileType } from './../../shared/enums/file-type';
-import { ImageDialogComponent } from '../../components/image-dialog/image-dialog.component';
-import { EventResult, ServerResult } from '../../shared/models/result';
-import { HttpClient } from '@angular/common/http';
-import { PopupFileUploadComponent } from '../popup-file-upload/popup-file-upload.component';
-import { UploadService } from './upload.service';
+import { UploadFileType } from "./../../shared/enums/file-type";
+import { ImageDialogComponent } from "../../components/image-dialog/image-dialog.component";
+import { EventResult, ServerResult } from "../../shared/models/result";
+import { HttpClient } from "@angular/common/http";
+import { PopupFileUploadComponent } from "../popup-file-upload/popup-file-upload.component";
+import { UploadService } from "./upload.service";
 
-import { RequestFileInclude, RequestFileItem } from './models';
-import { ToMonthPeriodPipe } from 'src/app/shared/pipes/to-month-period.pipe';
-import { ConfirmDialog } from 'src/app/components/confirm-dialog/confirm-dialog.component';
+import { RequestFileInclude, RequestFileItem } from "./models";
+import { ToMonthPeriodPipe } from "src/app/shared/pipes/to-month-period.pipe";
+import { ConfirmDialog } from "src/app/components/confirm-dialog/confirm-dialog.component";
 
 @Component({
-  selector: 'cdss-section-file-include',
-  templateUrl: './section-file-include.component.html',
-  styleUrls: ['./section-file-include.component.css'],
-  encapsulation: ViewEncapsulation.None
+  selector: "cdss-section-file-include",
+  templateUrl: "./section-file-include.component.html",
+  styleUrls: ["./section-file-include.component.css"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SectionFileInclude extends BaseSection implements OnInit {
-
-  @ViewChild("dialogError", { static: true}) private dialogError: ConfirmDialog;
+  @ViewChild("dialogError", { static: true })
+  private dialogError: ConfirmDialog;
 
   private uploadService: UploadService;
 
-  constructor(public app: ApplicationContext,public repo: RequestDocumentService, public http: HttpClient) {
+  constructor(
+    public app: ApplicationContext,
+    public repo: RequestDocumentService,
+    public http: HttpClient
+  ) {
     super(app, repo);
-    this.title = "รายการเอกสารแนบ"
+    this.title = "รายการเอกสารแนบ";
 
-    if(!this.repo.currentDocument.fileInclude){
+    console.log("this.title", this.title);
+
+    if (!this.repo.currentDocument.fileInclude) {
       this.repo.currentDocument.fileInclude = new RequestFileInclude();
     }
 
@@ -40,15 +46,14 @@ export class SectionFileInclude extends BaseSection implements OnInit {
     this.registerOnAfterViewInit(this.initWithUploadService);
   }
   // ---------------------------------------------
-  private initWithUploadService(){
-
+  private initWithUploadService() {
     this.uploadService
       .loadIncludeFileList(this.repo.currentDocument)
-      .then((result: RequestFileInclude)=>{
+      .then((result: RequestFileInclude) => {
         // this.repo.currentDocument.fileInclude = result;
         // console.log('load file OK : ', result);
       })
-      .catch((err: any)=>{
+      .catch((err: any) => {
         console.error(err);
       });
   }
@@ -57,64 +62,56 @@ export class SectionFileInclude extends BaseSection implements OnInit {
     return true;
   }
   // ---------------------------------------------
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
   // ---------------------------------------------
-  public get fileIncludeList(): RequestFileInclude{
+  public get fileIncludeList(): RequestFileInclude {
     return this.repo.currentDocument.fileInclude;
   }
   // ---------------------------------------------
   public get Footer(): string {
-
     let result = "ยังไม่มีเอกสารแนบ";
     let fileCount = this.repo.currentDocument.fileInclude.fileItems.length;
 
     if (fileCount > 0) {
-      result = "เอกสารแนบทั้งหมด "+fileCount+" ไฟล์";
+      result = "เอกสารแนบทั้งหมด " + fileCount + " ไฟล์";
     }
 
     // if(this.uploadErrorMessage.trim().length>0){
     //   result = this.uploadErrorMessage + result;
     // }
 
-
     return result;
   }
   // ---------------------------------------------
-  public swapRemoveItem(item: RequestFileItem){
+  public swapRemoveItem(item: RequestFileItem) {
     item.for_delete = !item.for_delete;
   }
   // ---------------------------------------------
-  public viewItem(item: RequestFileItem){
-
+  public viewItem(item: RequestFileItem) {
     this.app.ShowWaitingDialog();
-    this.uploadService.downloadFile(item, (isOK:boolean, err:any)=>{
+    this.uploadService.downloadFile(item, (isOK: boolean, err: any) => {
       this.app.CloseWaitingDialog();
 
-      if(!isOK){
-        this._uploadErrorMessage = err.status+' '+err.statusText;
+      if (!isOK) {
+        this._uploadErrorMessage = err.status + " " + err.statusText;
         this.dialogError.openDialog();
       }
     });
   }
   // ---------------------------------------------
-  public editItemName(item: RequestFileItem){
-
-  }
+  public editItemName(item: RequestFileItem) {}
   // ---------------------------------------------
   // ---------------------------------------------
-  public uploadDone(result: ServerResult){
+  public uploadDone(result: ServerResult) {
     const fResult: Array<any> = result.data;
-    const fResultOK = fResult.filter(item=>item.is_success==true);
-    const fResultError = fResult.filter(item=>item.is_success!=true);
-
+    const fResultOK = fResult.filter((item) => item.is_success == true);
+    const fResultError = fResult.filter((item) => item.is_success != true);
 
     // console.clear();
 
     const fList = new Array<RequestFileItem>();
 
-    fResultOK.forEach((item:any)=>{
+    fResultOK.forEach((item: any) => {
       const f = new RequestFileItem();
       f.id = 0;
       f.for_delete = false;
@@ -125,38 +122,45 @@ export class SectionFileInclude extends BaseSection implements OnInit {
       f.setItemFroServerResult();
 
       fList.push(f);
-
     });
 
     this.repo.currentDocument.fileInclude.fileItems.push(...fList);
 
     this.app.CloseWaitingDialog();
 
-    if(fResultError.length>0){
+    if (fResultError.length > 0) {
+      const message = fResultError
+        .map((item: any) => {
+          return (
+            '<div class="div-error">' +
+            '     <div class="div-error-title">' +
+            item.fileName +
+            "</div>" +
+            '     <div class="div-error-description">' +
+            item.result.message +
+            "</div>" +
+            "   </div>"
+          );
+        })
+        .join("");
 
-      const message = fResultError.map((item:any)=>{
-        return '<div class="div-error">' +
-            '     <div class="div-error-title">'+item.fileName+'</div>' +
-            '     <div class="div-error-description">'+item.result.message+'</div>' +
-            '   </div>';
-      }).join("");
-
-      this._uploadErrorMessage = '<div class="div-error-header">พบข้อผิดพลาดในการ upload บาง file, กรุณาลองอีกครั้ง</div>'+message;
+      this._uploadErrorMessage =
+        '<div class="div-error-header">พบข้อผิดพลาดในการ upload บาง file, กรุณาลองอีกครั้ง</div>' +
+        message;
 
       setTimeout(() => {
         this.dialogError.openDialog();
       }, 100);
-
     }
   }
   // ---------------------------------------------
-  private _uploadErrorMessage:string = '';
-  public get uploadErrorMessage():string{
+  private _uploadErrorMessage: string = "";
+  public get uploadErrorMessage(): string {
     return this._uploadErrorMessage;
   }
-  public uploadError(result: ServerResult){
+  public uploadError(result: ServerResult) {
     // console.log('-------------------------------');
-    console.error('uploadError: ', result);
+    console.error("uploadError: ", result);
     // this.uploadErrorMessage = "";
     // this.app.CloseWaitingDialogWithError(result);
     // console.log('-------------------------------');
@@ -164,7 +168,7 @@ export class SectionFileInclude extends BaseSection implements OnInit {
     this.dialogError.openDialog();
   }
   // ---------------------------------------------
-  public beginUpload(result: ServerResult){
+  public beginUpload(result: ServerResult) {
     // console.log('beginUpload : ', result);
     this.app.ShowWaitingDialog("กำลัง upload file เอกสาร...");
   }

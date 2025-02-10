@@ -139,7 +139,7 @@
           <p class="card-text">
             สำหรับทำ คำขอหารือความเป็นยุทธภัณฑ์
           </p>
-          <button (click)="gotoCreateArt()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftCrossBorder }">สร้างคำขอ</button>
+          <button (click)="gotoCreateArt()" class="btn btn-info" [ngClass]="{ 'no-permission': false }">สร้างคำขอ</button>
         </div>
       </div>
     </div>
@@ -151,7 +151,7 @@
           <p class="card-text">
             สำหรับทำ คำขออนุญาตทำลายยุทธภัณฑ์
           </p>
-          <button (click)="gotoCreateDestroyArmament()" class="btn btn-info" [ngClass]="{ 'no-permission': !CanCreateDraftCrossBorder }">สร้างคำขอ</button>
+          <button (click)="gotoCreateDestroyArmament()" class="btn btn-info" [ngClass]="{ 'no-permission': false }">สร้างคำขอ</button>
         </div>
       </div>
     </div>
