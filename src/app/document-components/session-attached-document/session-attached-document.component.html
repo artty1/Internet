@@ -1,6 +1,6 @@
 <div class="container-fluid div-content-box" id="div-section-attached-document">
     <div class="div-content-box-header">
-      <i class="fa fa-info-circle" aria-hidden="true"></i> {{Title}}
+      <i class="fa fa-info-circle" aria-hidden="true"></i> รายการเอกสารแนบคำขอ
     </div>
     <div class="div-content-box_suggestion is-warning">
       หมายเหตุ: กรุณาตั้งชื่อไฟล์เอกสารที่แนบมาให้สอดคล้องกับรายการเอกสารที่ติ๊กเลือก
@@ -32,6 +32,46 @@
           <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
           <label class="custom-control-label" for="print-include-06">คุณสมบัติหรือคุณลักษณะของผลิตภัณฑ์/สารเคมี ภาษาไทย และภาษาอังกฤษ</label>
         </div>
+
+        <!--  -->
+        <div *ngIf="IsRequest_Destroy_Armament">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">สำเนาใบอนุญาต............................เลขที่.......................................ลงวันที่................................</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">บัญชีรับจ่ายยุทธภัณฑ์ (แบบ ย.ภ.8) เดือน..............................................................................</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">หนังสือรับรองบริษัท</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">หนังสือมอบอำนาจ (ติดอากรแสตมป์ ๑๐ บาท)</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">สำเนาทะเบียนบ้านและสำเนาบัตรประจำตัวประชาชนกรรมการ</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">สำเนาทะเบียนบ้านและสำเนาบัตรประจำตัวประชาชนผู้รับมอบอำนาจ</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">รูปถ่ายยุทธภัณฑ์</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">หนังสือว่าจ้าง / หนังสือรับรองบริษัทผู้รับจ้างทำลาย (กรณีทำลายสารเคมี)</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="print-include-06" (change)="changeCheckInclude(6)" [checked]="getSequenceCheck(6)">
+          <label class="custom-control-label" for="print-include-06">หนังสือรับรองการกำจัดกากสารเคมีออกนอกบริเวณโรงงานของกรมโรงงานอุตสาหกรรม</label>
+        </div>
+      </div>
         
       </div>
     </div>

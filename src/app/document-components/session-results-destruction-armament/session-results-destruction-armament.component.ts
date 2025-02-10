@@ -1,15 +1,17 @@
 import { Component, OnInit } from "@angular/core";
-import { BaseSection } from "./../../shared/base/base-section";
+
 import { ApplicationContext } from "../../application-context";
 import { LookupService } from "../../shared/services/lookup.service";
 import { RequestDocumentService } from "../../shared/services/request-document.service";
+import { BaseSection } from "./../../shared/base/base-section";
 import { Trader } from "../../shared/models/common";
+
 @Component({
-  selector: "cdss-session-destroy-armament-detail",
-  templateUrl: "./session-destroy-armament-detail.component.html",
-  styleUrls: ["./session-destroy-armament-detail.component.css"],
+  selector: "cdss-session-results-destruction-armament",
+  templateUrl: "./session-results-destruction-armament.component.html",
+  styleUrls: ["./session-results-destruction-armament.component.css"],
 })
-export class SessionDestroyArmamentDetailComponent
+export class SessionResultsDestructionArmamentComponent
   extends BaseSection
   implements OnInit
 {
@@ -25,6 +27,7 @@ export class SessionDestroyArmamentDetailComponent
   }
 
   ngOnInit() {}
+
   //-------------------------------------------
   ngAfterViewInit(): void {
     //this.swapMode(this._isEditMode);

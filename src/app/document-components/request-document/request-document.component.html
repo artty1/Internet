@@ -202,15 +202,19 @@
     <cdss-section-armament-information validator-order="9" (ready)="initSection($event)" Title="ข้อมูลยุทธภัณฑ์"></cdss-section-armament-information>
     <cdss-section-use validator-order="10" (ready)="initSection($event)" Title="การนำไปใช้"></cdss-section-use>
     <cdss-section-coordinator validator-order="11" (ready)="initSection($event)" Title="ผู้ประสานงาน"></cdss-section-coordinator>
-    <cdss-session-attached-document validator-order="12" (ready)="initSection($event)" Title="รายการเอกสารแนบเคำขอ"></cdss-session-attached-document>
+    <cdss-session-attached-document validator-order="12" (ready)="initSection($event)" Title="รายการเอกสารแนบคำขอ"></cdss-session-attached-document>
   </div>
 
   <div *ngIf="IsRequest_Destroy_Armament">
     <cdss-section-armament-information validator-order="9" (ready)="initSection($event)" Title="ข้อมูลยุทธภัณฑ์"></cdss-section-armament-information>
     <cdss-session-destroy-armament-detail validator-order="10" (ready)="initSection($event)" Title="รายละเอียดการทำลายยุทธภัณฑ์"></cdss-session-destroy-armament-detail>
+    <cdss-section-coordinator validator-order="11" (ready)="initSection($event)" Title="ผู้ประสานงาน"></cdss-section-coordinator>
+    <cdss-session-attached-document validator-order="12" (ready)="initSection($event)" Title="รายการเอกสารแนบคำขอ"></cdss-session-attached-document>
+    <cdss-session-results-destruction-armament  validator-order="30" (ready)="initSection($event)" Title=" ผลการทำลายยุทธภัณฑ์"></cdss-session-results-destruction-armament>
+    <cdss-session-attached-document validator-order="31" (ready)="initSection($event)" Title="รายการเอกสารแนบคำขอ"></cdss-session-attached-document>
   </div>
 
-  <cdss-section-print-include *ngIf="!IsRequest_Artty" validator-order="20" (ready)="initSection($event)" Title="การแนบเอกสารหลักฐานต่าง ๆ"></cdss-section-print-include>
+  <cdss-section-print-include (*ngIf="!IsRequest_Artty" || *ngIf="!IsRequest_Destroy_Armament") validator-order="20" (ready)="initSection($event)" Title="การแนบเอกสารหลักฐานต่าง ๆ"></cdss-section-print-include>
   <cdss-section-file-include *ngIf="!IsRequest_Artty" validator-order="30" (ready)="initSection($event)" Title="เอกสารแนบ"></cdss-section-file-include>
 
   <cdss-section-trader-comment Title="หมายเหตุ"></cdss-section-trader-comment>

@@ -1,0 +1,31 @@
+<div class="container-fluid div-content-box" id="div-section-results-destruction-armament">
+    <!-- <div style="cursor:pointer;" class="div-content-box-header" data-toggle="collapse" data-target="#ProfileCollapse" aria-expanded="false" aria-controls="ProfileCollapse">
+      <i class="fa fa-building" aria-hidden="true"></i> หน่วยงาน   
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </div> -->
+    <div class="div-content-box-header">
+        <i class="fa fa-building" aria-hidden="true"></i> ผู้ประสานงาน
+      </div>
+      
+      <!-- ------------------------------------------------------ -->
+      <div class="form-row">
+        <div class="form-group col-sm-12 col-md-8">
+          <label for="txtTaxID" class="col-form-label-sm">วันที่ทำลาย</label>
+          <!--<input type="text" class="form-control form-control-sm" id="txtTaxID" placeholder="เลขประจำตัวผู้เสียภาษี" [readonly]="!isEditMode" [(ngModel)]="datasource.taxID">-->
+          <!-- <input type="text" class="form-control form-control-sm" id="txtTaxID" placeholder="-" readonly [value]="app.traderInformation.TRADER_TAX_NO"> -->
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.TRADER_TAX_NO">
+        </div>
+        
+        <div class="form-group col-sm-12 col-md-4">
+          <label for="txtRegisterCapital" class="col-form-label-sm">เจ้าหน้าที่ตรวจสอบการทำลาย</label>
+          <!--<input type="text" class="form-control form-control-sm" id="txtRegisterCapital" placeholder="ทุนจดทะเบียน" [readonly]="!isEditMode" [(ngModel)]="datasource.registerCapital">-->
+          <!-- <input type="text" class="form-control form-control-sm" id="txtRegisterCapital" placeholder="-" readonly [value]="app.traderInformation.CAPITAL_AMOUNT"> -->
+          <input type="text" class="form-control form-control-sm" placeholder="-"  [value]="app.traderInformation.CAPITAL_AMOUNT">
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------ -->
+   
+  </div>
+  
+  
